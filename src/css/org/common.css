@@ -1,0 +1,162 @@
+/*PARAMETER*/
+.brand {
+  color: #196732;
+}
+.bg-brand {
+  background-color: #196732;
+}
+/*
+'Noto Sans TC' cwTeXFangSong cwTeXMing
+
+
+@fontfamilyeng:'Cormorant Infant' , arial, sans-serif;*/
+/*@view_width:100%;;*/
+.white {
+  color: #fff;
+}
+.black {
+  color: #000;
+}
+.red {
+  color: #e71f19;
+}
+.yellow {
+  color: #feef00;
+}
+.darkGray {
+  color: #474747;
+}
+.bg-white {
+  background: #fff;
+}
+.bg-darkGray {
+  background: #474747;
+}
+.bg-brown {
+  background: #231815;
+}
+.bg-black {
+  background: #000;
+}
+.bg-red {
+  background: #e71f19;
+}
+.bold {
+  font-weight: bold;
+  font-family: 'Microsoft JhengHei', 'LiHei Pro', arial, sans-serif;
+}
+.abs {
+  position: absolute;
+}
+.relat {
+  position: relative;
+}
+.fix {
+  position: fixed;
+}
+.transparent {
+  background-color: transparent;
+  background: none;
+}
+.custom-input {
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  border: none;
+  outline: none;
+}
+.custom-input:focus {
+  outline: none;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.pure-form input[type=text],
+.pure-form input[type=password],
+.pure-form input[type=email],
+.pure-form input[type=url],
+.pure-form input[type=date],
+.pure-form input[type=month],
+.pure-form input[type=time],
+.pure-form input[type=datetime],
+.pure-form input[type=datetime-local],
+.pure-form input[type=week],
+.pure-form input[type=number],
+.pure-form input[type=search],
+.pure-form input[type=tel],
+.pure-form input[type=color],
+.pure-form select,
+.pure-form textarea {
+  padding: 0em .6em;
+}
+/*custimed slider*/
+input[type="range"] {
+  -webkit-appearance: none;
+  /* 限定範圍 */
+  width: 180px;
+  height: 3px;
+  outline: none;
+  /* 避免點選會有藍線或虛線 */
+  background: #333;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  position: relative;
+  /* 設為相對位置，為了前後區塊的絕對位置而設定 */
+  width: 15px;
+  height: 15px;
+  background: #444;
+  border-radius: 50%;
+  transition: .2s;
+  /* 點選放大時候的漸變時間 */
+}
+/* Base for label styling */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 1.95em;
+  cursor: pointer;
+}
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left: -30px;
+  top: 0;
+  width: 2.25em;
+  height: 2.25em;
+  border: solid 2px #000;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: '✔';
+  position: absolute;
+  top: 0.15em;
+  left: -0.85em;
+  font-size: 2em;
+  line-height: 0.8;
+  color: #000;
+  transition: all .2s;
+}
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}

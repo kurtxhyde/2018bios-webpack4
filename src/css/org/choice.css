@@ -1,0 +1,571 @@
+/*PARAMETER*/
+.brand {
+  color: #196732;
+}
+.bg-brand {
+  background-color: #196732;
+}
+/*
+'Noto Sans TC' cwTeXFangSong cwTeXMing
+
+
+@fontfamilyeng:'Cormorant Infant' , arial, sans-serif;*/
+/*@view_width:100%;;*/
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.pure-form input[type=text],
+.pure-form input[type=password],
+.pure-form input[type=email],
+.pure-form input[type=url],
+.pure-form input[type=date],
+.pure-form input[type=month],
+.pure-form input[type=time],
+.pure-form input[type=datetime],
+.pure-form input[type=datetime-local],
+.pure-form input[type=week],
+.pure-form input[type=number],
+.pure-form input[type=search],
+.pure-form input[type=tel],
+.pure-form input[type=color],
+.pure-form select,
+.pure-form textarea {
+  padding: 0em .6em;
+}
+/*custimed slider*/
+input[type="range"] {
+  -webkit-appearance: none;
+  /* 限定範圍 */
+  width: 180px;
+  height: 3px;
+  outline: none;
+  /* 避免點選會有藍線或虛線 */
+  background: #333;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  position: relative;
+  /* 設為相對位置，為了前後區塊的絕對位置而設定 */
+  width: 15px;
+  height: 15px;
+  background: #444;
+  border-radius: 50%;
+  transition: .2s;
+  /* 點選放大時候的漸變時間 */
+}
+/* Base for label styling */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 1.95em;
+  cursor: pointer;
+}
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left: -30px;
+  top: 0;
+  width: 2.25em;
+  height: 2.25em;
+  border: solid 2px #000;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: '✔';
+  position: absolute;
+  top: 0.15em;
+  left: -0.85em;
+  font-size: 2em;
+  line-height: 0.8;
+  color: #000;
+  transition: all .2s;
+}
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+.white {
+  color: #fff;
+}
+.black {
+  color: #000;
+}
+.red {
+  color: #e71f19;
+}
+.yellow {
+  color: #feef00;
+}
+.darkGray {
+  color: #474747;
+}
+.bg-white {
+  background: #fff;
+}
+.bg-darkGray {
+  background: #474747;
+}
+.bg-brown {
+  background: #231815;
+}
+.bg-black {
+  background: #000;
+}
+.bg-red {
+  background: #e71f19;
+}
+.bold {
+  font-weight: bold;
+  font-family: 'Microsoft JhengHei', 'LiHei Pro', arial, sans-serif;
+}
+.abs {
+  position: absolute;
+}
+.relat {
+  position: relative;
+}
+.fix {
+  position: fixed;
+}
+.transparent {
+  background-color: transparent;
+  background: none;
+}
+.custom-input {
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  border: none;
+  outline: none;
+}
+.custom-input:focus {
+  outline: none;
+}
+.bg-lightg {
+  background: #8fc322;
+}
+.bg-yellow {
+  background: #e7b142;
+}
+.bg-gray {
+  background: #ccc;
+}
+.red {
+  color: #e60012;
+}
+.line {
+  width: 100%;
+  height: 5px;
+  margin: 10px auto;
+  float: none;
+  padding: 0;
+}
+.line > div {
+  float: left;
+  padding: 0;
+  margin: 0;
+  height: 5px;
+  border-radius: 4px;
+  margin-right: -5px;
+}
+.line .color1 {
+  background: #f35c69;
+  width: 23%;
+  z-index: 6;
+  margin-left: 10px;
+}
+.line .color2 {
+  background: #f3c85c;
+  width: 10%;
+  z-index: 5;
+}
+.line .color3 {
+  background: #7bbd93;
+  width: 15%;
+  z-index: 4;
+}
+.line .color4 {
+  background: #ff6a62;
+  width: 27%;
+  z-index: 3;
+}
+.line .color5 {
+  background: #4dd6d4;
+  width: 12%;
+  z-index: 2;
+}
+.line .color6 {
+  background: #e0539f;
+  width: 13%;
+  z-index: 1;
+}
+.wrapper {
+  padding: 0;
+}
+.wrapper .container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.wrapper .container > .row {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.wrapper .container > .row .video {
+  margin: 8% auto 0;
+  text-align: center;
+}
+@media (min-width: 1000px) {
+  .wrapper .container > .row .video {
+    margin: 80px auto 0;
+  }
+}
+.wrapper .container > .row .video > div,
+.wrapper .container > .row .video #player {
+  max-width: 1000px;
+  height: 51vw;
+  margin: 0 auto;
+  float: none;
+  background: #000;
+}
+@media (min-width: 1000px) {
+  .wrapper .container > .row .video > div,
+  .wrapper .container > .row .video #player {
+    height: 560px;
+  }
+}
+.wrapper .container > .row.btns {
+  margin: 40px 0 100px;
+}
+@media (max-width: 575px) {
+  .wrapper .container > .row.btns {
+    margin: 30px 0 20px;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .wrapper .container > .row.btns {
+    margin: 50px 0;
+  }
+}
+.wrapper .container > .row.btns .fright {
+  float: right;
+}
+.wrapper .container > .row.btns .fleft {
+  float: left;
+}
+.wrapper .container > .row.btns .btn {
+  font-size: 3vw;
+  padding: 1vw 1.5vw;
+  color: #196732;
+  border: solid 1px #196732;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 5vw;
+  -moz-border-radius: 5vw;
+  border-radius: 5vw;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.wrapper .container > .row.btns .btn:hover,
+.wrapper .container > .row.btns .btn:focus,
+.wrapper .container > .row.btns .btn.act {
+  background-color: #196732;
+  color: #fff;
+}
+@media (max-width: 575px) {
+  .wrapper .container > .row.btns .btn {
+    font-size: 4.5vw;
+    padding: 2vw 3.5vw;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .wrapper .container > .row.btns .btn {
+    font-size: 4vw;
+  }
+}
+@media (min-width: 1200px) {
+  .wrapper .container > .row.btns .btn {
+    font-size: 30px;
+    padding: 15px 30px;
+    -webkit-border-radius: 60px;
+    -moz-border-radius: 60px;
+    border-radius: 60px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+  }
+}
+.wrapper .container > .row.table .title {
+  font-size: 8vw;
+  margin-top: 5vw;
+  margin-bottom: 1vw;
+  color: #196732;
+  font-family: 'Noto Sans TC', '新細明體', 'LiHei Pro', arial, sans-serif;
+  text-align: center;
+  letter-spacing: 2px;
+}
+.wrapper .container > .row.table .title .price {
+  font-family: 'Open Sans', sans-serif;
+}
+@media (min-width: 1200px) {
+  .wrapper .container > .row.table .title {
+    font-size: 100px;
+  }
+}
+.wrapper .container > .row.table .sub {
+  font-size: 3.8vw;
+  margin-bottom: 1vw;
+  color: #535353;
+  text-align: center;
+}
+@media (max-width: 575px) {
+  .wrapper .container > .row.table .sub {
+    margin-bottom: 3vw;
+  }
+}
+@media (min-width: 1200px) {
+  .wrapper .container > .row.table .sub {
+    font-size: 48px;
+  }
+}
+.wrapper .container > .row.table .tab {
+  margin-bottom: 3vw;
+}
+.wrapper .container > .row.table .ps {
+  font-size: 12px;
+  margin-bottom: 5vw;
+  text-align: center;
+}
+.wrapper .container > .row.table .pctable-demo {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.wrapper .container > .row.table .pctable-demo .demo {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  text-align: center;
+  font-size: 1.2vw;
+}
+.wrapper .container > .row.table .pctable-demo .demo > * {
+  padding: .5vw 10px;
+  display: inline-block;
+  float: none;
+}
+.wrapper .container > .row.table .pctable-demo .demo span {
+  padding: 0vw;
+}
+.wrapper .container > .row.table .pctable-demo .demo .roundline,
+.wrapper .container > .row.table .pctable-demo .demo .roundlinet {
+  width: 62px;
+  height: 3vw;
+  border-radius: 1.5vw;
+}
+.wrapper .container > .row.table .pctable-demo .demo .roundlinet {
+  width: auto;
+  padding: 0;
+  line-height: 3vw;
+}
+.wrapper .container > .row.table .pctable-demo .demo .roundlinet > * {
+  float: left;
+  padding: 0vw;
+}
+@media (min-width: 1100px) {
+  .wrapper .container > .row.table .pctable-demo .demo {
+    font-size: 16px;
+    line-height: 33px;
+  }
+  .wrapper .container > .row.table .pctable-demo .demo .roundline {
+    width: 62px;
+    height: 33px;
+    padding: 0;
+  }
+  .wrapper .container > .row.table .pctable-demo .demo .roundlinet {
+    height: 33px;
+    line-height: 33px;
+    padding: 0px;
+    overflow: hidden;
+  }
+  .wrapper .container > .row.table .pctable-demo .demo .roundlinet > * {
+    float: left;
+  }
+}
+.wrapper .container > .row.table .pctablechart {
+  margin: 30px auto;
+  max-width: 1100px;
+  left: 2px;
+}
+.wrapper .container > .row.table .pctablechart .leftcol {
+  padding: 0;
+}
+.wrapper .container > .row.table .pctablechart .rightcol {
+  height: 69vw;
+  padding: 0;
+  top: 1vw;
+  left: 1vw;
+}
+@media (min-width: 1100px) {
+  .wrapper .container > .row.table .pctablechart .rightcol {
+    height: 760px;
+  }
+}
+.wrapper .container > .row.table .pctablechart .dataset {
+  width: 100%;
+  height: 11%;
+  background: rgba(255, 0, 0, 0);
+  top: 0;
+  margin: 0;
+  padding: 0;
+}
+.wrapper .container > .row.table .pctablechart .dataset .data {
+  float: none;
+  height: 2.8vw;
+  width: 100%;
+  margin: 0vw auto 0;
+  padding: 0;
+  overflow: hidden;
+}
+@media (min-width: 1100px) {
+  .wrapper .container > .row.table .pctablechart .dataset .data {
+    height: 28px;
+  }
+}
+.wrapper .container > .row.table .pctablechart .dataset .data > * {
+  float: left;
+}
+.wrapper .container > .row.table .pctablechart .dataset .data .roundline {
+  width: 5%;
+  height: 2.6vw;
+  margin: 0px 0;
+  border-radius: 2.4vw;
+}
+@media (min-width: 1100px) {
+  .wrapper .container > .row.table .pctablechart .dataset .data .roundline {
+    height: 26px;
+    radius: 13px;
+  }
+}
+.wrapper .container > .row.table .pctablechart .dataset .data .t {
+  padding-left: 1%;
+  font-size: 1.5vw;
+}
+@media (min-width: 1100px) {
+  .wrapper .container > .row.table .pctablechart .dataset .data .t {
+    font-size: 18px;
+  }
+}
+.wrapper .container > .row.kv2 .title {
+  font-size: 6vw;
+  margin-bottom: 1vw;
+  color: #535353;
+  font-family: 'Noto Sans TC', '新細明體', 'LiHei Pro', arial, sans-serif;
+  text-align: center;
+  letter-spacing: 2px;
+}
+.wrapper .container > .row.kv2 .title .price {
+  font-family: 'Open Sans', sans-serif;
+}
+@media (min-width: 1200px) {
+  .wrapper .container > .row.kv2 .title {
+    font-size: 70px;
+  }
+}
+.wrapper .container > .row.kv2 .l {
+  max-width: 1000px;
+  float: none;
+  margin: 0 auto;
+}
+.wrapper .container > .row.kv2 .sub {
+  font-size: 3vw;
+  line-height: 8vw;
+  margin-bottom: 1vw;
+  color: #535353;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Microsoft JhengHei', 'LiHei Pro', arial, sans-serif;
+}
+@media (max-width: 575px) {
+  .wrapper .container > .row.kv2 .sub {
+    margin-bottom: 2vw;
+    font-size: 5vw;
+  }
+}
+@media (min-width: 1200px) {
+  .wrapper .container > .row.kv2 .sub {
+    font-size: 30px;
+    line-height: 80px;
+  }
+}
+.wrapper .container > .row.kv2 .desc {
+  color: #535353;
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Microsoft JhengHei', 'LiHei Pro', arial, sans-serif;
+  line-height: 30px;
+  margin-bottom: 100px;
+}
+@media (max-width: 575px) {
+  .wrapper .container > .row.kv2 .desc {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+.wrapper .container > .row.kv2 > .row.buyall {
+  width: 70%;
+  margin: 3vw auto;
+}
+@media (min-width: 1000px) {
+  .wrapper .container > .row.kv2 > .row.buyall {
+    width: 700px;
+  }
+}
+.wrapper .container > .row.kv2 > .row.buyall > div .t {
+  width: 100%;
+  text-align: center;
+  top: 15%;
+  left: 0;
+  font-size: 4vw;
+  line-height: 2.5vw;
+  color: #8fc322;
+}
+.wrapper .container > .row.kv2 > .row.buyall > div .t .desc {
+  color: #196732;
+  font-size: 2.5vw;
+  line-height: 2.5vw;
+  letter-spacing: 0;
+}
+@media (min-width: 1000px) {
+  .wrapper .container > .row.kv2 > .row.buyall > div .t {
+    font-size: 42px;
+    line-height: 28px;
+  }
+  .wrapper .container > .row.kv2 > .row.buyall > div .t .desc {
+    font-size: 28px;
+    line-height: 28px;
+  }
+}

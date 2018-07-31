@@ -1,0 +1,94 @@
+@import "config.less";
+@import "common.less";
+@import "mixin.less";
+    .pop{
+    left:50%;top:0%;
+        .bgb{
+            width:640px;
+            height:100vh;
+            background:rgba(0,0,0,.7);
+            top:0vh;
+            left:-320px;
+            
+        }
+        
+        
+    .content-box{
+            width:500px;
+            height:auto;
+            max-height:700px;
+            background:#004695;
+            border-radius:20px;
+            z-index:99999999;
+            top:20vh;
+            left:-285px;
+            .cloud{
+                width:80px;
+            }
+            .c1{
+                right:20px;
+                top:50px;
+            }.c2{
+                left:20px;
+                top:130px;
+            }
+            .bg{
+
+             }
+            .btn-close{
+                right:-20px;
+                top:-20px;
+
+            }
+            .content{
+                padding:30px 20px;
+                .title{
+                    width:240px;
+                    margin:0px auto;
+                    img{
+                        width:240px;
+                    }
+                }
+                .prize{
+                    width:400px;
+                    top:-20px;
+                    margin:0 auto;
+                    img{
+                        width:400px;
+                    }
+                    .setBorderBottomStyleDashed(3px , #fff);
+                    border-style: none none dotted;
+                }
+                .phase1{
+                    display:flex;
+                    flex-direction:row; justify-content:center;
+                    .ico{
+                        width:102px;
+                        height:48px;
+                        background:url('../img/dest/winner/ico.png');
+                        line-height:60px;
+                        .talign(center);
+                        .fontsize(21px);
+                        color:#004695;
+                    }
+                    .desc{
+                        height:48px;
+                        line-height:60px;
+                        .fontsize(21px);
+                        .white;.talign(center);
+                        padding-left:20px;
+                    }
+
+                }
+                .winner-list{
+                    .yellow;
+                    .fontsize(22px);
+                    .talign(center);
+                    padding:10px;
+
+                }
+            }
+        }
+        
+
+    }

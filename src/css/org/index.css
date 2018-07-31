@@ -1,0 +1,295 @@
+/*PARAMETER*/
+.brand {
+  color: #196732;
+}
+.bg-brand {
+  background-color: #196732;
+}
+/*
+'Noto Sans TC' cwTeXFangSong cwTeXMing
+
+
+@fontfamilyeng:'Cormorant Infant' , arial, sans-serif;*/
+/*@view_width:100%;;*/
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.pure-form input[type=text],
+.pure-form input[type=password],
+.pure-form input[type=email],
+.pure-form input[type=url],
+.pure-form input[type=date],
+.pure-form input[type=month],
+.pure-form input[type=time],
+.pure-form input[type=datetime],
+.pure-form input[type=datetime-local],
+.pure-form input[type=week],
+.pure-form input[type=number],
+.pure-form input[type=search],
+.pure-form input[type=tel],
+.pure-form input[type=color],
+.pure-form select,
+.pure-form textarea {
+  padding: 0em .6em;
+}
+/*custimed slider*/
+input[type="range"] {
+  -webkit-appearance: none;
+  /* 限定範圍 */
+  width: 180px;
+  height: 3px;
+  outline: none;
+  /* 避免點選會有藍線或虛線 */
+  background: #333;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  position: relative;
+  /* 設為相對位置，為了前後區塊的絕對位置而設定 */
+  width: 15px;
+  height: 15px;
+  background: #444;
+  border-radius: 50%;
+  transition: .2s;
+  /* 點選放大時候的漸變時間 */
+}
+/* Base for label styling */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 1.95em;
+  cursor: pointer;
+}
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left: -30px;
+  top: 0;
+  width: 2.25em;
+  height: 2.25em;
+  border: solid 2px #000;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: '✔';
+  position: absolute;
+  top: 0.15em;
+  left: -0.85em;
+  font-size: 2em;
+  line-height: 0.8;
+  color: #000;
+  transition: all .2s;
+}
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+.white {
+  color: #fff;
+}
+.black {
+  color: #000;
+}
+.red {
+  color: #e71f19;
+}
+.yellow {
+  color: #feef00;
+}
+.darkGray {
+  color: #474747;
+}
+.bg-white {
+  background: #fff;
+}
+.bg-darkGray {
+  background: #474747;
+}
+.bg-brown {
+  background: #231815;
+}
+.bg-black {
+  background: #000;
+}
+.bg-red {
+  background: #e71f19;
+}
+.bold {
+  font-weight: bold;
+  font-family: 'Microsoft JhengHei', 'LiHei Pro', arial, sans-serif;
+}
+.abs {
+  position: absolute;
+}
+.relat {
+  position: relative;
+}
+.fix {
+  position: fixed;
+}
+.transparent {
+  background-color: transparent;
+  background: none;
+}
+.custom-input {
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  border: none;
+  outline: none;
+}
+.custom-input:focus {
+  outline: none;
+}
+.abs {
+  position: absolute;
+}
+.red {
+  color: #e71f19;
+}
+.bg-red {
+  background: #e71f19;
+}
+.wrapper .container {
+  width: 100%;
+}
+.wrapper .container > .row {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.wrapper .container > .row .kv {
+  width: 100%;
+  height: 45vw;
+  margin-top: -2%;
+  background: url('../img/dest/indexkv.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 2;
+}
+@media (max-width: 767px) {
+  .wrapper .container > .row .kv {
+    width: 150vw;
+    height: 70vw;
+    left: -31vw;
+    margin-top: -8vw;
+  }
+}
+.wrapper .container > .row .books {
+  float: none;
+  height: 10vw;
+  margin-left: 35%;
+  margin-top: -4vw;
+  background: url('../img/dest/book.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+@media (max-width: 575px) {
+  .wrapper .container > .row .books {
+    height: 20vw;
+    margin-left: 20%;
+    margin-top: -3vw;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .wrapper .container > .row .books {
+    height: 20vw;
+    margin-left: 20%;
+    margin-top: -3vw;
+  }
+}
+.wrapper .container > .row .pname {
+  float: none;
+  height: 13vw;
+  margin-left: 29%;
+  margin-top: -4vw;
+  background: url('../img/dest/prodname.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+@media (max-width: 575px) {
+  .wrapper .container > .row .pname {
+    margin-left: 8%;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .wrapper .container > .row .pname {
+    margin-left: 8%;
+  }
+}
+.wrapper .container > .row.video {
+  margin-bottom: 10%;
+  text-align: center;
+}
+.wrapper .container > .row.video > div,
+.wrapper .container > .row.video #player {
+  max-width: 1000px;
+  height: 51vw;
+  margin: 0 auto;
+  float: none;
+  background: #000;
+}
+@media (min-width: 1000px) {
+  .wrapper .container > .row.video > div,
+  .wrapper .container > .row.video #player {
+    height: 560px;
+  }
+}
+.wrapper .container > .row > .title {
+  width: 100%;
+  bottom: 2vw;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  font-family: 'Noto Sans TC', '新細明體', 'LiHei Pro', arial, sans-serif;
+}
+.wrapper .container > .row > .title > div {
+  color: #196732;
+  font-size: 5rem;
+  padding: 0;
+}
+.wrapper .container > .row > .title > div.tleft {
+  text-align: left;
+}
+.wrapper .container > .row > .title > div.tright {
+  text-align: right;
+}
+@media (max-width: 575px) {
+  .wrapper .container > .row > .title > div {
+    font-size: 7.5vw;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .wrapper .container > .row > .title > div {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .wrapper .container > .row > .title > div {
+    font-size: 4rem;
+  }
+}

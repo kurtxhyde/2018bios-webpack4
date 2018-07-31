@@ -1,0 +1,88 @@
+@import "config.less";
+@import "common.less";
+@import "mixin.less";
+
+.userForm {
+    float: none;
+    width: 495px;
+    margin: 0px auto 100px;
+    .bg-rnd{
+        left:-35px;
+        top:138px;
+
+    }
+    .subdesc,.desc-mid{
+        color:#584918;
+        .bold;
+        letter-spacing:0px;
+        padding:0 40px 10px 0;
+        .fontsize(30px);
+        line-height:34px;
+        .strong{
+            .fontsize(34px);letter-spacing:1px;
+        }
+
+    }
+    .pool{
+        float:none;
+        margin:0 auto;
+        .fontsize(22px);
+        color:#584918;
+        .talign(center);
+        p{
+            padding:3px 0;
+        }
+    }
+    .desc-mid{
+        margin:50px 0 0;
+        .weak{
+            .fontsize(26px);
+        }
+    }
+    
+    
+    .form {
+       
+        padding: 0 0 10px;
+        color: #584918;
+        margin: 10px 0;
+        a {
+            color: #584918;
+            text-decoration: underline;
+        }
+        .form-group.inputname,
+        .form-group.inputidcode,.form-group.inputtel {
+            width: 490px;
+            height: 44px;
+            margin: 0 0 10px;
+
+            &.inputname {
+                background-image: url('');
+            }
+            &.inputidcode {
+                background-image: url('');
+                input{
+                    padding-left:40px;
+                }
+            }
+            &.inputtel {
+                background-image: url('');
+            }
+        }
+        .form-check {
+            margin: 0 0 10px;
+            letter-spacing:-1px;
+            label {
+                .bold;
+                .md-lrgt;
+            }
+        }
+        .btn-submit {
+            width: 197px;
+            height: 59px;
+            margin: 30px auto 0;
+            background: url('') 0px 0px;
+            
+        }
+    }
+}
