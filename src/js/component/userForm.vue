@@ -221,7 +221,7 @@ export default {
 			}else{
 				_this.submitActive = false;
 				//ga('send', 'event', 'index', 'click', 'submit', 1);
-				gtag('event' , 'shsh' , {'category':'index' , 'action':'click' , 'label':'submit'})
+				//gtag('event' , 'shsh' , {'category':'index' , 'action':'click' , 'label':'submit'})
 				getFormResponse(`./api/index.ashx?mode=savedata`).then(function (data)  {
 			    	
 			    	console.log('success!.....');

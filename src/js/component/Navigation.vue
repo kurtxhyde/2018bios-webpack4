@@ -85,7 +85,7 @@ export default{
 
                 let ga = $(this).data('ga');
                 //ga('send', 'event', 'menu', 'click', 'product', 1);
-                gtag('event' , 'shsh' , {'category':'menu' , 'action':'click' , 'label':'product'})
+                //gtag('event' , 'shsh' , {'category':'menu' , 'action':'click' , 'label':'product'})
                 clk(target, href, act, ga, e);
 
                 return false;

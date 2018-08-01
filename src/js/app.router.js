@@ -55,7 +55,7 @@ router.beforeEach((to, from, next) => {
   } else {
     
      //ga('send', 'event', to.name , 'pv', '', 1);
-     gtag('event' , 'shsh' , {'category':to.name , 'action':'pv' , 'label':''})
+     //gtag('event' , 'shsh' , {'category':to.name , 'action':'pv' , 'label':''})
      next();
   }
 });

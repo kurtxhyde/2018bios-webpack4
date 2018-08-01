@@ -112,10 +112,10 @@ export default {
 		},
 
 		playVideoHandler() {
-			console.log("yt playing....");
-			this.videoplayed(true);
+			// console.log("yt playing....");
+			// this.videoplayed(true);
 			//ga('send', 'event', 'index', 'video', 'play', 1);
-			gtag('event' , 'shsh' , {'category':'index' , 'action':'click' , 'label':'video'})
+			//gtag('event' , 'shsh' , {'category':'index' , 'action':'click' , 'label':'video'})
 		},
 		
 	},

@@ -4,8 +4,9 @@
 
 .bg.abs#canv(v-images-loaded:on.progress="imageProgress")
 	.cover.cover1.abs
-
-		img.cover__image(src="../../img/dest/index-bg.jpg")
+		img.inv(src="../../img/dest/clouds.jpg")
+		img.inv.cover__image(src="../../img/dest/index-bg.jpg")
+		img.inv.cover__image(src="../../img/dest/index-bg.jpg")
 	#canvas.abs
 
 	.ghost1.abs
@@ -103,13 +104,26 @@ export default {
 				sprites: spriteImagesSrc,
 				displacementImage: '../../img/dest/clouds.jpg',
 				autoPlay: true,
-				autoPlaySpeed: [10, 10],
+				autoPlaySpeed: [10, 20],
 				displaceScale: [5000, 10000],
 				interactive: true,
 				interactionEvent: 'click', // 'click', 'hover', 'both' 
 				displaceAutoFit: false,
-				dispatchPointerOver: true // restarts pointerover 
+				dispatchPointerOver: true, // restarts pointerover 
+				//wacky:true,
 			});
+			
+			active(0)
+			function active(id){
+				switch(id){
+					case 0:
+						initCanvasSlideshow.moveSlider(0)
+						TweenMax.fromTo( $('.ghost1') , 1 ,  {y:-500 , opacity:0} , {y:1 , opacity:1 })
+						TweenMax.fromTo( $('.ghost2') , 1 ,  {y:500 , opacity:0} , {y:1 , opacity:1 })
+					break;
+				}
+
+			}
 		},
 		pngFix() {
 			const self = $(this);
