@@ -7,12 +7,7 @@
 
 .wrapper.relat(v-images-loaded:on.progress="imageProgress")
 	.preload.abs
-	.bg.abs#canv
-		
-		.ghost1.abs
-			img(src="../../img/dest/ghost-u.png")
-		.ghost2.abs
-			img(src="../../img/dest/ghost-d.png")
+	
 	.container.relat
 		.title.title1.relat
 			.blood1.abs
@@ -36,7 +31,7 @@
 			img(src="../../img/dest/index-btn-1.png")
 		.btn-j.btn2
 			img(src="../../img/dest/index-btn-2.png")
-	footerComp
+	
 
 
 			
@@ -46,9 +41,10 @@
 //import $ from "jquery";
 import { mapActions, mapMutations } from 'vuex';
 import userForm from './userForm.vue';
+
 //import svgAnim from './svgAnim.vue';
 
-import footerComp from './footerComp.vue';
+
 import imagesLoaded from 'vue-images-loaded';
 
 
@@ -69,7 +65,7 @@ export default {
 		userForm,
 		// svgAnim,
 		
-		footerComp,
+		
 	},
 	created:function(){
 
