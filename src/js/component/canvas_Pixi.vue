@@ -4,7 +4,7 @@
 
 .bg.abs#canv(v-images-loaded:on.progress="imageProgress")
 	.cover.cover1.abs
-		img.inv(src="../../img/dest/clouds.jpg")
+		img.inv.filter_image(src="../../img/dest/clouds.jpg")
 		img.inv.cover__image(src="../../img/dest/index-bg.jpg")
 		img.inv.cover__image(src="../../img/dest/index-bg.jpg")
 	#canvas.abs
@@ -102,7 +102,7 @@ export default {
 				stageWidth:750,
 				stageHeight:stageH,
 				sprites: spriteImagesSrc,
-				displacementImage: '../../img/dest/clouds.jpg',
+				displacementImage: $('.filter_image').attr('src'),
 				autoPlay: true,
 				autoPlaySpeed: [10, 20],
 				displaceScale: [5000, 10000],
