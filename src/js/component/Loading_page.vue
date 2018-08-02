@@ -1,7 +1,7 @@
 <style lang="less" src="loading.less" scoped></style>
 <template lang="pug">
 
-transition( :duration="{ enter:50, leave: 1000 }" ,name='fade', mode='out-in')
+transition( :duration="{ enter:0, leave: 500 }" ,name='fade', mode='out-in')
   .loading(v-show='showPageLoading')
     .center
       .bg

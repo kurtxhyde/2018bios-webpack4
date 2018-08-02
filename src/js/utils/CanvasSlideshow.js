@@ -229,7 +229,7 @@ function CanvasSlideshow(options) {
             .to(displacementFilter.scale, 2, { x: options.displaceScale[0], y: options.displaceScale[1], ease: Power2.easeIn })
             .to(slideImages[that.currentIndex], 1, { alpha: 0, ease: Power2.easeOut }, 0.4)
             .to(slideImages[newIndex], 2, { alpha: 1, ease: Power2.easeOut }, 1)
-            .to(displacementFilter.scale, 1.5, { x: options.displaceScaleTo[0], y: options.displaceScaleTo[1], ease: Power1.easeOut }, 0.9);
+            .to(displacementFilter.scale, 2, { x: options.displaceScaleTo[0], y: options.displaceScaleTo[1], ease: Power1.easeOut }, 0.9);
 
     };
 
@@ -464,8 +464,8 @@ function CanvasSlideshow(options) {
 
     this.active = function(id) {
         switch(id){
-                 case 0:
-                     that.moveSlider(0)
+                 case 1:
+                     that.moveSlider(1)
                      TweenMax.fromTo( $('.ghost1') , 3 ,  {y:-500 , opacity:0} , {delay:2,y:1 , opacity:1 })
                      TweenMax.fromTo( $('.ghost2') , 3 ,  {y:500 , opacity:0} , {delay:2,y:1 , opacity:1 })
                  break;

@@ -5,7 +5,7 @@
 .bg.abs#canv(v-images-loaded:on.progress="imageProgress")
 	.cover.cover1.abs
 		img.inv.filter_image(src="../../img/dest/clouds.jpg")
-		img.inv.cover__image(src="../../img/dest/index-bg.jpg")
+		img.inv.cover__image(src="")
 		img.inv.cover__image(src="../../img/dest/index-bg.jpg")
 	#canvas.abs
 
@@ -104,8 +104,8 @@ export default {
 				sprites: spriteImagesSrc,
 				displacementImage: $('.filter_image').attr('src'),
 				autoPlay: true,
-				autoPlaySpeed: [10, 20],
-				displaceScale: [5000, 10000],
+				autoPlaySpeed: [10, 10],
+				displaceScale: [20000, 20000],
 				interactive: true,
 				interactionEvent: 'click', // 'click', 'hover', 'both' 
 				displaceAutoFit: false,
@@ -113,7 +113,7 @@ export default {
 				//wacky:true,
 			});
 			
-			initCanvasSlideshow.active(0);
+			initCanvasSlideshow.active(1);
 			// function active(id){
 			// 	switch(id){
 			// 		case 0:
