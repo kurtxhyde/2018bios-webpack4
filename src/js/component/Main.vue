@@ -86,6 +86,7 @@ export default {
 	beforeDestroy:function(){
 		//$('.carousel').slick('unslick');
 		console.log('destroy.........');
+		this.killIntervals();
 	},
 	methods: {
 		...mapActions(['showPageLoading']),
@@ -141,11 +142,12 @@ export default {
   	// 		window.requestAnimationFrame = requestAnimationFrame;
   			this.glitch1opts = {dom:$('.title1') , typ:true, count :0 , intervals :[] }
   			this.glitch2opts = {dom:$('.title2') , typ:false, count :0 , intervals :[] }
-
+  			let context = this;
   			setTimeout( function(){
-  				glitch()
-				glitch({dom:$('.title2') , typ:false , count :0})
+  				glitch(context.glitch1opts)
+				glitch(context.glitch2opts)
   			}, 5000)
+
 			
 			function glitch(opt){
 				loop(opt)
@@ -168,17 +170,31 @@ export default {
 						opt.typ = false;
 					}
 					opt.count++
-					this.glitch1opts.push (setTimeout(function(){loop(opt)} , (ifrest)? Math.random()*2000 + 2000 : 10 + Math.random()*40 ))
+					opt.intervals.push (setTimeout(function(){loop(opt)} , (ifrest)? Math.random()*2000 + 2000 : 10 + Math.random()*40 ))
 				}
 			}
 		},
+		killIntervals (){
+			let context = this;
+			
+			for (let i in context.glitch1opts.intervals){
+				clearTimeout (context.glitch1opts.intervals[i]);
+			}
+			for (let i in context.glitch2opts.intervals){
+				clearTimeout (context.glitch2opts.intervals[i]);
+			}
+		},
 		bind(){
+			let context = this;
 			$('.btn-j').each(function(){
 				$(this).hover(function(){
 					TweenMax.to($(this) , .1 ,{scaleX:.98,scaleY:.98} )	
 				} , function(){
 					TweenMax.to($(this) , .1 ,{scaleX:1,scaleY:1} )	
 				})
+			})
+			$('.btn-j').click(function(){
+				context.killIntervals();
 			})
 		}
 
