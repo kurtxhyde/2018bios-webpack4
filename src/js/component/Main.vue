@@ -101,6 +101,8 @@ export default {
 			if(img_count >= MAX_img_count){
 				this.pngFix();
 				this.showPageLoading(false);
+				this.init();
+				this.bind();
 			}
 		},
 		pngFix() {
@@ -110,13 +112,33 @@ export default {
 			`progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='image',src='${this.src}')`;
 			});
 		},
-
-		playVideoHandler() {
-			// console.log("yt playing....");
-			// this.videoplayed(true);
-			//ga('send', 'event', 'index', 'video', 'play', 1);
-			//gtag('event' , 'shsh' , {'category':'index' , 'action':'click' , 'label':'video'})
+		init(){
+			console.log('starting anim....');
+			let count =0;
+			$('.title').each(function(){
+				TweenMax.fromTo($(this) , 2 ,{opacity:0} , {delay:.5 + count *.2 ,opacity:1})	
+				count ++
+			})
+			count =0
+			$('.sub').each(function(){
+				TweenMax.fromTo($(this) , 2 ,{y:20 ,opacity:0} , {delay:1 + count *.2 ,y:0,opacity:1})	
+				count ++
+			})
+			$('.btn-j').each(function(){
+				TweenMax.fromTo($(this) , .5 ,{opacity:0} , {delay:2 + count *.2 ,y:0,opacity:1})	
+				count ++
+			})
 		},
+		bind(){
+			$('.btn-j').each(function(){
+				$(this).hover(function(){
+					TweenMax.to($(this) , .1 ,{scaleX:.98,scaleY:.98} )	
+				} , function(){
+					TweenMax.to($(this) , .1 ,{scaleX:1,scaleY:1} )	
+				})
+			})
+		}
+
 		
 	},
 };

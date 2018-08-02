@@ -113,17 +113,17 @@ export default {
 				//wacky:true,
 			});
 			
-			active(0)
-			function active(id){
-				switch(id){
-					case 0:
-						initCanvasSlideshow.moveSlider(0)
-						TweenMax.fromTo( $('.ghost1') , 1 ,  {y:-500 , opacity:0} , {y:1 , opacity:1 })
-						TweenMax.fromTo( $('.ghost2') , 1 ,  {y:500 , opacity:0} , {y:1 , opacity:1 })
-					break;
-				}
+			initCanvasSlideshow.active(0);
+			// function active(id){
+			// 	switch(id){
+			// 		case 0:
+			// 			initCanvasSlideshow.moveSlider(0)
+			// 			TweenMax.fromTo( $('.ghost1') , 1 ,  {y:-500 , opacity:0} , {delay:2,y:1 , opacity:1 })
+			// 			TweenMax.fromTo( $('.ghost2') , 1 ,  {y:500 , opacity:0} , {delay:2,y:1 , opacity:1 })
+			// 		break;
+			// 	}
 
-			}
+			// }
 		},
 		pngFix() {
 			const self = $(this);

@@ -112,7 +112,7 @@ function CanvasSlideshow(options) {
 
     };
 
-
+    
 
     /// ---------------------------
     //  LOAD SLIDES TO CANVAS
@@ -462,6 +462,14 @@ function CanvasSlideshow(options) {
         return scale;
     } // http://bit.ly/2y1Yk2k      
 
-
+    this.active = function(id) {
+        switch(id){
+                 case 0:
+                     that.moveSlider(0)
+                     TweenMax.fromTo( $('.ghost1') , 3 ,  {y:-500 , opacity:0} , {delay:2,y:1 , opacity:1 })
+                     TweenMax.fromTo( $('.ghost2') , 3 ,  {y:500 , opacity:0} , {delay:2,y:1 , opacity:1 })
+                 break;
+         }
+    }
 }
 export {CanvasSlideshow as CanvasSlideshow}
