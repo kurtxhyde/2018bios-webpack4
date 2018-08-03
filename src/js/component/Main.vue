@@ -10,12 +10,16 @@
 	
 	.container.relat
 		.title.title1.relat
+			.shadow.abs
+				img(src="../../img/dest/index-tit-1-s.png")
 			.blood1.abs
 				img(src="../../img/dest/blood1.png")
 			
 			img.relat(src="../../img/dest/index-tit-1.png")
 			
 		.title.title2.relat
+			.shadow.abs
+				img(src="../../img/dest/index-tit-2-s.png")
 			.blood2.abs
 				img(src="../../img/dest/blood2.png")
 			.blood3.abs
@@ -74,6 +78,23 @@ export default {
 		this.showPageLoading(true);
 		else
 		this.showPageLoading(false);
+
+		if(device.desktop()){
+  				scrollCenter();
+			}
+			function scrollCenter() {
+        		var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
+
+        		let top = 300;
+
+        		//TweenMax.set(window, {scrollTo:{y:top}});
+        		$body.delay(1500).animate({
+        		    scrollTop: top -120
+        		}, 0);
+        		
+
+
+    		}
 	},
 	mounted:function(){
 		MAX_img_count = $('.wrapper img').length;
@@ -117,8 +138,11 @@ export default {
 		init(){
 			console.log('starting anim....');
 			let count =0;
+
+
+			
 			$('.title').each(function(){
-				TweenMax.fromTo($(this) , 2 ,{opacity:0} , {delay:1.5 + count *.2 ,opacity:1})	
+				TweenMax.fromTo($(this) , 2 ,{y:0, opacity:0} , {delay:1.5 + count *.5,y:0 ,opacity:1})	
 				count ++
 			})
 
@@ -140,20 +164,22 @@ export default {
 			})
 			// const requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
   	// 		window.requestAnimationFrame = requestAnimationFrame;
-  			this.glitch1opts = {dom:$('.title1') , typ:true, count :0 , intervals :[] }
-  			this.glitch2opts = {dom:$('.title2') , typ:false, count :0 , intervals :[] }
+  			this.glitch1opts = {dom:$('.title1 > img') , typ:true, count :0 , intervals :[] }
+  			this.glitch2opts = {dom:$('.title2 > img') , typ:false, count :0 , intervals :[] }
   			let context = this;
+  			
   			setTimeout( function(){
+  				
   				glitch(context.glitch1opts)
 				glitch(context.glitch2opts)
-  			}, 5000)
-
+  			}, 3000)
+  			
 			
 			function glitch(opt){
 				loop(opt)
 				function loop(opt){
 					let ifrest 
-					if(opt.count > 15 && Math.random() > .7 ){
+					if(opt.count > 10 && Math.random() > .8 ){
 						ifrest = true;
 						opt.count = 0 ;
 					}else{
@@ -165,12 +191,15 @@ export default {
 						TweenMax.set(opt.dom , {x: 0});
 						opt.typ = true;
 					}else{
-						TweenMax.set(opt.dom , {opacity:.5 + Math.random() * .4});	
-						TweenMax.set(opt.dom , {x: Math.random()* 6 - 3});
+						let opa = Math.random() * .4 + .4;
+						let offest = 5/opa 
+						TweenMax.set(opt.dom , {opacity:opa });
+
+						TweenMax.set(opt.dom , {x: Math.random()* offest - offest*.5});
 						opt.typ = false;
 					}
 					opt.count++
-					opt.intervals.push (setTimeout(function(){loop(opt)} , (ifrest)? Math.random()*2000 + 2000 : 10 + Math.random()*40 ))
+					opt.intervals.push (setTimeout(function(){loop(opt)} , (ifrest)? Math.random()*3000 + 3000 : 20 + Math.random()*40 ))
 				}
 			}
 		},
@@ -194,7 +223,7 @@ export default {
 				})
 			})
 			$('.btn-j').click(function(){
-				context.killIntervals();
+				//context.killIntervals();
 			})
 		}
 

@@ -3,7 +3,7 @@
 nav.navbar.navbar-fixed-top
   .container
     .navbar-header
-      button.inv(type="button",class="navbar-toggle collapsed" ,data-toggle="collapse" ,data-target="#navbar" ,aria-expanded="false" ,aria-controls="navbar")
+      button(type="button",class="navbar-toggle collapsed" ,data-toggle="collapse" ,data-target="#navbar" ,aria-expanded="false" ,aria-controls="navbar")
 
           span.sr-only Toggle navigation
           span.icon-bar.top
