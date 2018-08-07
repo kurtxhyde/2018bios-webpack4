@@ -7,7 +7,7 @@ import Main from './component/Main.vue';
 
 Vue.use(VueRouter);
 
-//const Rule = () => import(/* webpackChunkName: "Track" */'./component/Rule.vue');
+const Exam = () => import(/* webpackChunkName: "Track" */'./component/Exam.vue');
 const Login = () => import(/* webpackChunkName: "Login" */'./component/Login.vue');
 
 const log = value => console.log(`%c${value}`, 'background: #bdc3c7; color: black; font-size:10px;');
@@ -21,7 +21,7 @@ const router = new VueRouter({
   linkActiveClass:'act',
   routes: [
     { path: '/' , component: Main ,name:'index'},
-    //{ path: '/rule' , component: Rule ,name:'rule'},
+    { path: '/exam' , component: Exam ,name:'exam'},
     //{ path: '/winner', name:'winner'},
     
     //{ path: '/age/:id/user/:uid' , component: Main ,name:'index' , redirect:'/' },

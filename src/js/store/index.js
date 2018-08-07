@@ -8,7 +8,7 @@ Vue.use(Vuex);
 const state = {
   showPageLoading: true,
   //showWinner: false,
-  showLoading: false,
+  showLoading: true,
   isLogin: false,
   userName: '',
   count: 0,

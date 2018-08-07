@@ -1,4 +1,4 @@
-
+let baseTimeline;
 function CanvasSlideshow(options) {
     var that = this;
     options = options || {};
@@ -198,11 +198,11 @@ function CanvasSlideshow(options) {
     this.moveSlider = function(newIndex) {
 
         isPlaying = true;
-
-
-        var baseTimeline = new TimelineMax({
+        if(baseTimeline)
+        baseTimeline.kill();
+        baseTimeline = new TimelineMax({
             onComplete: function() {
-                that.currentIndex = newIndex;
+                
                 isPlaying = false;
                 if (options.wacky === true) {
                     displacementSprite.scale.set(1);
@@ -227,10 +227,10 @@ function CanvasSlideshow(options) {
         // DEMO 4
         baseTimeline
             .to(displacementFilter.scale, 2, { x: options.displaceScale[0], y: options.displaceScale[1], ease: Power2.easeIn })
-            .to(slideImages[that.currentIndex], 1, { alpha: 0, ease: Power2.easeOut }, 0.4)
-            .to(slideImages[newIndex], 2, { alpha: 1, ease: Power2.easeOut }, 1)
-            .to(displacementFilter.scale, 2, { x: options.displaceScaleTo[0], y: options.displaceScaleTo[1], ease: Power1.easeOut }, 0.9);
-
+            .to(slideImages[that.currentIndex], 2, { alpha: 0, ease: Power2.easeOut }, 1)
+            .to(slideImages[newIndex], 2, {alpha: 1, ease: Power2.easeOut }, 1)
+            .to(displacementFilter.scale, 2, { x: options.displaceScaleTo[0], y: options.displaceScaleTo[1], ease: Power2.easeOut }, 1);
+        that.currentIndex = newIndex;
     };
 
 
@@ -287,14 +287,14 @@ function CanvasSlideshow(options) {
         that.initPixi();
         that.loadPixiSprites(options.pixiSprites);
 
-        /*
-        if ( options.fullScreen === true ) {
-          window.addEventListener("resize", function( event ){ 
-            scaleToWindow( renderer.view );
-          });
-          scaleToWindow( renderer.view );  
-        }
-        */
+        
+        // if ( options.fullScreen === true ) {
+        //   window.addEventListener("resize", function( event ){ 
+        //     scaleToWindow( renderer.view );
+        //   });
+        //   scaleToWindow( renderer.view );  
+        // }
+        
 
 
     };
@@ -463,11 +463,31 @@ function CanvasSlideshow(options) {
     } // http://bit.ly/2y1Yk2k      
 
     this.active = function(id) {
+        TweenMax.killTweensOf( $('.ghost1'));
+        TweenMax.killTweensOf( $('.ghost2'));
+        TweenMax.killTweensOf( $('.ghost3'));
+        TweenMax.killTweensOf( $('.wave3'));
         switch(id){
+                 case 0:
+                     TweenMax.set( $('.ghost1') ,  {y:-500 , opacity:0})
+                     TweenMax.set( $('.ghost2') ,  {y:500 , opacity:0} )
+                     TweenMax.set( $('.ghost3') ,  {y:700 , opacity:0})
+                     TweenMax.set( $('.wave3') ,  {y:500 , opacity:0} )
+                    break;
                  case 1:
                      that.moveSlider(1)
                      TweenMax.fromTo( $('.ghost1') , 3 ,  {y:-500 , opacity:0} , {delay:2,y:1 , opacity:1 })
                      TweenMax.fromTo( $('.ghost2') , 3 ,  {y:500 , opacity:0} , {delay:2,y:1 , opacity:1 })
+                     TweenMax.to( $('.ghost3') , 2 ,  {y:700 , opacity:0})
+                     TweenMax.to( $('.wave3') , 2 ,  {y:500 , opacity:0} );
+                 break;
+                 case 2:
+                     that.moveSlider(2)
+                     TweenMax.to( $('.ghost1') , 2 ,  {y:-500 , opacity:0})
+                     TweenMax.to( $('.ghost2') , 2 ,  {y:500 , opacity:0} );
+                     
+                     TweenMax.fromTo( $('.ghost3') , 3 ,  {y:700 , opacity:1}, {delay:2,y:1 , opacity:1 })
+                     TweenMax.fromTo( $('.wave3') , 3 ,  {y:500 , opacity:0}, {delay:2,y:1 , opacity:1 } )
                  break;
          }
     }

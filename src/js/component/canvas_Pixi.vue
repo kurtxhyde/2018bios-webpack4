@@ -7,23 +7,29 @@
 		img.filter_image(src="../../img/dest/clouds.jpg")
 		img.cover__image(src="")
 		img.cover__image(src="../../img/dest/index-bg.jpg")
+		img.cover__image(src="../../img/dest/exam-bg.png")
 	#canvas.abs
 
 	.ghost1.abs
 		img(src="../../img/dest/ghost-u.png")
 	.ghost2.abs
 		img(src="../../img/dest/ghost-d.png")
+	.ghost3.abs
+		img(src="../../img/dest/exam-girl.png")
+	.wave3.abs
+		img(src="../../img/dest/exam-wave.png")
 
 </template>
 
 <script>
-import { mapActions, mapMutations } from 'vuex';
+import { mapActions, mapMutations ,mapGetters} from 'vuex';
 import imagesLoaded from 'vue-images-loaded';
-import { mapGetters } from 'vuex';
+
 import {CanvasSlideshow} from '../utils/CanvasSlideshow.js';
 // import {getBrowserHeight} from '../utils/common.js';
 let MAX_img_count ;
 let img_count = 0;
+let initCanvasSlideshow
 //let __CanvasSlideshow = CanvasSlideshow;
 export default {
 	data() {
@@ -37,7 +43,15 @@ export default {
 		
 	},
 	computed: {
-    	
+    	...mapGetters(['path']),
+
+  	},
+
+  	watch:{
+  		path:function(val){
+  			console.log(val + '....watched');
+  			this.updateBG(val);
+  		}
   	},
 	components:{
 		//Space,
@@ -59,7 +73,7 @@ export default {
 		console.log("MAX_img_count:" + MAX_img_count)
 		img_count = 0;
 
-		
+		//alert(this.path);
 			
 		
 	},
@@ -69,6 +83,18 @@ export default {
 		//////////////
 		validator:function(){
 			
+		},
+		updateBG:function(p){
+			console.log('update canvas....' + p)
+			switch(p){
+				case 'index':
+					initCanvasSlideshow.active(1);
+					break;
+				case 'exam':
+					initCanvasSlideshow.active(2);
+					break;
+
+			}
 		},
 		imageProgress(instance, image ) {
 			const result = image.isLoaded ? 'loaded' : 'broken';
@@ -98,7 +124,7 @@ export default {
 				spriteImagesSrc.push( img.getAttribute('src' ) );
 			}
       		let stageH = $('#canv').height();
-			const initCanvasSlideshow = new CanvasSlideshow({
+		    initCanvasSlideshow = new CanvasSlideshow({
 				stageWidth:750,
 				stageHeight:stageH,
 				sprites: spriteImagesSrc,
@@ -112,8 +138,10 @@ export default {
 				dispatchPointerOver: true, // restarts pointerover 
 				//wacky:true,
 			});
+			initCanvasSlideshow.active(0);
+			this.updateBG(this.path);
 			
-			initCanvasSlideshow.active(1);
+			//
 			// function active(id){
 			// 	switch(id){
 			// 		case 0:

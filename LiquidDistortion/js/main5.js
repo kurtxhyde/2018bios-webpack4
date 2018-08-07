@@ -238,7 +238,7 @@
         // DEMO 4
         baseTimeline
         .to(displacementFilter.scale, 0.8, { x: options.displaceScale[0], y: options.displaceScale[1], ease: Power2.easeIn  })
-        .to(slideImages[that.currentIndex], 0.5, { alpha: 0, ease: Power2.easeOut }, 0.4)
+        .to(slideImages[that.currentIndex], 0.5, { alpha: 0, ease: Power2.easeOut },1)
         .to(slideImages[newIndex], 0.8, { alpha: 1, ease: Power2.easeOut }, 1)          
         .to(displacementFilter.scale, 0.7, { x: options.displaceScaleTo[0], y: options.displaceScaleTo[1], ease: Power1.easeOut }, 0.9 );
 

@@ -1,0 +1,119 @@
+@import "config.less";
+@import "common.less";
+@import "mixin.less";
+.banner{
+    .btn-j{
+        
+    }
+
+}
+
+
+
+.wrapper {
+    width: 100%;
+    height:100%;
+    padding: 0;
+
+    
+    .container {
+        
+        width: 100%;
+
+        .talign(center);
+        .title{
+            display:inline-block;
+            margin:140px auto 3px;
+            .blood1{
+                left:2px;
+                top:25px;
+            }
+            .blood2{
+                left:275px;
+                top:-180px;
+            }
+            .shadow{
+                left:-29px;
+                top:-29px;
+
+            }
+
+            img.abs{
+                left:0;
+                top:0;
+                opacity:.2;
+            }
+        }
+        
+        .sub{
+            margin-top:30px;
+            .sub2{
+                left:300px;
+                top:20px;
+                opacity:0;
+                
+            }
+        }
+        .meter{
+            margin: 0px auto 440px;
+            .circ{
+
+                width:440px;
+                margin: 0 auto;
+                .scanline_circ{
+                    width:380px;
+                    height:380px;
+                    border-radius:190px;
+
+                    top:30px;
+                    left:30px;
+                    overflow:hidden;
+                    
+                    .line{
+                        width:100%;
+                        height:2px;
+                        top:50px;
+                        left:0;
+                        background:#d31116;
+                        .up{
+                            .scale(-1);
+                            top:-45px;
+
+                        }   
+                        .down{
+                            opacity:0;
+                        }
+                    }
+                }
+                .plus{
+                    left:202px;
+                    top:202px;
+                }
+                .bg{
+                    left:28px;
+                    top:30px;
+                }
+                .cord{
+                    font-family:@fontfamilyeng;
+                    color:#d31116;
+                    right:50px;
+                    bottom:-20px;
+                    .S{
+                        .fontsize(26px);
+                        top:-70px;
+                    }
+                    .num1{
+                        top:-40px;
+                    }
+                    .num2{
+                        top:-20px;
+                    }
+                    .num{
+                        .fontsize(16px);
+                    }
+                }
+            }
+        }
+    }
+
+}

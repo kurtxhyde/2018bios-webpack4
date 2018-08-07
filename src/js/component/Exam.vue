@@ -1,44 +1,50 @@
-<style lang="less" src="index.less" scoped></style>
-
-
+<style lang="less" src="exam.less" scoped></style>
 <template lang="pug">
-
-//-input#page.inv(type="text",value = "index")
-
 .wrapper.relat(v-images-loaded:on.progress="imageProgress")
 	.preload.abs
-	
 	.container.relat
 		.title.title1.relat
 			.shadow.abs
-				img(src="../../img/dest/index-tit-1-s.png")
+				img(src="../../img/dest/exam-tit-s.png")
 			.blood1.abs
-				img(src="../../img/dest/blood1.png")
-			
-			img.relat(src="../../img/dest/index-tit-1.png")
-			img.abs.glitch(src="../../img/dest/index-tit-1.png")
-			
-		.title.title2.relat
-			.shadow.abs
-				img(src="../../img/dest/index-tit-2-s.png")
+				img(src="../../img/dest/exam-blood2.png")
 			.blood2.abs
-				img(src="../../img/dest/blood2.png")
-			.blood3.abs
-				img(src="../../img/dest/blood3.png")
+				img(src="../../img/dest/exam-blood1.png")
+			img.relat(src="../../img/dest/exam-title.png")
+			img.abs.glitch(src="../../img/dest/exam-title.png")
+		.sub.relat
+			img.sub1(src="../../img/dest/exam-sub.png")
+			img.sub2.abs(src="../../img/dest/exam-sub2.png")
 
-			img.relat(src="../../img/dest/index-tit-2.png")
-			img.abs.glitch(src="../../img/dest/index-tit-2.png")
+		.meter.relat
+			
+			.circ.relat
+				.bg.abs
+					img(src="../../img/dest/circle-bg.png")
+				
+				
 
-		.sub.sub1.relat
-			img(src="../../img/dest/index-sub1.png")
-		.sub.sub2.relat
-			img(src="../../img/dest/index-sub2.png")
-		.sub.sub3.relat
-			img(src="../../img/dest/index-sub3.png")
-		a.btn-j.btn1(href="#/exam")
-			img(src="../../img/dest/index-btn-1.png")
-		.btn-j.btn2
-			img(src="../../img/dest/index-btn-2.png")
+				.scanline_circ.abs
+					.line.abs
+						.abs.glow.down
+							img(src="../../img/dest/meter-glow.png")
+						.abs.glow.up
+							img(src="../../img/dest/meter-glow.png")
+				.plus.abs
+					img(src="../../img/dest/plus.png")
+				.cord.abs
+					.S.abs S
+					.num.num1.abs 83
+					.num.num2.abs 34
+					.num.num3.abs 90
+
+
+
+				img.relat(src="../../img/dest/meter.png")
+
+
+		
+		
 	
 
 
@@ -82,8 +88,8 @@ export default {
 		else
 		this.showPageLoading(false);
 
-		if(device.desktop()){
-  				scrollCenter();
+			if(device.desktop()){
+  				
 			}
 			function scrollCenter() {
         		var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
@@ -150,10 +156,9 @@ export default {
 			})
 
 			TweenMax.fromTo ($('.blood1'),3, {scaleY:0 } , {delay:2 , scaleY:1 , transformOrigin:'50% 0%',ease:Sine.easeOut})
-			TweenMax.fromTo ($('.blood2'),5, {scaleY:0 } , {delay:2.5 , scaleY:1 , transformOrigin:'50% 00%',ease:Sine.easeOut})
+			// TweenMax.fromTo ($('.blood2'),5, {scaleY:0 } , {delay:2.5 , scaleY:1 , transformOrigin:'50% 00%',ease:Sine.easeOut})
 
-			TweenMax.fromTo ($('.blood3'),3, {scaleY:0 } , {delay:3.5 , scaleY:1 , transformOrigin:'50% 0%',ease:Sine.easeOut})
-
+			
 
 
 			count =0
@@ -161,28 +166,22 @@ export default {
 				TweenMax.fromTo($(this) , 2 ,{y:20 ,opacity:0} , {delay:3.5 + count *.4 ,y:0,opacity:1})	
 				count ++
 			})
-			$('.btn-j').each(function(){
-				TweenMax.fromTo($(this) , .5 ,{opacity:0} , {delay:4 + count *.4 ,y:0,opacity:1})	
-				count ++
-			})
+			
 			// const requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
   	// 		window.requestAnimationFrame = requestAnimationFrame;
   			this.glitch1opts = {dom:$('.title1 > img.glitch') , typ:true, count :0 , intervals :[] }
-  			this.glitch2opts = {dom:$('.title2 > img.glitch') , typ:false, count :0 , intervals :[] }
+  			this.glitch2opts = {dom:$('.ghost3 > img') , typ:false, count :0 , intervals :[] }
   			let context = this;
-  			
   			setTimeout( function(){
-  				
   				glitch(context.glitch1opts)
-				glitch(context.glitch2opts)
+				vibrate(context.glitch2opts)
   			}, 3000)
   			
-			
 			function glitch(opt){
 				loop(opt)
 				function loop(opt){
 					let ifrest 
-					if(opt.count > 20 && Math.random() > .8 ){
+					if(opt.count > 20 && Math.random() > .6 ){
 						ifrest = true;
 						opt.count = 0 ;
 					}else{
@@ -194,16 +193,44 @@ export default {
 						TweenMax.set(opt.dom , {x: 0, y:0});
 						opt.typ = true;
 					}else{
-						let opa = Math.random() * .5 + .1;
-						let offest = 10/opa 
+						let opa = Math.random() * .6 + .1;
+						let offest = 15/opa 
 						TweenMax.set(opt.dom , {opacity:opa });
+
+						TweenMax.set(opt.dom , {x: Math.random()* offest - offest*.5});
+						//TweenMax.set(opt.dom , {y: Math.random()*5 -2});
+						opt.typ = false;
+					}
+					opt.count++
+					opt.intervals.push (setTimeout(function(){loop(opt)} , (ifrest)? Math.random()*3000 + 3000 : 20 + Math.random()*30 ))
+				}
+			}
+			function vibrate(opt){
+				loop(opt)
+				function loop(opt){
+					
+					if(opt.count > 20 && Math.random() > .6 ){
+						
+						opt.count = 0 ;
+					}else{
+						
+					}
+					
+					if(!opt.typ){
+						TweenMax.set(opt.dom , {opacity:1});
+						TweenMax.set(opt.dom , {x: 0, y:0});
+						opt.typ = true;
+					}else{
+						
+						let offest = 10 
+						
 
 						TweenMax.set(opt.dom , {x: Math.random()* offest - offest*.5});
 						TweenMax.set(opt.dom , {y: Math.random()*5 -2});
 						opt.typ = false;
 					}
 					opt.count++
-					opt.intervals.push (setTimeout(function(){loop(opt)} , (ifrest)? Math.random()*3000 + 3000 : 20 + Math.random()*20 ))
+					opt.intervals.push (setTimeout(function(){loop(opt)} , 50 + Math.random()*100 ))
 				}
 			}
 		},
@@ -212,23 +239,13 @@ export default {
 			
 			for (let i in context.glitch1opts.intervals){
 				clearTimeout (context.glitch1opts.intervals[i]);
-			}
-			for (let i in context.glitch2opts.intervals){
 				clearTimeout (context.glitch2opts.intervals[i]);
 			}
+			
 		},
 		bind(){
 			let context = this;
-			$('.btn-j').each(function(){
-				$(this).hover(function(){
-					TweenMax.to($(this) , .3 ,{scaleX:.98,scaleY:.98,ease:Expo.easeOut} )	
-				} , function(){
-					TweenMax.to($(this) , .3 ,{scaleX:1,scaleY:1,ease:Expo.easeOut} )	
-				})
-			})
-			$('.btn-j').click(function(){
-				//context.killIntervals();
-			})
+			
 		}
 
 		
