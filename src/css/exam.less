@@ -61,27 +61,38 @@
                 width:440px;
                 margin: 0 auto;
                 .scanline_circ{
-                    width:380px;
-                    height:380px;
-                    border-radius:190px;
+                    width:400px;
+                    height:400px;
+                    border-radius:200px;
 
-                    top:30px;
-                    left:30px;
+                    top:22px;
+                    left:22px;
                     overflow:hidden;
                     
                     .line{
                         width:100%;
                         height:2px;
-                        top:50px;
+                        top:-20px;
                         left:0;
                         background:#d31116;
+                        opacity:0;
+                        .up , .down{ 
+                            width:400px;
+                            img{
+                                width:100%;
+                            }
+                        }
                         .up{
+                           
+
                             .scale(-1);
                             top:-45px;
 
                         }   
                         .down{
-                            opacity:0;
+
+                            opacity:1;
+                            
                         }
                     }
                 }
@@ -98,17 +109,22 @@
                     color:#d31116;
                     right:50px;
                     bottom:-20px;
+                    .talign(right);
                     .S{
+                        width:20px; 
                         .fontsize(26px);
                         top:-70px;
                     }
                     .num1{
+                        width:20px;
                         top:-40px;
                     }
                     .num2{
+                        width:20px;
                         top:-20px;
                     }
                     .num{
+                        width:20px;
                         .fontsize(16px);
                     }
                 }

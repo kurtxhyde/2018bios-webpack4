@@ -190,16 +190,15 @@ export default {
 					}
 					
 					if(!opt.typ || ifrest){
-						TweenMax.set(opt.dom , {opacity:1});
-						TweenMax.set(opt.dom , {x: 0, y:0});
+						TweenMax.set(opt.dom , {x: 0, y:0,opacity:1});
 						opt.typ = true;
 					}else{
-						let opa = Math.random() * .5 + .1;
+						let opa = Math.random() * .5 + .3;
 						let offest = 10/opa 
 						TweenMax.set(opt.dom , {opacity:opa });
 
 						TweenMax.set(opt.dom , {x: Math.random()* offest - offest*.5});
-						TweenMax.set(opt.dom , {y: Math.random()*5 -2});
+						//TweenMax.set(opt.dom , {y:0});
 						opt.typ = false;
 					}
 					opt.count++

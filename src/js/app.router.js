@@ -8,7 +8,14 @@ import Main from './component/Main.vue';
 Vue.use(VueRouter);
 
 const Exam = () => import(/* webpackChunkName: "Track" */'./component/Exam.vue');
-const Login = () => import(/* webpackChunkName: "Login" */'./component/Login.vue');
+const Result1 = () => import(/* webpackChunkName: "Track" */'./component/Result1.vue');
+// const Result2 = () => import(/* webpackChunkName: "Track" */'./component/Result2.vue');
+// const Result3 = () => import( webpackChunkName: "Track" './component/Result3.vue');
+// const Result4 = () => import(/* webpackChunkName: "Track" */'./component/Result4.vue');
+
+
+
+//const Login = () => import(/* webpackChunkName: "Login" */'./component/Login.vue');
 
 const log = value => console.log(`%c${value}`, 'background: #bdc3c7; color: black; font-size:10px;');
 const DEV_MODE = (process.env.NODE_ENV === 'development');
@@ -22,6 +29,10 @@ const router = new VueRouter({
   routes: [
     { path: '/' , component: Main ,name:'index'},
     { path: '/exam' , component: Exam ,name:'exam'},
+    { path: '/result1' , component: Result1 ,name:'result1'},
+    // { path: '/exam' , component: Exam ,name:'exam'},
+    // { path: '/exam' , component: Exam ,name:'exam'},
+    // { path: '/exam' , component: Exam ,name:'exam'},
     //{ path: '/winner', name:'winner'},
     
     //{ path: '/age/:id/user/:uid' , component: Main ,name:'index' , redirect:'/' },
@@ -34,8 +45,6 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  //log(`Router beforeEach to: ${to.path} from: ${from.path}`);
-  // console.log('name....'+to.name)
   console.log('age....'+to.params.id)
   console.log('user....'+to.params.uid)
   store.commit('path' , to.name);

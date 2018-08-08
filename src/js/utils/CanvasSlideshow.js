@@ -467,6 +467,7 @@ function CanvasSlideshow(options) {
         TweenMax.killTweensOf( $('.ghost2'));
         TweenMax.killTweensOf( $('.ghost3'));
         TweenMax.killTweensOf( $('.wave3'));
+        
         switch(id){
                  case 0:
                      TweenMax.set( $('.ghost1') ,  {y:-500 , opacity:0})
@@ -488,7 +489,14 @@ function CanvasSlideshow(options) {
                      
                      TweenMax.fromTo( $('.ghost3') , 3 ,  {y:700 , opacity:1}, {delay:2,y:1 , opacity:1 })
                      TweenMax.fromTo( $('.wave3') , 3 ,  {y:500 , opacity:0}, {delay:2,y:1 , opacity:1 } )
-                 break;
+                    break;
+                 case 3:
+                    that.moveSlider(3)
+                    TweenMax.to( $('.ghost1') , 2 ,  {y:-500 , opacity:0})
+                     TweenMax.to( $('.ghost2') , 2 ,  {y:500 , opacity:0} );
+                    TweenMax.to( $('.ghost3') , 2 ,  {y:700 , opacity:0})
+                     TweenMax.to( $('.wave3') , 2 ,  {y:500 , opacity:0} );
+                    break;
          }
     }
 }

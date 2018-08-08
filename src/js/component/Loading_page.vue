@@ -1,7 +1,7 @@
 <style lang="less" src="loading.less" scoped></style>
 <template lang="pug">
 
-transition( :duration="{ enter:0, leave: 500 }" ,name='fade', mode='out-in')
+transition( :duration="{ enter:500, leave: 500 }" ,name='fade', mode='out-in')
   .loading(v-show='showPageLoading')
     .center
       .bg
@@ -16,6 +16,17 @@ import { mapGetters } from 'vuex';
 export default {
   computed: {
     ...mapGetters(['showPageLoading','percentLoading']),
+  },
+  watch:{
+  		percentLoading:function(val){
+  			console.log(val + '....percentLoading');
+  			if(val == 100){
+  				setTimeout( function(){
+  					$('.loading .bg').css('opacity' ,0);
+  				}, 500)
+  				
+  			}
+  		}
   },
 };
 </script>

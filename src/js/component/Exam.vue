@@ -40,7 +40,7 @@
 
 
 
-				img.relat(src="../../img/dest/meter.png")
+				img.ring.relat(src="../../img/dest/meter.png")
 
 
 		
@@ -89,12 +89,12 @@ export default {
 		this.showPageLoading(false);
 
 			if(device.desktop()){
-  				
+  				scrollTop()
 			}
-			function scrollCenter() {
+			function scrollTop() {
         		var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
 
-        		let top = 300;
+        		let top = 0;
 
         		//TweenMax.set(window, {scrollTo:{y:top}});
         		$body.delay(1500).animate({
@@ -146,37 +146,78 @@ export default {
 		},
 		init(){
 			console.log('starting anim....');
-			let count =0;
-
-
-			
+			let count =0 , context = this ;
 			$('.title').each(function(){
 				TweenMax.fromTo($(this) , 2 ,{y:0, opacity:0} , {delay:1.5 + count *.5,y:0 ,opacity:1})	
 				count ++
 			})
-
-			TweenMax.fromTo ($('.blood1'),3, {scaleY:0 } , {delay:2 , scaleY:1 , transformOrigin:'50% 0%',ease:Sine.easeOut})
-			// TweenMax.fromTo ($('.blood2'),5, {scaleY:0 } , {delay:2.5 , scaleY:1 , transformOrigin:'50% 00%',ease:Sine.easeOut})
-
-			
-
-
+			TweenMax.fromTo ($('.blood1'),3, {scaleY:0 } , {delay:1 , scaleY:1 , transformOrigin:'50% 0%',ease:Sine.easeOut})
+			TweenMax.fromTo ($('.blood2'),.8, {scaleX:0,scaleY:0 } , {delay:2 , scaleX:1,scaleY:1 , transformOrigin:'0% 100%',ease:Quad.easeIn})
 			count =0
-			$('.sub').each(function(){
-				TweenMax.fromTo($(this) , 2 ,{y:20 ,opacity:0} , {delay:3.5 + count *.4 ,y:0,opacity:1})	
+			$('.sub .sub1').each(function(){
+				TweenMax.fromTo($(this) , 2 ,{y:20 ,opacity:0} , {delay:2 + count *.4 ,y:0,opacity:1})	
 				count ++
 			})
 			
-			// const requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-  	// 		window.requestAnimationFrame = requestAnimationFrame;
+			let ring = $('.circ .ring'), plus = $('.circ .plus') ,bg = $('.circ .bg'), cord = $('.cord') , line =  $('.circ .line') , glowup = line.find('.glow.up'), glowdown = line.find('.glow.down');
+			TweenMax.fromTo(cord , .5 , {opacity:0 } , {delay:2.5, opacity:1})
+
+			
+			TweenMax.fromTo(ring , 1, {scaleX: 1.1 , scaleY:1.1 ,opacity:0} , {delay:2.5, scaleX: 1 , scaleY:1,opacity:1,onComplete:function(){
+				//TweenMax.to($('.circ .ring') , 10, {rotation:359 ,opacity:1, yoyo:false , repeat:-1,ease:Linear.easeNone} )
+				TweenMax.to($('.circ .ring, .circ .bg') , 1, {scaleX: 1.05 , scaleY:1.05 ,opacity:1, yoyo:true , repeat:-1,ease:Linear.easeNone} )
+				bind();
+			}})
+			let meter = new meterRun();
+			function bind(){
+				
+				ring.mousedown(function(){
+
+					$('.sub .sub2').each(function(){
+						TweenMax.fromTo($(this) , .5 ,{y:20 ,opacity:0} , {delay:.5,y:0,opacity:1})	
+						
+					})
+					$('.sub .sub1').each(function(){
+						TweenMax.to($(this) , .5 ,{y:20 ,opacity:0} )	
+						
+					})
+					
+					TweenMax.killTweensOf($('.circ .ring, .circ .bg'));
+					TweenMax.set(line , {opacity:1});
+					
+					TweenMax.to(line , 2 , {delay:.5, y:450 , ease:Linear.easeNone,repeat:-1 , yoyo:true , onUpdate:function(){
+						meter.setRandom();
+					}} );
+
+					TweenMax.set( glowup, {opacity:0} )
+					TweenMax.to(glowup , 2 ,  { delay:0 , opacity:1 , ease:Expo.easeInOut , repeat:-1 , yoyo:true } );
+					TweenMax.set( glowdown, {opacity:1} )
+					TweenMax.to(glowdown , 2 , {delay:0 , opacity:0 , ease:Expo.easeInOut , repeat:-1 , yoyo:true } );
+					/*A*/
+					setTimeout(function(){
+						 let rnd = Math.ceil(Math.random() * 4)
+						 context.$router.replace('result'+rnd );
+
+					}, 3000 * Math.random() + 6000)
+
+
+					ring.off('mousedown');
+
+				})
+			}
+			TweenMax.fromTo(plus , .5, {scaleX: .1 , scaleY:.1 ,opacity:0} , {delay:2.7, scaleX: 1 , scaleY:1,opacity:1})
+			TweenMax.fromTo(bg , 1, {scaleX: 1.1 , scaleY:1.1 ,opacity:0} , {delay:2.9, scaleX: 1 , scaleY:1,opacity:1})
+			
   			this.glitch1opts = {dom:$('.title1 > img.glitch') , typ:true, count :0 , intervals :[] }
   			this.glitch2opts = {dom:$('.ghost3 > img') , typ:false, count :0 , intervals :[] }
-  			let context = this;
+  			
   			setTimeout( function(){
   				glitch(context.glitch1opts)
 				vibrate(context.glitch2opts)
   			}, 3000)
   			
+  			
+
 			function glitch(opt){
 				loop(opt)
 				function loop(opt){
@@ -253,7 +294,27 @@ export default {
 };
 
 
+function meterRun(){
+	const dom = $('.cord') , num1 = dom.find('.num1'), num2 = dom.find('.num2'), num3 = dom.find('.num3');
 
+	this.setRandom=function(){
+		if(Math.random() >.7)
+			updateNumber(num1  , Math.ceil(Math.random() * 99))
+		if(Math.random() >.8)
+			updateNumber(num2  , Math.ceil(Math.random() * 99))
+		if(Math.random() >.7)
+			updateNumber(num3  , Math.ceil(Math.random() * 99))
+	}
+	function updateNumber(dom , val){
+		dom.html(val);
+	}
+	function init(){
+		updateNumber(num1  , 0)
+		updateNumber(num2  , 0)
+		updateNumber(num3  , 0)
+	}
+	init();
+}
 
 
 </script>

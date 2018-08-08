@@ -8,6 +8,7 @@
 		img.cover__image(src="")
 		img.cover__image(src="../../img/dest/index-bg.jpg")
 		img.cover__image(src="../../img/dest/exam-bg.png")
+		img.cover__image(src="../../img/dest/result1-bg.jpg")
 	#canvas.abs
 
 	.ghost1.abs
@@ -18,7 +19,8 @@
 		img(src="../../img/dest/exam-girl.png")
 	.wave3.abs
 		img(src="../../img/dest/exam-wave.png")
-
+	
+		
 </template>
 
 <script>
@@ -93,7 +95,18 @@ export default {
 				case 'exam':
 					initCanvasSlideshow.active(2);
 					break;
-
+				case 'result1':
+					initCanvasSlideshow.active(3);
+					break;
+				case 'result2':
+					initCanvasSlideshow.active(4);
+					break;
+				case 'result3':
+					initCanvasSlideshow.active(5);
+					break
+				case 'result4':
+					initCanvasSlideshow.active(6);
+					break;
 			}
 		},
 		imageProgress(instance, image ) {
