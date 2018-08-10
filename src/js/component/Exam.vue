@@ -89,7 +89,7 @@ export default {
 		this.showPageLoading(false);
 
 			if(device.desktop()){
-  				scrollTop()
+  				//scrollTop()
 			}
 			function scrollTop() {
         		var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
@@ -183,6 +183,7 @@ export default {
 					})
 					
 					TweenMax.killTweensOf($('.circ .ring, .circ .bg'));
+					
 					TweenMax.set(line , {opacity:1});
 					
 					TweenMax.to(line , 2 , {delay:.5, y:450 , ease:Linear.easeNone,repeat:-1 , yoyo:true , onUpdate:function(){

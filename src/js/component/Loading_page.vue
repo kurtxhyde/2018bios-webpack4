@@ -21,9 +21,8 @@ export default {
   		percentLoading:function(val){
   			console.log(val + '....percentLoading');
   			if(val == 100){
-  				setTimeout( function(){
-  					$('.loading .bg').css('opacity' ,0);
-  				}, 500)
+  				
+          TweenMax.to($('.loading .bg') , 1, {delay:.5 , opacity:0})  
   				
   			}
   		}

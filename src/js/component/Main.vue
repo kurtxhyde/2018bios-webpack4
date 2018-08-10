@@ -83,7 +83,7 @@ export default {
 		this.showPageLoading(false);
 
 		if(device.desktop()){
-  				scrollCenter();
+  				//scrollCenter();
 			}
 			function scrollCenter() {
         		var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
