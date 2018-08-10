@@ -186,14 +186,14 @@ export default {
 					
 					TweenMax.set(line , {opacity:1});
 					
-					TweenMax.to(line , 2 , {delay:.5, y:450 , ease:Linear.easeNone,repeat:-1 , yoyo:true , onUpdate:function(){
+					TweenMax.to(line , 1.5, {delay:.5, y:450 , ease:Linear.easeNone,repeat:-1 , yoyo:true , onUpdate:function(){
 						meter.setRandom();
 					}} );
 
 					TweenMax.set( glowup, {opacity:0} )
-					TweenMax.to(glowup , 2 ,  { delay:0 , opacity:1 , ease:Expo.easeInOut , repeat:-1 , yoyo:true } );
+					TweenMax.to(glowup , 1.5 ,  { delay:0 , opacity:1 , ease:Expo.easeInOut , repeat:-1 , yoyo:true } );
 					TweenMax.set( glowdown, {opacity:1} )
-					TweenMax.to(glowdown , 2 , {delay:0 , opacity:0 , ease:Expo.easeInOut , repeat:-1 , yoyo:true } );
+					TweenMax.to(glowdown , 1.5 , {delay:0 , opacity:0 , ease:Expo.easeInOut , repeat:-1 , yoyo:true } );
 					/*A*/
 					setTimeout(function(){
 						 let rnd = Math.ceil(Math.random() * 4)

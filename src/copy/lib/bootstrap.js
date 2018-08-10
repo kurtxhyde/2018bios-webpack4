@@ -624,9 +624,10 @@ if (typeof jQuery === 'undefined') {
       .emulateTransitionEnd(Collapse.TRANSITION_DURATION)[dimension](this.$element[0][scrollSize])
     
  
-    TweenMax.to($(".navbar-toggle .icon-bar.top") , .2, {y:0, x:2,rotation:45 , transformOrigin:"0% 0%"} )
+    TweenMax.to($(".navbar-toggle .icon-bar.top") , .2, {y:0, x:5,rotation:45 , transformOrigin:"0% 0%"} )
     TweenMax.to($(".navbar-toggle .icon-bar.mid") , .2, {opacity:0,rotation:45 , transformOrigin:"50% 0%"} )
-    TweenMax.to($(".navbar-toggle .icon-bar.bottom") , .2, {y:7,x:0,rotation:-45 , transformOrigin:"0% 0%"} )
+    TweenMax.to($(".navbar-toggle .icon-bar.bottom") , .2, {y:6,x:0,rotation:-45 , transformOrigin:"0% 0%"} )
+    $('.navbar >.bgx').fadeIn();
   }
 
   Collapse.prototype.hide = function () {
@@ -670,6 +671,7 @@ if (typeof jQuery === 'undefined') {
     TweenMax.to($(".navbar-toggle .icon-bar.top") , .3, {y:0, x:0,rotation:0 , transformOrigin:"0% 0%"} )
     TweenMax.to($(".navbar-toggle .icon-bar.mid") , .3, {opacity:1,rotation:0 , transformOrigin:"50% 0%"} )
     TweenMax.to($(".navbar-toggle .icon-bar.bottom") , .3, {y:0,x:0,rotation:0 , transformOrigin:"0% 0%"} )
+    $('.navbar > .bgx').fadeOut();
   }
 
   Collapse.prototype.toggle = function () {

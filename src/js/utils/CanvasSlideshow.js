@@ -476,14 +476,14 @@ function CanvasSlideshow(options) {
                      TweenMax.set( $('.wave3') ,  {y:500 , opacity:0} )
                     break;
                  case 1:
-                     that.moveSlider(1)
+                     that.moveSlider(id)
                      TweenMax.fromTo( $('.ghost1') , 3 ,  {y:-500 , opacity:0} , {delay:2,y:1 , opacity:1 })
                      TweenMax.fromTo( $('.ghost2') , 3 ,  {y:500 , opacity:0} , {delay:2,y:1 , opacity:1 })
                      TweenMax.to( $('.ghost3') , 2 ,  {y:700 , opacity:0})
                      TweenMax.to( $('.wave3') , 2 ,  {y:500 , opacity:0} );
                  break;
                  case 2:
-                     that.moveSlider(2)
+                     that.moveSlider(id)
                      TweenMax.to( $('.ghost1') , 2 ,  {y:-500 , opacity:0})
                      TweenMax.to( $('.ghost2') , 2 ,  {y:500 , opacity:0} );
                      
@@ -491,12 +491,17 @@ function CanvasSlideshow(options) {
                      TweenMax.fromTo( $('.wave3') , 3 ,  {y:500 , opacity:0}, {delay:2,y:1 , opacity:1 } )
                     break;
                  case 3:
-                    that.moveSlider(3)
+                 case 4:
+                 case 5:   
+                 case 6:
+                    that.moveSlider(id)
                     TweenMax.to( $('.ghost1') , 2 ,  {y:-500 , opacity:0})
                      TweenMax.to( $('.ghost2') , 2 ,  {y:500 , opacity:0} );
                     TweenMax.to( $('.ghost3') , 2 ,  {y:700 , opacity:0})
                      TweenMax.to( $('.wave3') , 2 ,  {y:500 , opacity:0} );
                     break;
+                 
+                   
          }
     }
 }

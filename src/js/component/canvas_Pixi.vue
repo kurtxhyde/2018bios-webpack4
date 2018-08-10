@@ -9,6 +9,9 @@
 		img.cover__image(src="../../img/dest/index-bg.jpg")
 		img.cover__image(src="../../img/dest/exam-bg.png")
 		img.cover__image(src="../../img/dest/result1-bg.jpg")
+		img.cover__image(src="../../img/dest/result2-bg.jpg")
+		img.cover__image(src="../../img/dest/result3-bg.jpg")
+		img.cover__image(src="../../img/dest/result4-bg.jpg")
 	#canvas.abs
 
 	.ghost1.abs

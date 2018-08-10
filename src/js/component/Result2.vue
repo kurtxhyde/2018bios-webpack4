@@ -11,13 +11,13 @@
 				img(src="../../img/dest/result-blood.png")
 			.blood2.abs
 				img(src="../../img/dest/exam-blood1.png")
-			img.relat(src="../../img/dest/result1-tit.png")
+			img.relat(src="../../img/dest/result2-tit.png")
 		.sub.relat
-			img.relat(src="../../img/dest/result1-sub.png")
+			img.relat(src="../../img/dest/result2-sub.png")
 		a.btn-j.btn1.relat(href="#/")
-			img(src="../../img/dest/result1-btna.png")
+			img(src="../../img/dest/result2-btna.png")
 		a.btn-j.btn2.relat(href="#/")
-			img(src="../../img/dest/result1-btnb.png")
+			img(src="../../img/dest/result2-btnb.png")
 			.prd.abs
 				img(src="../../img/dest/result-product.png")
 		

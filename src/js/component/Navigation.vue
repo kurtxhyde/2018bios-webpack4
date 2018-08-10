@@ -1,6 +1,14 @@
 <style lang="less" src="navigation.less" scoped></style>
 <template lang="pug">
 nav.navbar.navbar-fixed-top
+  .bgx.abs.inv
+    .all.abs
+      
+    .btm.abs
+      img(src="../../img/dest/m-bg-btm.png")
+    .top.abs
+      img(src="../../img/dest/m-bg-top.png")
+    .frame.abs
   .container
     .navbar-header
       button(type="button",class="navbar-toggle collapsed" ,data-toggle="collapse" ,data-target="#navbar" ,aria-expanded="false" ,aria-controls="navbar")
@@ -13,16 +21,35 @@ nav.navbar.navbar-fixed-top
           
           span 
     #navbar.navbar-collapse.collapse
+      
       ul.nav.navbar-nav.relat
-        //- li.m1o(data-id='0')
-        //-     router-link.tracklink.custom(data-ga="index",data-href="index.html",href="index.html" , to="./") 首頁
-        //- li.m1o(data-id='1')
-        //-     router-link.hash.custom(data-ga="game",data-href="index.html#/game",href="index.html#/game", to="./game") 肌能快篩檢測
-        //- li(data-id='fb')
-        //-     a.social.fb.tracklink(data-ga="fanspage",data-href="https://www.facebook.com/globalshiseidotw/", href="https://www.facebook.com/globalshiseidotw/" , target="_blank")
-        //-         //- img(src="../../img/dest/fb.png")
-        //- li(data-id='line')
-        //-     a.social.line.tracklink(data-ga="line",data-href="https://line.me/R/ti/p/@globalshiseidotw",href="https://line.me/R/ti/p/@globalshiseidotw"  , target="_blank")
+
+        li.m1o(data-id='0')
+            router-link.tracklink.custom(data-ga="gallery",data-href="",href="gallery" , to="./gallery") 
+              img.ico(src="../../img/dest/m-ico1.png")
+              img(src="../../img/dest/m1.png")
+
+        .line
+          img(src="../../img/dest/mline.png")
+        
+
+        li.m2o(data-id='1')
+            router-link.hash.custom(data-ga="game",data-href="index.html#/game",href="index.html#/game", to="./game") 
+              img.ico(src="../../img/dest/m-ico2.png")
+              img(src="../../img/dest/m2.png")
+        .line
+          img(src="../../img/dest/mline.png")
+
+        li.m3o(data-id='1')
+            router-link.hash.custom(data-ga="game",data-href="index.html#/game",href="index.html#/game", to="./game") 
+              img.ico(src="../../img/dest/m-ico3.png")
+              img(src="../../img/dest/m3.png")
+        .line
+          img(src="../../img/dest/mline.png")
+        li.m4o(data-id='1')
+            router-link.hash.custom(data-ga="game",data-href="index.html#/game",href="index.html#/game", to="./game") 
+              img.ico(src="../../img/dest/m-ico4.png")
+              img(src="../../img/dest/m4.png")
                 //- img(src="../../img/dest/line.png")
       
 

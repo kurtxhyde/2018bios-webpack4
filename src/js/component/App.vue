@@ -4,6 +4,7 @@
 
   canvas_Pixi
   .frame.abs
+    
   Navigation
   Loading_page
   transition(name="fade" mode="out-in")
