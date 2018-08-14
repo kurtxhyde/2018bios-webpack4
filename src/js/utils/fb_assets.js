@@ -3,7 +3,7 @@ import {GLOBAL} from './config.js';
 export {FB_ASSET as FB_ASSET}
 function FB_ASSET() {
 	const context = this;
-	const PARAM_SCOPE = 'public_profile,email,user_friends';
+	const PARAM_SCOPE = 'public_profile,email';
 	const albIds = [];
 	const albNames = [];
 	const albCovers = [];
@@ -15,19 +15,23 @@ function FB_ASSET() {
 	let loginCb;
 
 	(function (d, s, id) {
-		const js = d.createElement(s); js.id = id;
-		const fjs = d.getElementsByTagName(s)[0];
-		if (d.getElementById(id)) { return; }
-		js.src = '//connect.facebook.net/zh_TW/sdk.js';
-		fjs.parentNode.insertBefore(js, fjs);
+		
+	 var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/zh_TW/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));
 
 	function getFBInfo(cb) {
 		FB.api('/me', (response) => {
 			FB_ID = response.id;
 			FB_NAME = response.name;
+			console.log('fbname...' + FB_NAME)
 			GLOBAL.fbid = FB_ID;
 			GLOBAL.fbname = FB_NAME;
+			if(cb)
+			cb();
 		});
 	}
 	function statusChangeCallback2(cb, response) {
@@ -63,7 +67,7 @@ function FB_ASSET() {
 			statusChangeCallback(cb, response);
 		});
 	}
-	function fbLogin(cb) {
+	function fbLogin(cb , url) {
 		const isSafari = navigator.userAgent.indexOf('Safari') > -1;
 		const isChrome = navigator.userAgent.indexOf('Chrome') > -1;
 		var isLine = window.navigator.userAgent.toLowerCase().indexOf('line') ;
@@ -74,32 +78,44 @@ function FB_ASSET() {
 				checkLoginState(cb);
 			}, { scope: PARAM_SCOPE });
 		} else {
-			let redUrl = document.location.href;			
-			location.href = `https://www.facebook.com/dialog/oauth?client_id=${GLOBAL.fbAppId}&redirect_uri=${redUrl}&scope=${PARAM_SCOPE}`;			
+			
+			let redUrl = url;	
+			
+			let state = '{uid=splitline'+GLOBAL.linestate+'splitline}' //'{uid='+GLOBAL.uid+'}'
+			location.href = `https://www.facebook.com/v3.0/dialog/oauth?client_id=${GLOBAL.fbAppId}&redirect_uri=${redUrl}&state=${state}`;			
 		}
 	}
 	function uiPost(title, msg, picurl, url, hash=null , cb ) {
-		FB.ui({
-			method: 'feed',
-			caption: title,
-			// description: msg,
-			//hashtag:hash,
-			link: url,
-			/*picture: picurl,*/
-			// privacy:{'value':'EVERYONE'},
-		},
-		(response) => {
-			if(cb)
-			cb();
-			if (response && response.post_id) {
-				
-				GLOBAL.isSHARE = 1;
-				
-			} else {
-				
-				GLOBAL.isSHARE = 0;
-			}
-		});
+		const isSafari = navigator.userAgent.indexOf('Safari') > -1;
+		const isChrome = navigator.userAgent.indexOf('Chrome') > -1;
+		var isLine = window.navigator.userAgent.toLowerCase().indexOf('line') ;
+
+
+		if (isLine<0) {
+			FB.ui({
+			        method: 'feed',
+			       
+			        // description: msg,
+			        //hashtag:hash,
+			        link: url,
+
+			        /*picture: picurl,*/
+			        // privacy:{'value':'EVERYONE'},
+			    },
+			    (response) => {
+			        if (cb)
+			            cb();
+					if (response && response.post_id) {
+			            GLOBAL.isSHARE = 1;
+			        } else {
+			            GLOBAL.isSHARE = 0;
+			        }
+			    });
+		}else{
+
+			location.href="https://www.facebook.com/dialog/feed?app_id="+GLOBAL.fbAppId+"&display=popup&amp;caption="+title+"&link="+url+"&redirect_uri="+GLOBAL.host+"form.html";
+		}
+		
 	}
 	function createAlbsNodes() {
 		
@@ -234,8 +250,8 @@ function FB_ASSET() {
 	this.get_ui_post = function (title, msg, purl, url, hash=null , cb) {
 		uiPost(title, msg, purl, url, hash , cb);
 	};
-	this.get_login = function (cb) {
-		fbLogin(cb);
+	this.get_login = function (cb,url) {
+		fbLogin(cb, url);
 	};
 	this.get_checkLoginState =	function (cb) {
 		checkLoginState2(cb);
@@ -246,10 +262,9 @@ function FB_ASSET() {
 	};
 	window.fbAsyncInit = function () {
 		FB.init({
-				appId: GLOBAL.fbAppId,//'108536939812687',
-			    cookie: true,
+				appId: GLOBAL.fbAppId, //'108536939812687',
 			    xfbml: true,
-			    version: 'v2.10',
+			    version: 'v3.0',
 		});
 		FB.AppEvents.logPageView();  
 		context.get_checkLoginState(null);

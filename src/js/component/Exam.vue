@@ -163,9 +163,10 @@ export default {
 			TweenMax.fromTo(cord , .5 , {opacity:0 } , {delay:2.5, opacity:1})
 
 			
-			TweenMax.fromTo(ring , 1, {scaleX: 1.1 , scaleY:1.1 ,opacity:0} , {delay:2.5, scaleX: 1 , scaleY:1,opacity:1,onComplete:function(){
+			TweenMax.fromTo(ring , .7, {scaleX: 1.1 , scaleY:1.1 ,opacity:0} , {delay:2.5, scaleX: 1 , scaleY:1,opacity:1,onComplete:function(){
 				//TweenMax.to($('.circ .ring') , 10, {rotation:359 ,opacity:1, yoyo:false , repeat:-1,ease:Linear.easeNone} )
-				TweenMax.to($('.circ .ring, .circ .bg') , 1, {scaleX: 1.05 , scaleY:1.05 ,opacity:1, yoyo:true , repeat:-1,ease:Linear.easeNone} )
+				TweenMax.to($('.circ .ring, .circ .bg') , 
+					.7, {scaleX: 1.05 , scaleY:1.05 ,opacity:1, yoyo:true , repeat:-1,ease:Linear.easeNone} )
 				bind();
 			}})
 			let meter = new meterRun();
@@ -196,7 +197,7 @@ export default {
 					TweenMax.to(glowdown , 1.5 , {delay:0 , opacity:0 , ease:Expo.easeInOut , repeat:-1 , yoyo:true } );
 					/*A*/
 					setTimeout(function(){
-						 let rnd = Math.ceil(Math.random() * 4)
+						 let rnd =1// Math.ceil(Math.random() * 4)
 						 context.$router.replace('result'+rnd );
 
 					}, 3000 * Math.random() + 4000)

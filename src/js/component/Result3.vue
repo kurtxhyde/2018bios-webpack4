@@ -14,13 +14,15 @@
 			img.relat(src="../../img/dest/result3-tit.png")
 		.sub.relat
 			img.relat(src="../../img/dest/result3-sub.png")
-		a.btn-j.btn1.relat(href="#/")
+		.btn-j.btn1.relat
 			img(src="../../img/dest/result3-btna.png")
 		a.btn-j.btn2.relat(href="#/")
 			img(src="../../img/dest/result1-btnb.png")
 			.prd.abs
 				img(src="../../img/dest/result-product.png")
-		
+	.pop.pop-fblogin.fix.inv
+		.bgx.abs
+		.btnlogin.relat 請先登入FB	
 
 		
 		

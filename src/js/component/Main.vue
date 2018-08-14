@@ -202,7 +202,7 @@ export default {
 						opt.typ = false;
 					}
 					opt.count++
-					opt.intervals.push (setTimeout(function(){loop(opt)} , (ifrest)? Math.random()*3000 + 3000 : 20 + Math.random()*20 ))
+					opt.intervals.push (setTimeout(function(){loop(opt)} , (ifrest)? Math.random()*3000 + 3000 : 20 + Math.random()*10 ))
 				}
 			}
 		},

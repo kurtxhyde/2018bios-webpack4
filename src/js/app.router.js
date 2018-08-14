@@ -15,6 +15,8 @@ const Result4 = () => import(/* webpackChunkName: "Track" */'./component/Result4
 const form = () => import(/* webpackChunkName: "Track" */'./component/form.vue');
 const comp = () => import(/* webpackChunkName: "Track" */'./component/complete.vue');
 const rule = () => import(/* webpackChunkName: "Track" */'./component/Rule.vue');
+const gallery = () => import(/* webpackChunkName: "Track" */'./component/Gallery.vue');
+const bus = () => import(/* webpackChunkName: "Track" */'./component/Ghostbus.vue');
 //const Login = () => import(/* webpackChunkName: "Login" */'./component/Login.vue');
 
 const log = value => console.log(`%c${value}`, 'background: #bdc3c7; color: black; font-size:10px;');
@@ -36,6 +38,8 @@ const router = new VueRouter({
     { path: '/form' , component: form ,name:'form'},
     { path: '/complete' , component: comp ,name:'comp'},
     { path: '/rule' , component: rule ,name:'rule'},
+    { path: '/gallery' , component: gallery ,name:'gallery'},
+    { path: '/ghost-bus' , component: bus ,name:'bus'},
     // { path: '/exam' , component: Exam ,name:'exam'},
     //{ path: '/winner', name:'winner'},
     

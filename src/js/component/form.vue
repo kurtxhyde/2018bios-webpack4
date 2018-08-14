@@ -54,6 +54,8 @@
 //import $ from "jquery";
 import { mapActions, mapMutations } from 'vuex';
 import userForm from './userForm.vue';
+import {GLOBAL} from '../utils/config.js';
+import {FB_ASSET} from '../utils/fb_assets.js';
 
 //import svgAnim from './svgAnim.vue';
 
@@ -63,7 +65,7 @@ import imagesLoaded from 'vue-images-loaded';
 
 let MAX_img_count ;
 let img_count = 0;
-
+let fb = new FB_ASSET();
 
 //var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
 export default {
@@ -135,9 +137,120 @@ export default {
 			
 			
 		},
+		submit(){
+			let context = this;
+			console.log('fb name ...' + GLOBAL.fbname)
+			FormHandle();
+			function  FormHandle(){
+             let tof = validator();
+             const DOM = $('.form form');
+
+            
+            console.log('sending data...');
+            let cName = DOM.find('#cname');
+            let tel = DOM.find('#tel');
+            let email = DOM.find('#eml');
+            // let babyname = DOM.find("#babyname");
+            // console.log('birthtyp...' + birthtyp)
+            if (tof) {
+                //$("#loadingajax").show();
+                $.post(`${GLOBAL.api_root}api/?mode=savedata`, {
+                        name: cName.val(),
+                        tel: tel.val(),
+                        email: email.val(),
+                        fbname: GLOBAL.fbname,
+                        
+                    },
+                    (pResponse) => {
+                        $("#loadingajax").hide();
+                        //$('#loadingajax').fadeOut(400);
+                        if (pResponse.state == '1') {
+                            alert('資料成功送出！')
+                            let id = pResponse.data
+                            
+                            setTimeout(function(){
+                            	context.$router.replace('product');	
+                            } ,200)
+                        } else {
+                            let msg = "出現錯誤，請稍後再試！"
+                            alert(msg);
+                        }
+                    }, 'json');
+
+            }
+
+        }
+        function validator(){
+            
+            function checkEmail(__email) {
+                /* eslint max-len: ["error", 180] */
+                /* eslint no-useless-escape: 0 */
+                const EmailCheck = new RegExp(/^([a-zA-Z0-9]+)([\.\-\_]?[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(\.[a-zA-Z0-9\_\-]+)+$/);
+                if (EmailCheck.test(__email)) {
+                    return true;
+                }
+                return false;
+            }
+            const DOM = $('.form form');
+
+            var cName = DOM.find('#cname');     
+            var tel = DOM.find('#tel');     
+            let email = DOM.find('#eml');
+           
+           
+
+
+            const testmail = /^.+@.+\..{2,3}$/;
+            const word = /^[A-Za-z]+$/;
+            const num = /^[0-9]+$/;
+            const specialChars = /^[a-zA-Z0-9]+$/;
+            const Chinese = /^[\u4e00-\u9fa5]+$/;
+            const cellPhone = /^09[0-9]|{8|}+$/;
+
+
+            let str = '';
+            // CHECK DATA
+            
+            if (cName.val() === '') {
+                str += '請填寫中文全名 !\n';
+            } else if (!Chinese.test(cName.val())) {
+                str += '請填寫中文全名 !\n';
+            }
+            
+            if ($.trim(tel.val()) === '') {
+                str += '請填寫手機號碼 !\n';
+            } else if (tel.val().length < 8) {
+                str += '請填寫完整手機號碼 !\n';
+            } else if (isNaN(tel.val()) || !(cellPhone.test(tel.val()))  ) {
+                str += '請以數字填寫手機號碼 !\n';
+            }
+                
+
+            if (email.val() === '') {
+                str += '請填寫電子信箱 !\n';
+            } else if (!checkEmail(email.val())) {
+                str += '電子信箱不正確 !\n';
+            }
+
+            
+            
+            if (!document.getElementById('checkbox').checked) {
+                str += '請同意個資法條款及活動辦法！\n';
+            }
+           
+            if (str !== '') {
+                alert(str);         
+                return false;
+            }
+            return true;
+        }	
+
+		}
+		,
 		bind(){
 			
-			
+		
+	
 		}
 
 		

@@ -1,15 +1,12 @@
 <style lang="less" src="all.less"></style>
 <template lang="pug">
 #app.app
-
   canvas_Pixi
   .frame.abs
-    
   Navigation
   Loading_page
   transition(name="fade" mode="out-in")
     router-view
-  
   footerComp
 
 </template>
