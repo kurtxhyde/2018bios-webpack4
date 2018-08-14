@@ -1,25 +1,45 @@
-<style lang="less" src="result1.less" scoped></style>
+<style lang="less" src="form.less" scoped></style>
 <template lang="pug">
 .wrapper.relat(v-images-loaded:on.progress="imageProgress")
+	
 	.preload.abs
+	.bg-all.abs
+		.frame.abs
 	.container.relat
 		
 		.title.title1.relat
-			.sub.abs
-				img.relat(src="../../img/dest/result-sub.png")
 			.blood1.abs
-				img(src="../../img/dest/result-blood.png")
+				img(src="../../img/dest/form-blood.png")
 			.blood2.abs
 				img(src="../../img/dest/exam-blood1.png")
-			img.relat(src="../../img/dest/result2-tit.png")
+			img.relat(src="../../img/dest/form-title.png")
 		.sub.relat
-			img.relat(src="../../img/dest/result2-sub.png")
-		a.btn-j.btn1.relat(href="#/")
-			img(src="../../img/dest/result2-btna.png")
-		a.btn-j.btn2.relat(href="#/")
-			img(src="../../img/dest/result1-btnb.png")
-			.prd.abs
-				img(src="../../img/dest/result-product.png")
+			img.relat(src="../../img/dest/form-sub.png")
+		.form#form
+			form(autocomplete="off")
+				.form-group.row.inputname
+					label.col-xs-4.col-sm-4.col-form-label(for="cname",) 
+						img(src="../../img/dest/label1.png")
+					.col-xs-8.col-sm-8
+						input.form-control#cname(type="text",placeholder="請輸入姓名",data-ph="請輸入姓名",v-model="cname")
+				.form-group.row.inputtel
+					label.col-xs-4.col-form-label(for="tel")
+						img(src="../../img/dest/label2.png") 
+					.col-xs-8
+						input.form-control#tel(type="text",placeholder="請輸入手機號碼",data-ph="請輸入手機號碼",v-model="telnum")
+				.form-group.row.inputeml
+					label.col-xs-4.col-form-label(for="eml") 
+						img(src="../../img/dest/label3.png")
+					.col-xs-8
+						input.form-control#eml(type="text",placeholder="請輸入e-mail",data-ph="請輸入e-mail",v-model="eml")
+				
+				
+				.form-check.relat
+					input.form-check-input#checkbox(type="checkbox" , v-model="checkedPrivate" )
+					label(for="checkbox") <a href="#/rule" target="_blank" class="" data-ga="privateAgree"><img src="../../img/dest/privacy.png"></a>
+				
+				.btn-j.btn-submit.relat(v-on:click="submit")
+					img(src="../../img/dest/form-btn.png")
 		
 
 		
@@ -109,24 +129,7 @@ export default {
 			});
 		},
 		init(){
-			let title = $('.title >img') , t_sub = $('.title .sub') ,sub = $('.container > .sub') , blood1 =  $('.blood1') , blood2 =  $('.blood2') , btn1 = $('.btn-j.btn1')  , btn2 = $('.btn-j.btn2') , prd = btn2.find('.prd');
-
-			TweenMax.fromTo(title , .5 , {scaleX:2 , scaleY:2 , opacity:0},{delay:1 ,scaleX:1 , scaleY:1 , opacity:1,ease:Back.easeOut})
 			
-			TweenMax.fromTo(t_sub , .7 , {opacity:0},{delay:.5 ,scaleX:1 , scaleY:1 , opacity:1,ease:Sine.easeOut})
-			
-			TweenMax.fromTo(sub ,1 , {opacity:0 , y:20},{delay:1.5,y:0 , opacity:1,ease:Sine.easeOut})
-
-			
-			TweenMax.fromTo (blood1 ,3, {opacity:0 ,scaleY:0 } , {delay:1 , scaleY:1 ,opacity:1 , transformOrigin:'50% 0%',ease:Sine.easeOut})
-
-			TweenMax.fromTo (blood2 ,.8, {opacity:0 ,scaleX:0,scaleY:0 } , {delay:.8 , scaleX:1,scaleY:1 ,opacity:1 , transformOrigin:'0% 100%',ease:Quad.easeIn})
-			let count =0
-			$('.btn-j').each(function(){
-				TweenMax.fromTo($(this) , .7 ,{opacity:0} , {delay:2.5 + count *.1 ,y:0,opacity:1,ease:Expo.easeOut})	
-				count ++
-			})
-			TweenMax.fromTo(prd ,.8, {opacity:0 ,y:-50 } , {delay:2.8 , y:0,opacity:1 , ease:Back.easeOut})
 		},
 		killIntervals (){
 			

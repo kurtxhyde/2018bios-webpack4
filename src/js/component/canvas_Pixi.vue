@@ -110,6 +110,9 @@ export default {
 				case 'result4':
 					initCanvasSlideshow.active(6);
 					break;
+				default:
+					initCanvasSlideshow.active(0);
+					break;
 			}
 		},
 		imageProgress(instance, image ) {
@@ -142,7 +145,7 @@ export default {
       		let stageH = $('#canv').height();
 		    initCanvasSlideshow = new CanvasSlideshow({
 				stageWidth:750,
-				stageHeight:stageH,
+				stageHeight:1365,
 				sprites: spriteImagesSrc,
 				displacementImage: $('.filter_image').attr('src'),
 				autoPlay: true,

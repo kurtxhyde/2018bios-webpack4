@@ -12,12 +12,9 @@ const Result1 = () => import(/* webpackChunkName: "Track" */'./component/Result1
 const Result2 = () => import(/* webpackChunkName: "Track" */'./component/Result2.vue');
 const Result3 = () => import(/* webpackChunkName: "Track" */'./component/Result3.vue');
 const Result4 = () => import(/* webpackChunkName: "Track" */'./component/Result4.vue');
-// const Result2 = () => import(/* webpackChunkName: "Track" */'./component/Result2.vue');
-// const Result3 = () => import( webpackChunkName: "Track" './component/Result3.vue');
-// const Result4 = () => import(/* webpackChunkName: "Track" */'./component/Result4.vue');
-
-
-
+const form = () => import(/* webpackChunkName: "Track" */'./component/form.vue');
+const comp = () => import(/* webpackChunkName: "Track" */'./component/complete.vue');
+const rule = () => import(/* webpackChunkName: "Track" */'./component/Rule.vue');
 //const Login = () => import(/* webpackChunkName: "Login" */'./component/Login.vue');
 
 const log = value => console.log(`%c${value}`, 'background: #bdc3c7; color: black; font-size:10px;');
@@ -36,8 +33,9 @@ const router = new VueRouter({
     { path: '/result2' , component: Result2 ,name:'result2'},
     { path: '/result3' , component: Result3 ,name:'result3'},
     { path: '/result4' , component: Result4 ,name:'result4'},
-    // { path: '/exam' , component: Exam ,name:'exam'},
-    // { path: '/exam' , component: Exam ,name:'exam'},
+    { path: '/form' , component: form ,name:'form'},
+    { path: '/complete' , component: comp ,name:'comp'},
+    { path: '/rule' , component: rule ,name:'rule'},
     // { path: '/exam' , component: Exam ,name:'exam'},
     //{ path: '/winner', name:'winner'},
     

@@ -1,25 +1,25 @@
-<style lang="less" src="result1.less" scoped></style>
+<style lang="less" src="comp.less" scoped></style>
 <template lang="pug">
 .wrapper.relat(v-images-loaded:on.progress="imageProgress")
+	
 	.preload.abs
+	.bg-all.abs
+		.frame.abs
 	.container.relat
 		
 		.title.title1.relat
-			.sub.abs
-				img.relat(src="../../img/dest/result-sub.png")
 			.blood1.abs
-				img(src="../../img/dest/result-blood.png")
+				img(src="../../img/dest/form-blood.png")
 			.blood2.abs
 				img(src="../../img/dest/exam-blood1.png")
-			img.relat(src="../../img/dest/result2-tit.png")
+			img.relat(src="../../img/dest/complete-title.png")
 		.sub.relat
-			img.relat(src="../../img/dest/result2-sub.png")
-		a.btn-j.btn1.relat(href="#/")
-			img(src="../../img/dest/result2-btna.png")
-		a.btn-j.btn2.relat(href="#/")
-			img(src="../../img/dest/result1-btnb.png")
-			.prd.abs
-				img(src="../../img/dest/result-product.png")
+			img.relat(src="../../img/dest/complete-sub.png")
+		
+		.btn-j.relat()
+			img(src="../../img/dest/index-btn-1.png")
+		.btn-j.btn2.relat()
+			img(src="../../img/dest/complete-btn.png")
 		
 
 		
@@ -109,24 +109,7 @@ export default {
 			});
 		},
 		init(){
-			let title = $('.title >img') , t_sub = $('.title .sub') ,sub = $('.container > .sub') , blood1 =  $('.blood1') , blood2 =  $('.blood2') , btn1 = $('.btn-j.btn1')  , btn2 = $('.btn-j.btn2') , prd = btn2.find('.prd');
-
-			TweenMax.fromTo(title , .5 , {scaleX:2 , scaleY:2 , opacity:0},{delay:1 ,scaleX:1 , scaleY:1 , opacity:1,ease:Back.easeOut})
 			
-			TweenMax.fromTo(t_sub , .7 , {opacity:0},{delay:.5 ,scaleX:1 , scaleY:1 , opacity:1,ease:Sine.easeOut})
-			
-			TweenMax.fromTo(sub ,1 , {opacity:0 , y:20},{delay:1.5,y:0 , opacity:1,ease:Sine.easeOut})
-
-			
-			TweenMax.fromTo (blood1 ,3, {opacity:0 ,scaleY:0 } , {delay:1 , scaleY:1 ,opacity:1 , transformOrigin:'50% 0%',ease:Sine.easeOut})
-
-			TweenMax.fromTo (blood2 ,.8, {opacity:0 ,scaleX:0,scaleY:0 } , {delay:.8 , scaleX:1,scaleY:1 ,opacity:1 , transformOrigin:'0% 100%',ease:Quad.easeIn})
-			let count =0
-			$('.btn-j').each(function(){
-				TweenMax.fromTo($(this) , .7 ,{opacity:0} , {delay:2.5 + count *.1 ,y:0,opacity:1,ease:Expo.easeOut})	
-				count ++
-			})
-			TweenMax.fromTo(prd ,.8, {opacity:0 ,y:-50 } , {delay:2.8 , y:0,opacity:1 , ease:Back.easeOut})
 		},
 		killIntervals (){
 			

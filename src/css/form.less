@@ -1,0 +1,112 @@
+@import "config.less";
+@import "common.less";
+@import "mixin.less";
+.banner{
+    .btn-j{
+        
+    }
+
+}
+
+
+
+.wrapper {
+    width: 100%;
+    height:100%;
+    padding: 0;
+
+    .bg-all{
+        width:750px;
+        height:100%;
+        min-height:100vh;
+        background:url('../img/dest/form-bg.jpg');
+        background-size:cover;
+    }
+    .container {
+        
+        width: 100%;
+
+        
+        .talign(center);
+        .title{
+            display:inline-block;
+            margin:150px 0 0; 
+           
+            .blood1{
+                left:30px;
+                top:30px;
+                opacity:1;
+            }
+            .blood2{
+                left:255px;
+                top:-190px;
+                opacity:1;
+            }
+            .shadow{
+                left:-29px;
+                top:-29px;
+
+            }
+            >img.relat{
+                opacity:1;
+            }
+            
+            opacity:1;
+        }
+        
+        >.sub{
+            margin:0px 0 30px;
+            opacity:1;
+           
+            
+        }
+        .form {
+            width: 640px;
+            margin: 60px auto;
+
+            .form-group.inputname,
+            .form-group.inputeml,
+            .form-group.inputtel {
+               
+                margin: 0 0 10px;
+                padding:0px 0;
+
+                input{
+                    .white;
+                    .bg-black;
+                    padding:13px 10px;
+                    border-radius:0;
+                    .setBorderStyle(2px , #ccc);
+                }
+            }
+            .form-check {
+                margin: 30px 0 10px;
+                letter-spacing:-1px;
+                .black;
+                label {
+                    .bold;
+                    .fontsize(26px);
+                }
+                a{
+                    text-decoration:underline;
+                }
+            }
+        }
+        .btn-j{
+            margin:130px auto 170px;
+            display:block;
+            opacity:1;
+        }
+        .btn2{
+            top:-10px;
+            margin:0 0 150px;
+            .prd{
+                left:50px;
+                top:-230px;
+                opacity:0;
+            }
+        }
+       
+    }
+
+}

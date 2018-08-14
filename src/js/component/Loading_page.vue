@@ -6,7 +6,7 @@ transition( :duration="{ enter:500, leave: 500 }" ,name='fade', mode='out-in')
     .center
       .bg
       .ld
-        //- img(src="../../img/common/ring.gif")
+        img(src="../../img/dest/loading.gif")
         .txt.relat.inv {{percentLoading}}
 </template>
 

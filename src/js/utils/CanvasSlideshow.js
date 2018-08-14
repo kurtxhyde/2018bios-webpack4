@@ -467,23 +467,24 @@ function CanvasSlideshow(options) {
         TweenMax.killTweensOf( $('.ghost2'));
         TweenMax.killTweensOf( $('.ghost3'));
         TweenMax.killTweensOf( $('.wave3'));
-        
+        that.moveSlider(id)
         switch(id){
                  case 0:
-                     TweenMax.set( $('.ghost1') ,  {y:-500 , opacity:0})
-                     TweenMax.set( $('.ghost2') ,  {y:500 , opacity:0} )
-                     TweenMax.set( $('.ghost3') ,  {y:700 , opacity:0})
-                     TweenMax.set( $('.wave3') ,  {y:500 , opacity:0} )
+
+                     TweenMax.to( $('.ghost1') ,.5,  {y:-500 , opacity:0})
+                     TweenMax.to( $('.ghost2') ,.5,  {y:500 , opacity:0} )
+                     TweenMax.to( $('.ghost3') ,.5,  {y:700 , opacity:0})
+                     TweenMax.to( $('.wave3') ,.5,  {y:500 , opacity:0} )
                     break;
                  case 1:
-                     that.moveSlider(id)
+                    
                      TweenMax.fromTo( $('.ghost1') , 3 ,  {y:-500 , opacity:0} , {delay:2,y:1 , opacity:1 })
                      TweenMax.fromTo( $('.ghost2') , 3 ,  {y:500 , opacity:0} , {delay:2,y:1 , opacity:1 })
                      TweenMax.to( $('.ghost3') , 2 ,  {y:700 , opacity:0})
                      TweenMax.to( $('.wave3') , 2 ,  {y:500 , opacity:0} );
                  break;
                  case 2:
-                     that.moveSlider(id)
+                     
                      TweenMax.to( $('.ghost1') , 2 ,  {y:-500 , opacity:0})
                      TweenMax.to( $('.ghost2') , 2 ,  {y:500 , opacity:0} );
                      
@@ -494,12 +495,13 @@ function CanvasSlideshow(options) {
                  case 4:
                  case 5:   
                  case 6:
-                    that.moveSlider(id)
+                   
                     TweenMax.to( $('.ghost1') , 2 ,  {y:-500 , opacity:0})
                      TweenMax.to( $('.ghost2') , 2 ,  {y:500 , opacity:0} );
                     TweenMax.to( $('.ghost3') , 2 ,  {y:700 , opacity:0})
                      TweenMax.to( $('.wave3') , 2 ,  {y:500 , opacity:0} );
                     break;
+
                  
                    
          }

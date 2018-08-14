@@ -15,7 +15,13 @@
     height:100%;
     padding: 0;
 
-    
+    .bg-all{
+        width:750px;
+        height:100%;
+        min-height:100vh;
+        background:url('../img/dest/form-bg.jpg');
+        background-size:cover;
+    }
     .container {
         
         width: 100%;
@@ -24,19 +30,20 @@
         .talign(center);
         .title{
             display:inline-block;
-            margin:590px 0 0; 
-            .sub{
-                top:-40px;
-                left:20px;
-                opacity:0;
+            margin:250px 0 0; 
+            @media (min-width: 768px){
+                margin-top:150px;
             }
             .blood1{
-                left:30px;
-                top:50px;opacity:0;
+                left:0px;
+                top:30px;
+                opacity:1;
+                .scale(.9);
             }
             .blood2{
-                left:155px;
-                top:-160px;opacity:0;
+                left:255px;
+                top:-160px;
+                opacity:1;.scale(.9);
             }
             .shadow{
                 left:-29px;
@@ -44,25 +51,27 @@
 
             }
             >img.relat{
-                opacity:0;
+                opacity:1;
             }
             
             opacity:1;
         }
         
         >.sub{
-            margin:0px 0 20px;opacity:0;
-            .sub1{}
+            margin:0px 0 30px;
+            opacity:1;
+           
             
         }
-        >.btn-j{
-            margin:0px auto 0;
+       
+        .btn-j{
+            margin:60px auto 0px;
             display:block;
-            opacity:0;
+            opacity:1;
         }
         .btn2{
             top:-10px;
-            margin:0 0 150px;
+            margin:0 0 250px;
             .prd{
                 left:50px;
                 top:-230px;

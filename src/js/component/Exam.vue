@@ -199,7 +199,7 @@ export default {
 						 let rnd = Math.ceil(Math.random() * 4)
 						 context.$router.replace('result'+rnd );
 
-					}, 3000 * Math.random() + 6000)
+					}, 3000 * Math.random() + 4000)
 
 
 					ring.off('mousedown');

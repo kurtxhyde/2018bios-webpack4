@@ -2,21 +2,7 @@
 
 <template lang="pug">
 .row.userForm.relat
-	.bg-rnd.abs
-		
-	.col-xs-12.subdesc.lrgt 活動說明：看影片回答問題並留下您的雀巢1000天計畫會員資料，即有機會抽<span class="strong">五星級親子飯店住宿券</span>
-	.col-xs-11.pool
-		
-		p （請點選回答）
-	.col-xs-12.qa
-		
-	.col-xs-12.row.anws
-		
-		.col-xs-4.btn-j.btn2(data-id="螢光塗鴉", v-on:click="choose('2')")
-		.col-xs-4.btn-j.btn1(data-id="空中飛人", v-on:click="choose('1')")
-		.col-xs-4.btn-j.btn3(data-id="跑跑賽車", v-on:click="choose('3')")
-	.col-xs-12.desc-mid.lrgt 請留下雀巢1000天營養計畫會員資料<span class="weak">(姓名/身分證後六碼)</span>，並提供手機號碼以利中獎通知：
-
+	
 	.col-xs-12.form#form
 		form(autocomplete="off")
 			.form-group.row.inputname

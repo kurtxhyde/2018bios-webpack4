@@ -162,7 +162,7 @@ export default {
 				count ++
 			})
 			$('.btn-j').each(function(){
-				TweenMax.fromTo($(this) , .5 ,{opacity:0} , {delay:4 + count *.4 ,y:0,opacity:1})	
+				TweenMax.fromTo($(this) , .7 ,{opacity:0} , {delay:5 + count *.1 ,y:0,opacity:1,ease:Expo.easeOut})	
 				count ++
 			})
 			// const requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
