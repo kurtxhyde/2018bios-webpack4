@@ -24,7 +24,7 @@
 			img(src="../../img/dest/result1-btnb.png")
 			.prd.abs
 				img(src="../../img/dest/result-product.png")
-	.pop.pop-fblogin.fix
+	.pop.pop-fblogin.fix.inv
 		.bgx.abs
 		.btnlogin.relat 請先登入FB
 </template>
