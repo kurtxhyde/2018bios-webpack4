@@ -182,7 +182,7 @@ export default {
 				loop(opt)
 				function loop(opt){
 					let ifrest 
-					if(opt.count > 20 && Math.random() > .8 ){
+					if(opt.count > 20 && Math.random() > .6 ){
 						ifrest = true;
 						opt.count = 0 ;
 					}else{
@@ -190,19 +190,20 @@ export default {
 					}
 					
 					if(!opt.typ || ifrest){
-						TweenMax.set(opt.dom , {x: 0, y:0,opacity:1});
+						TweenMax.set(opt.dom , {opacity:1});
+						TweenMax.set(opt.dom , {x: 0, y:0});
 						opt.typ = true;
 					}else{
-						let opa = Math.random() * .5 + .3;
-						let offest = 10/opa 
+						let opa = Math.random() * .6 + .1;
+						let offest = 15/opa 
 						TweenMax.set(opt.dom , {opacity:opa });
 
 						TweenMax.set(opt.dom , {x: Math.random()* offest - offest*.5});
-						//TweenMax.set(opt.dom , {y:0});
+						//TweenMax.set(opt.dom , {y: Math.random()*5 -2});
 						opt.typ = false;
 					}
 					opt.count++
-					opt.intervals.push (setTimeout(function(){loop(opt)} , (ifrest)? Math.random()*3000 + 3000 : 20 + Math.random()*10 ))
+					opt.intervals.push (setTimeout(function(){loop(opt)} , (ifrest)? Math.random()*3000 + 3000 : 20 + Math.random()*30 ))
 				}
 			}
 		},

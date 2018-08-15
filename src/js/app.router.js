@@ -55,13 +55,13 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  console.log('age....'+to.params.id)
-  console.log('user....'+to.params.uid)
-  store.commit('path' , to.name);
-  if(to.name=='index'){
-    store.commit('age' , to.params.id);
-  }
 
+  store.commit('path' , to.name);
+
+  let navExpanded = $('.navbar-toggle').attr('aria-expanded');
+  if(navExpanded == 'true'){
+    $('.navbar-toggle').trigger( "click" )
+  }
 
   if (to.matched.some(record => record.meta.authorization || false)) {
     const isLogin = store.state.isLogin;

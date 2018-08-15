@@ -25,7 +25,7 @@ nav.navbar.navbar-fixed-top
       ul.nav.navbar-nav.relat
 
         li.m1o(data-id='0')
-            router-link.tracklink.custom(data-ga="gallery",data-href="",href="gallery" , to="./gallery") 
+            router-link.tracklink.custom(data-ga="exam",data-href="",  to="./exam") 
               img.ico(src="../../img/dest/m-ico1.png")
               img(src="../../img/dest/m1.png")
 
@@ -34,20 +34,20 @@ nav.navbar.navbar-fixed-top
         
 
         li.m2o(data-id='1')
-            router-link.hash.custom(data-ga="game",data-href="index.html#/game",href="index.html#/game", to="./game") 
+            router-link.hash.custom(data-ga="gallery",data-href="", to="./gallery") 
               img.ico(src="../../img/dest/m-ico2.png")
               img(src="../../img/dest/m2.png")
         .line
           img(src="../../img/dest/mline.png")
 
         li.m3o(data-id='1')
-            router-link.hash.custom(data-ga="game",data-href="index.html#/game",href="index.html#/game", to="./game") 
+            router-link.hash.custom(data-ga="product",data-href="", to="./product") 
               img.ico(src="../../img/dest/m-ico3.png")
               img(src="../../img/dest/m3.png")
         .line
           img(src="../../img/dest/mline.png")
         li.m4o(data-id='1')
-            router-link.hash.custom(data-ga="game",data-href="index.html#/game",href="index.html#/game", to="./game") 
+            router-link.hash.custom(data-ga="rule",data-href="", to="./rule") 
               img.ico(src="../../img/dest/m-ico4.png")
               img(src="../../img/dest/m4.png")
                 //- img(src="../../img/dest/line.png")

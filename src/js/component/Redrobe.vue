@@ -5,6 +5,7 @@
 	.bg-all.abs
 		.frame.abs
 	.container.relat
+		.gradblk.abs
 		.title.title1.relat
 			img.relat(src="../../img/dest/redrobe-tit.png")
 		.content.relat
@@ -193,24 +194,11 @@ export default {
 			});
 		},
 		init(){
-			let title = $('.title >img') , t_sub = $('.title .sub') ,sub = $('.container > .sub') , blood1 =  $('.blood1') , blood2 =  $('.blood2') , btn1 = $('.btn-j.btn1')  , btn2 = $('.btn-j.btn2') , prd = btn2.find('.prd');
-
-			TweenMax.fromTo(title , .5 , {scaleX:2 , scaleY:2 , opacity:0},{delay:1 ,scaleX:1 , scaleY:1 , opacity:1,ease:Back.easeOut})
+			let title = $('.title >img') ;
+			TweenMax.to($('.bg-all') , 1 , {delay:1, opacity:1});
+			TweenMax.fromTo(title , .5 , {scaleX:1.2 , scaleY:1.2 , opacity:0},{delay:.5 ,scaleX:1 , scaleY:1 , opacity:1,ease:Back.easeOut})
 			
-			TweenMax.fromTo(t_sub , .7 , {opacity:0},{delay:.5 ,scaleX:1 , scaleY:1 , opacity:1,ease:Sine.easeOut})
 			
-			TweenMax.fromTo(sub ,1 , {opacity:0 , y:20},{delay:1.5,y:0 , opacity:1,ease:Sine.easeOut})
-
-			
-			TweenMax.fromTo (blood1 ,3, {opacity:0 ,scaleY:0 } , {delay:1 , scaleY:1 ,opacity:1 , transformOrigin:'50% 0%',ease:Sine.easeOut})
-
-			TweenMax.fromTo (blood2 ,.8, {opacity:0 ,scaleX:0,scaleY:0 } , {delay:.8 , scaleX:1,scaleY:1 ,opacity:1 , transformOrigin:'0% 100%',ease:Quad.easeIn})
-			let count =0
-			$('.btn-j').each(function(){
-				TweenMax.fromTo($(this) , .7 ,{opacity:0} , {delay:2.5 + count *.1 ,y:0,opacity:1,ease:Expo.easeOut})	
-				count ++
-			})
-			TweenMax.fromTo(prd ,.8, {opacity:0 ,y:-50 } , {delay:2.8 , y:0,opacity:1 , ease:Back.easeOut})
 
 		},
 		killIntervals (){
