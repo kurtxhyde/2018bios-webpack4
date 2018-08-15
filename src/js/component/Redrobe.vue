@@ -1,32 +1,111 @@
-<style lang="less" src="result1.less" scoped></style>
+<style lang="less" src="redrobe.less" scoped></style>
 <template lang="pug">
-
 .wrapper.relat(v-images-loaded:on.progress="imageProgress")
-	
-		
-
 	.preload.abs
+	.bg-all.abs
+		.frame.abs
 	.container.relat
-		
 		.title.title1.relat
-			.sub.abs
-				img.relat(src="../../img/dest/result-sub.png")
-			.blood1.abs
-				img(src="../../img/dest/result-blood.png")
-			.blood2.abs
-				img(src="../../img/dest/exam-blood1.png")
-			img.relat(src="../../img/dest/result1-tit.png")
-		.sub.relat
-			img.relat(src="../../img/dest/result1-sub.png")
-		.btn-j.btn1.relat
-			img(src="../../img/dest/result1-btna.png")
-		a.btn-j.btn2.relat(href="#/product/")
-			img(src="../../img/dest/result1-btnb.png")
-			.prd.abs
-				img(src="../../img/dest/result-product.png")
+			img.relat(src="../../img/dest/redrobe-tit.png")
+		.content.relat
+			.blk.relat.b1
+				.p.relat
+					img(src="../../img/dest/redrobe1.png")
+				.t.t1.abs
+					img(src="../../img/dest/redrobet01.gif")
+				.t.t2.abs
+					img(src="../../img/dest/redrobet02.gif")
+
+			.blk.relat.b2
+				.p.relat
+					img(src="../../img/dest/redrobe2.png")
+
+				.t.t1.abs
+					img(src="../../img/dest/redrobet03.gif")
+				
+				.t.t2.abs
+					img(src="../../img/dest/redrobet04.gif")
+			.blk.relat.b3
+				.p.relat
+					img(src="../../img/dest/redrobe3.png")
+
+				.t.t1.abs
+					img(src="../../img/dest/redrobet05.gif")
+			
+			.blk.relat.b4
+				.p.relat
+					img(src="../../img/dest/redrobe4.png")
+
+				.t.t1.abs
+					img(src="../../img/dest/redrobet06.gif")
+				.t.t2.abs
+					img(src="../../img/dest/redrobet07.gif")
+			.blk.relat.b5
+				.p.relat
+					img(src="../../img/dest/redrobe5.png")
+
+				.t.t1.abs
+					img(src="../../img/dest/redrobet08.gif")
+				//- .t.t2.abs
+				//- 	img(src="../../img/dest/redrobet09.gif")
+			.blk.relat.b6
+				.p.relat
+					img(src="../../img/dest/redrobe6.png")
+
+				.t.t1.abs
+					img(src="../../img/dest/redrobet09.gif")
+				.t.t2.abs
+					img(src="../../img/dest/redrobet010.gif")
+			.blk.relat.b7
+				.p.relat
+					img(src="../../img/dest/redrobe7.png")
+
+				.t.t1.abs
+					img(src="../../img/dest/redrobet011.gif")
+				.t.t2.abs
+					img(src="../../img/dest/redrobet012.gif")
+			.blk.relat.b8
+				.p.relat
+					img(src="../../img/dest/redrobe8.png")
+
+				//- .t.t1.abs
+				//- 	img(src="../../img/dest/redrobet011.gif")
+				//- .t.t2.abs
+				//- 	img(src="../../img/dest/redrobet012.gif")
+			.blk.relat.b9
+				.p.relat
+					img(src="../../img/dest/redrobe9.png")
+				.t.t1.abs
+					img(src="../../img/dest/redrobet013.gif")
+			.blk.relat.b10
+				.p.relat
+					img(src="../../img/dest/redrobe10.png")
+				.t.t1.abs
+					img(src="../../img/dest/redrobet014.gif")
+				.t.t2.abs
+					img(src="../../img/dest/redrobet015.gif")
+			.blk.relat.b11
+				.p.relat
+					img(src="../../img/dest/redrobe-b.png")
+					.lgt.abs.l1
+						img(src="../../img/dest/redrobe11-lgt.png")
+					.lgt.abs.l2
+						img(src="../../img/dest/redrobe11-lgt.png")
+					.lgt.abs.l3
+						img(src="../../img/dest/redrobe11-lgt.png")
+					.front.abs
+						img(src="../../img/dest/redrobe11-a.png")
+					.framez.abs
+		.list.realt
+			.btn-j.btn1
+				img.relat(src="../../img/dest/redrobe-btn.png")
+			.btn-j.btn2.relat
+				img(src="../../img/dest/btn-gallery-else.png")
+				//- .prd.abs
+				//- 	img(src="../../img/dest/result-product.png"
 	.pop.pop-fblogin.fix.inv
 		.bgx.abs
-		.btnlogin.relat 請先登入FB
+		.btnlogin.relat 請先登入FB	
 </template>
 
 <script>
@@ -78,7 +157,7 @@ export default {
 		MAX_img_count = $('.wrapper img').length;
 		console.log("MAX_img_count:" + MAX_img_count)
 		img_count = 0;
-		setCookie('prev' , 'exam' , '1')
+		setCookie('prev' , 'red-robe' , '1')
 		
 		
 	},

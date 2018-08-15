@@ -34,9 +34,11 @@
 
 <script>
 //import $ from "jquery";
-import { mapActions, mapMutations } from 'vuex';
+import { mapActions, mapMutations,mapGetters } from 'vuex';
 import userForm from './userForm.vue';
-
+import {GLOBAL} from '../utils/config.js';
+import {FB_ASSET} from '../utils/fb_assets.js';
+import {setCookie , getCookie} from '../utils/common.js';
 //import svgAnim from './svgAnim.vue';
 
 
@@ -45,13 +47,13 @@ import imagesLoaded from 'vue-images-loaded';
 
 let MAX_img_count ;
 let img_count = 0;
-
+let fb = new FB_ASSET();
 
 //var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
 export default {
 	data() {
-	return {
-	};
+		return {
+		};
 	},
 	directives: {
 		imagesLoaded
@@ -62,6 +64,10 @@ export default {
 		
 		
 	},
+	computed: {
+    	...mapGetters(['path']),
+
+  	},
 	created:function(){
 
 		if(MAX_img_count!=0)
@@ -75,7 +81,7 @@ export default {
 		MAX_img_count = $('.wrapper img').length;
 		console.log("MAX_img_count:" + MAX_img_count)
 		img_count = 0;
-		
+		setCookie('prev' , 'exam' , '1')
 		
 		
 	},
@@ -129,13 +135,46 @@ export default {
 				count ++
 			})
 			TweenMax.fromTo(prd ,.8, {opacity:0 ,y:-50 } , {delay:2.8 , y:0,opacity:1 , ease:Back.easeOut})
+
 		},
 		killIntervals (){
 			
 			
 		},
+		chkFbInitial() {
+        	if (fb.get_FBID() == '0') {
+            	console.log('fb login')
+            	
+            	return false;
+        	}
+        	return true;
+        //console.log("fbid..." + fb.get_FBID());
+    	},
 		bind(){
+			let context = this;
 			
+			$('.btnlogin').click(function(){
+				let url = `${GLOBAL.host}${context.path}.html`;
+				
+            	fb.get_login(cb , url);
+        	})
+			$('.btn1').click(function(){
+				if ( !context.chkFbInitial()  ) {
+                	$('.pop-fblogin').fadeIn(500);
+                	return;
+            	}else{
+            		shareHandle();
+            	}
+			})
+			function cb(){
+            	$('.pop-fblogin').fadeOut(500);
+        	}
+        	function shareHandle(){
+                fb.get_ui_post('現形吧!肌膚鬼怪', '快來檢測妳的肌膚鬼怪，有機會獲得碧歐斯維他命B5原液喔！', "", GLOBAL.host+ context.path + '.html', [], afterPost);
+             	function afterPost(){
+             		context.$router.replace('form');
+             	}
+        	}
 			
 		}
 

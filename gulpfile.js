@@ -69,6 +69,7 @@ gulp.task('webpack-build', (cb) => {
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: true,
       compress: { warnings: false },
+      mangle: {safari10: true },
     }) // eslint-disable-line
   );
   webpack(config, (err, stats) => {

@@ -89,16 +89,16 @@ function FB_ASSET() {
 		const isSafari = navigator.userAgent.indexOf('Safari') > -1;
 		const isChrome = navigator.userAgent.indexOf('Chrome') > -1;
 		var isLine = window.navigator.userAgent.toLowerCase().indexOf('line') ;
-
-
-		if (isLine<0) {
+		let hashtag = encodeURIComponent('#肌膚的都市傳說');
+		alert('hashtag..'+hashtag)
+		if (false) {
 			FB.ui({
 			        method: 'feed',
-			       
+			        
 			        // description: msg,
 			        //hashtag:hash,
 			        link: url,
-
+			        //hashtag:hashtag,
 			        /*picture: picurl,*/
 			        // privacy:{'value':'EVERYONE'},
 			    },
@@ -113,7 +113,7 @@ function FB_ASSET() {
 			    });
 		}else{
 
-			location.href="https://www.facebook.com/dialog/feed?app_id="+GLOBAL.fbAppId+"&display=popup&amp;caption="+title+"&link="+url+"&redirect_uri="+GLOBAL.host+"form.html";
+			location.href="https://www.facebook.com/dialog/feed?app_id="+GLOBAL.fbAppId+"&display=popup&amp;caption="+title+"&link="+url+"&hashtag="+hashtag+"&redirect_uri="+GLOBAL.host+"form.html";
 		}
 		
 	}
@@ -264,7 +264,7 @@ function FB_ASSET() {
 		FB.init({
 				appId: GLOBAL.fbAppId, //'108536939812687',
 			    xfbml: true,
-			    version: 'v3.0',
+			    version: 'v3.1',
 		});
 		FB.AppEvents.logPageView();  
 		context.get_checkLoginState(null);

@@ -26,10 +26,12 @@
 </template>
 
 <script>
+//import $ from "jquery";
 import { mapActions, mapMutations,mapGetters } from 'vuex';
 import userForm from './userForm.vue';
 import {GLOBAL} from '../utils/config.js';
 import {FB_ASSET} from '../utils/fb_assets.js';
+import {setCookie , getCookie} from '../utils/common.js';
 //import svgAnim from './svgAnim.vue';
 
 
@@ -72,7 +74,7 @@ export default {
 		MAX_img_count = $('.wrapper img').length;
 		console.log("MAX_img_count:" + MAX_img_count)
 		img_count = 0;
-		
+		setCookie('prev' , 'exam' , '1')
 		
 		
 	},
@@ -161,15 +163,10 @@ export default {
             	$('.pop-fblogin').fadeOut(500);
         	}
         	function shareHandle(){
-              
-                fb.get_ui_post('TEST', 'test desc', "", GLOBAL.host+ '#/'+ context.path, [], afterPost);
-            
-             function afterPost(){
-                    //alert('感謝您的參與');
-                    
-                    location.href = GLOBAL.host+'form.html';
-                    ///location.href = ''
-             }
+                fb.get_ui_post('現形吧!肌膚鬼怪', '快來檢測妳的肌膚鬼怪，有機會獲得碧歐斯維他命B5原液喔！', "", GLOBAL.host+ context.path + '.html', [], afterPost);
+             	function afterPost(){
+             		context.$router.replace('form');
+             	}
         	}
 			
 		}
@@ -177,6 +174,7 @@ export default {
 		
 	},
 };
+
 
 
 </script>

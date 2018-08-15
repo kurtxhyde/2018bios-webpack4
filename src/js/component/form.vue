@@ -36,7 +36,7 @@
 				
 				.form-check.relat
 					input.form-check-input#checkbox(type="checkbox" , v-model="checkedPrivate" )
-					label(for="checkbox") <a href="#/rule" target="_blank" class="" data-ga="privateAgree"><img src="../../img/dest/privacy.png"></a>
+					label(for="checkbox") <img src="../../img/dest/privacy.png"><a href="#/rule" target="_blank" class="" data-ga="privateAgree"><img src="../../img/dest/privacyb.png"></a>
 				
 				.btn-j.btn-submit.relat(v-on:click="submit")
 					img(src="../../img/dest/form-btn.png")
@@ -56,7 +56,7 @@ import { mapActions, mapMutations } from 'vuex';
 import userForm from './userForm.vue';
 import {GLOBAL} from '../utils/config.js';
 import {FB_ASSET} from '../utils/fb_assets.js';
-
+import { getCookie} from '../utils/common.js';
 //import svgAnim from './svgAnim.vue';
 
 
@@ -66,7 +66,7 @@ import imagesLoaded from 'vue-images-loaded';
 let MAX_img_count ;
 let img_count = 0;
 let fb = new FB_ASSET();
-
+let prev;
 //var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
 export default {
 	data() {
@@ -79,29 +79,22 @@ export default {
 	components:{
 		userForm,
 		// svgAnim,
-		
-		
 	},
 	created:function(){
-
 		if(MAX_img_count!=0)
 		this.showPageLoading(true);
 		else
 		this.showPageLoading(false);
-
-			
 	},
 	mounted:function(){
 		MAX_img_count = $('.wrapper img').length;
 		console.log("MAX_img_count:" + MAX_img_count)
 		img_count = 0;
-		
-		
-		
+		prev = getCookie('prev');
+		console.log('prev .... ' + prev)
 	},
 	beforeDestroy:function(){
-		//$('.carousel').slick('unslick');
-		console.log('destroy.........');
+		//console.log('destroy.........');
 		this.killIntervals();
 	},
 	methods: {
@@ -139,7 +132,7 @@ export default {
 		},
 		submit(){
 			let context = this;
-			console.log('fb name ...' + GLOBAL.fbname)
+			console.log('fb name ...' + GLOBAL.fbname);
 			FormHandle();
 			function  FormHandle(){
              let tof = validator();

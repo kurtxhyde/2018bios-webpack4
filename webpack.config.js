@@ -30,6 +30,7 @@ const toFilename = (name, ext = 'js') => {
 const config = {
   context: path.resolve('src'),
   entry: {
+   // babel-polyfill:"babel-polyfill",
     app: ['./js/app.js'],
     vendor: [      
       'es6-promise/auto',
@@ -112,10 +113,10 @@ config.plugins = [
   copyWebpackPlugin([
     { from: 'copy', to: './' },
   ]),
-  new webpack.optimize.CommonsChunkPlugin({
-    names: ['vendor', 'manifest'],
-    minChunks: Infinity,
-  }),
+  // new webpack.optimize.CommonsChunkPlugin({
+  //   names: ['vendor', 'manifest'],
+  //   minChunks: Infinity,
+  // }),
   // 產生 html , 並注入script tag app.js?[hash] 
   new HtmlWebpackPlugin({
     template: 'html/index.template.pug',
