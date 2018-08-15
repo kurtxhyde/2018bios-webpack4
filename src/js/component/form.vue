@@ -151,19 +151,15 @@ export default {
                         name: cName.val(),
                         tel: tel.val(),
                         email: email.val(),
-                        fbname: GLOBAL.fbname,
+                        fbname: (location.href.indexOf('localhost')>=0)? 'chen jojo':GLOBAL.fbname,
                         
                     },
                     (pResponse) => {
                         $("#loadingajax").hide();
                         //$('#loadingajax').fadeOut(400);
                         if (pResponse.state == '1') {
-                            alert('資料成功送出！')
-                            let id = pResponse.data
+                            context.$router.push('complete' );
                             
-                            setTimeout(function(){
-                            	context.$router.replace('product');	
-                            } ,200)
                         } else {
                             let msg = "出現錯誤，請稍後再試！"
                             alert(msg);

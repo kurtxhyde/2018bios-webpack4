@@ -175,7 +175,7 @@ export default {
 				ring.mousedown(function(){
 
 					$('.sub .sub2').each(function(){
-						TweenMax.fromTo($(this) , .5 ,{y:20 ,opacity:0} , {delay:.5,y:0,opacity:1})	
+						TweenMax.fromTo($(this) , .5 ,{y:20 ,opacity:0} , {delay:.5,y:0,opacity:1})
 						
 					})
 					$('.sub .sub1').each(function(){
@@ -198,7 +198,7 @@ export default {
 					/*A*/
 					setTimeout(function(){
 						 let rnd =1// Math.ceil(Math.random() * 4)
-						 context.$router.replace('result'+rnd );
+						 context.$router.push('result'+rnd );
 
 					}, 3000 * Math.random() + 4000)
 

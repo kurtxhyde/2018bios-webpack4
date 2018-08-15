@@ -35,7 +35,7 @@
 			img(src="../../img/dest/index-sub2.png")
 		.sub.sub3.relat
 			img(src="../../img/dest/index-sub3.png")
-		a.btn-j.btn1(href="#/exam")
+		a.btn-j.btn1(href="#/gallery")
 			img(src="../../img/dest/index-btn-1.png")
 		a.btn-j.btn2(href="#/exam")
 			img(src="../../img/dest/index-btn-2.png")

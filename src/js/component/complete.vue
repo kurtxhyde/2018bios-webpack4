@@ -16,9 +16,9 @@
 		.sub.relat
 			img.relat(src="../../img/dest/complete-sub.png")
 		
-		.btn-j.relat()
+		a.btn-j.relat(href="#/gallery")
 			img(src="../../img/dest/index-btn-1.png")
-		.btn-j.btn2.relat()
+		a.btn-j.btn2.relat(href="#/product")
 			img(src="../../img/dest/complete-btn.png")
 		
 
@@ -109,7 +109,26 @@ export default {
 			});
 		},
 		init(){
+			TweenMax.to($('.bg-all') , 1 , {delay:1, opacity:1});
+
+
+			let title = $('.title >img') , t_sub = $('.title .sub') ,sub = $('.container > .sub') , blood1 =  $('.blood1') , blood2 =  $('.blood2') , btn1 = $('.btn-j.btn1')  , btn2 = $('.btn-j.btn2') ;
+
+			TweenMax.fromTo(title , 1, {y:30 , opacity:0},{delay:.5 ,y:0 , opacity:1,ease:Sine.easeOut})
 			
+			
+			TweenMax.fromTo(sub , 1 , {opacity:0 , y:20},{delay:1.5,y:0 , opacity:1,ease:Sine.easeOut})
+
+			
+			TweenMax.fromTo (blood1 ,3, {opacity:0 ,scaleY:0 } , {delay:1 , scaleY:1 ,opacity:1 , transformOrigin:'50% 0%',ease:Sine.easeOut})
+
+			TweenMax.fromTo (blood2 ,.8, {opacity:0 ,scaleX:0,scaleY:0 } , {delay:.8 , scaleX:1,scaleY:1 ,opacity:1 , transformOrigin:'0% 100%',ease:Quad.easeIn})
+			let count =0
+			
+			$('.btn-j').each(function(){
+				TweenMax.fromTo($(this) , 1 ,{y: 30 , opacity:0} , {delay:1 + count *.2 ,y:0,opacity:1,ease:Sine.easeOut})	
+				count ++
+			})
 		},
 		killIntervals (){
 			
