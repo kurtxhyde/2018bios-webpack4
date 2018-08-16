@@ -1,9 +1,9 @@
 
 const GLOBAL = {};
 GLOBAL.TEST = 0;
-GLOBAL.host = 'https://as.campaigns.com.tw/bio/';
+GLOBAL.host = 'https://bioessence.campaigns.com.tw/';
 GLOBAL.mobile_root = 'm/';
-GLOBAL.api_root = 'https://as.campaigns.com.tw/bio/';
+GLOBAL.api_root = 'https://bioessence.campaigns.com.tw/';
 GLOBAL.gaId = '';
 GLOBAL.fbAppId = '871568789710796';
 //GLOBAL.fbname = 'notlogin'

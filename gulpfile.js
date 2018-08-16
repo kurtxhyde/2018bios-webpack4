@@ -63,7 +63,7 @@ gulp.task('webpack-dev-server', (cb) => {
 gulp.task('webpack-build', (cb) => {
   logProduction();
   process.env.NODE_ENV = 'production';
-  process.env.ROOT = '/bio/'
+  process.env.ROOT = '/'
   const config = require('./webpack.config');
   config.plugins.push(
     new webpack.optimize.UglifyJsPlugin({
