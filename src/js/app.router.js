@@ -18,6 +18,8 @@ const rule = () => import(/* webpackChunkName: "Track" */'./component/Rule.vue')
 const gallery = () => import(/* webpackChunkName: "Track" */'./component/Gallery.vue');
 const bus = () => import(/* webpackChunkName: "Track" */'./component/Ghostbus.vue');
 const redrobe = () => import(/* webpackChunkName: "Track" */'./component/Redrobe.vue');
+
+const prod = () => import(/* webpackChunkName: "Track" */'./component/Prod.vue');
 //const Login = () => import(/* webpackChunkName: "Login" */'./component/Login.vue');
 
 const log = value => console.log(`%c${value}`, 'background: #bdc3c7; color: black; font-size:10px;');
@@ -42,6 +44,7 @@ const router = new VueRouter({
     { path: '/gallery' , component: gallery ,name:'gallery'},
     { path: '/ghost-bus' , component: bus ,name:'ghost-bus'},
     { path: '/red-robe' , component: redrobe ,name:'red-robe'},
+    { path: '/product' , component: prod ,name:'product'},
     // { path: '/exam' , component: Exam ,name:'exam'},
     //{ path: '/winner', name:'winner'},
     

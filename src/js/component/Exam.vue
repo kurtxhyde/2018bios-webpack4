@@ -197,7 +197,7 @@ export default {
 					TweenMax.to(glowdown , 1.5 , {delay:0 , opacity:0 , ease:Expo.easeInOut , repeat:-1 , yoyo:true } );
 					/*A*/
 					setTimeout(function(){
-						 let rnd =1// Math.ceil(Math.random() * 4)
+						 let rnd = Math.ceil(Math.random() * 4)
 						 context.$router.push('result'+rnd );
 
 					}, 3000 * Math.random() + 4000)

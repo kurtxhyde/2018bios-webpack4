@@ -21,21 +21,21 @@
 					label.col-xs-4.col-sm-4.col-form-label(for="cname",) 
 						img(src="../../img/dest/label1.png")
 					.col-xs-8.col-sm-8
-						input.form-control#cname(type="text",placeholder="請輸入姓名",data-ph="請輸入姓名",v-model="cname")
+						input.form-control#cname(type="text",placeholder="請輸入姓名",data-ph="請輸入姓名")
 				.form-group.row.inputtel
 					label.col-xs-4.col-form-label(for="tel")
 						img(src="../../img/dest/label2.png") 
 					.col-xs-8
-						input.form-control#tel(type="text",placeholder="請輸入手機號碼",data-ph="請輸入手機號碼",v-model="telnum")
+						input.form-control#tel(type="text",placeholder="請輸入手機號碼",data-ph="請輸入手機號碼")
 				.form-group.row.inputeml
 					label.col-xs-4.col-form-label(for="eml") 
 						img(src="../../img/dest/label3.png")
 					.col-xs-8
-						input.form-control#eml(type="text",placeholder="請輸入e-mail",data-ph="請輸入e-mail",v-model="eml")
+						input.form-control#eml(type="text",placeholder="請輸入e-mail",data-ph="請輸入e-mail")
 				
 				
 				.form-check.relat
-					input.form-check-input#checkbox(type="checkbox" , v-model="checkedPrivate" )
+					input.form-check-input#checkbox(type="checkbox"  )
 					label(for="checkbox") <img src="../../img/dest/privacy.png"><a href="#/rule" target="_blank" class="" data-ga="privateAgree"><img src="../../img/dest/privacyb.png"></a>
 				
 				.btn-j.btn-submit.relat(v-on:click="submit")

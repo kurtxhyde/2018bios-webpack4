@@ -163,57 +163,56 @@ function FLOWERS(COUNT , RANGE ,DROP_ZONE,PARENT , CLASSNAME, DIRECTION , OPACIT
 	
 }
 
-
 function STEP(SECTION, NEXT , ANIM = null){
-	var _delay = 1000 / 5;
-	var state = -1;
-	var old_state = -1;
-	
+    var _delay = 1000 / 5;
+    var state = -1;
+    var old_state = -1;
+    
 
-	function render_loop() {
+    function render_loop() {
 
-		var sh = parseInt(getBrowserHeight());
-		if (GLOBAL.top < $(SECTION).offset().top - sh * .7) {
-			state = 0
-			if (state != old_state) {
-				animat('dis');
-			}
-		} else if (GLOBAL.top >= $(SECTION).offset().top - sh * .7 && GLOBAL.top < $(NEXT).offset().top - sh * .3) {
-			state = 1
-			if (state != old_state) {
-				animat('act');
-			}
-		} else {
-			state = 2
-			if (state != old_state) {
-				animat('dis');
-			}
-		}
-		old_state = state;
-		setTimeout(render_loop, _delay)
-	}
+        var sh = parseInt(getBrowserHeight());
+        if (GLOBAL.top < $(SECTION).offset().top - sh * .9) {
+            state = 0
+            if (state != old_state) {
+                animat('dis');
+            }
+        } else if (GLOBAL.top >= $(SECTION).offset().top - sh * .5 && GLOBAL.top < $(NEXT).offset().top - sh * .5) {
+            state = 1
+            if (state != old_state) {
+                animat('act');
+            }
+        } else {
+            state = 2
+            if (state != old_state) {
+                animat('dis');
+            }
+        }
+        old_state = state;
+        setTimeout(render_loop, _delay)
+    }
   this.getanimat=animat;
-	function animat(typ) {
-		//console.log(SECTION + ' animat typ' + typ)
-		
+    function animat(typ) {
+        //console.log(SECTION + ' animat typ' + typ)
+        
 
-		if (typ == "act") {			
-			 ANIM(true , SECTION)
-		} else {
-		  ANIM(false, SECTION)
-	   
-	   }
-	}
-	function reset() {   
-		 ANIM(false, SECTION)	
-		
-	}
-	this.init=function() {
-		reset();
-		render_loop();
-	}
-	this.init();
-	
+        if (typ == "act") {         
+             ANIM(true , SECTION)
+        } else {
+          ANIM(false, SECTION)
+       
+       }
+    }
+    function reset() {   
+         ANIM(false, SECTION)   
+        
+    }
+    this.init=function() {
+        reset();
+        render_loop();
+    }
+    this.init();
+    
 }
 
 

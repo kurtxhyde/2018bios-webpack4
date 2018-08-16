@@ -17,19 +17,19 @@
 		
 
 		.list.realt
-			router-link.btn-j.btn-galery(data-ga="ghost-bus",data-href="",  to="./ghost-bus")
+			router-link.btn-j.btn1(data-ga="ghost-bus",data-href="",  to="./ghost-bus")
 				img.relat(src="../../img/dest/gallery-bg1.png")
 				.t.abs
 					img(src="../../img/dest/gallery-t1.png")
-			router-link.btn-j.btn-galery(data-ga="red-robe",data-href="",  to="./red-robe")
+			router-link.btn-j.btn2(data-ga="red-robe",data-href="",  to="./red-robe")
 				img(src="../../img/dest/gallery-bg2.png")
 				.t.abs
 					img(src="../../img/dest/gallery-t2.png")
-			.btn-j.btn-galery
+			.btn-j.btn3
 				img(src="../../img/dest/gallery-bg3.png")
 				.t.abs.coming
 					img(src="../../img/dest/coming.png")
-			.btn-j.btn-galery
+			.btn-j.btn4
 				img(src="../../img/dest/gallery-bg4.png")
 				.t.abs.coming
 					img(src="../../img/dest/coming.png")
@@ -124,28 +124,67 @@ export default {
 		init(){
 			TweenMax.to($('.bg-all') , 1 , {delay:1, opacity:1});
 
-
 			let title = $('.title >img') , t_sub = $('.title .sub') ,sub = $('.container > .sub') , blood1 =  $('.blood1') , blood2 =  $('.blood2') , btn1 = $('.btn-j.btn1')  , btn2 = $('.btn-j.btn2') ;
 
 			TweenMax.fromTo(title , 1, {y:30 , opacity:0},{delay:.5 ,y:0 , opacity:1,ease:Sine.easeOut})
-			
-			
 			TweenMax.fromTo(sub , 1 , {opacity:0 , y:20},{delay:1.5,y:0 , opacity:1,ease:Sine.easeOut})
-
-			
 			TweenMax.fromTo (blood1 ,3, {opacity:0 ,scaleY:0 } , {delay:1 , scaleY:1 ,opacity:1 , transformOrigin:'50% 0%',ease:Sine.easeOut})
 
 			TweenMax.fromTo (blood2 ,.8, {opacity:0 ,scaleX:0,scaleY:0 } , {delay:.8 , scaleX:1,scaleY:1 ,opacity:1 , transformOrigin:'0% 100%',ease:Quad.easeIn})
 			let count =0
 			
 			$('.btn-j').each(function(){
-				TweenMax.fromTo($(this) , 1 ,{y: 30 , opacity:0} , {delay:1 + count *.2 ,y:0,opacity:1,ease:Sine.easeOut})	
+				TweenMax.fromTo($(this) , .7 ,{y: 30 , opacity:0} , {delay:1.2 + count *.2 ,y:0,opacity:1,ease:Sine.easeOut})	
 				count ++
 			})
-			
+			this.glitch1opts = {dom:$('.btn1 > .t >img') , typ:true, count :0 , intervals :[] }
+  			this.glitch2opts = {dom:$('.btn2 > .t >img') , typ:false, count :0 , intervals :[] }
+  			let context = this;
+  			
+  			
+  			glitch(context.glitch1opts)
+  			setTimeout( function(){
+				glitch(context.glitch2opts)
+  			}, 3000)
+
+
+
+			glitch(context.glitch1opts)
+			function glitch(opt){
+				loop(opt)
+				function loop(opt){
+					let ifrest 
+					if(opt.count > 20 && Math.random() > .6 ){
+						ifrest = true;
+						opt.count = 0 ;
+					}else{
+						ifrest = false;
+					}
+					if(!opt.typ || ifrest){
+						TweenMax.set(opt.dom , {opacity:1});
+						TweenMax.set(opt.dom , {x: 0, y:0});
+						opt.typ = true;
+					}else{
+						let opa = Math.random() * .6 + .1;
+						let offest = 5/opa 
+						TweenMax.set(opt.dom , {opacity:opa });
+						TweenMax.set(opt.dom , {x: Math.random()* offest - offest*.5});
+						opt.typ = false;
+					}
+					opt.count++
+					opt.intervals.push (setTimeout(function(){loop(opt)} , (ifrest)? Math.random()*3000 + 5000 : 20 + Math.random()*30 ))
+				}
+			}
 		},
 		killIntervals (){
+			let context = this;
 			
+			for (let i in context.glitch1opts.intervals){
+				clearTimeout (context.glitch1opts.intervals[i]);
+			}
+			for (let i in context.glitch2opts.intervals){
+				clearTimeout (context.glitch2opts.intervals[i]);
+			}
 			
 		},
 		bind(){

@@ -33,7 +33,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     .container {
         
         width: 100%;
-
+        overflow:hidden;
         .gradblk{
             width:750px;
             height:3800px;
@@ -47,21 +47,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
             margin:80px 0 0px; 
             left:-30px;
             
-            .blood1{
-                left:60px;
-                top:60px;
-                opacity:1;
-
-            }
-            .blood2{
-                left:155px;
-                top:-160px;
-                opacity:1;
-                .scale(.9);
-            }
            
             >img.relat{
-                opacity:1;
+                opacity:0;
             }
             
             opacity:1;
@@ -81,8 +69,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
         }
         .content{
             margin: 50px auto 150px;
+            opacity:0;
             .blk{
                 margin: 170px auto 300px;
+                .t{
+                    .mask{
+                        width:100%;
+                        height:100%;
+                        background:rgba(0,0,0,.7);
+                        top:0;left:0;
+                    }
+                }
             }
             .b1{
                 
