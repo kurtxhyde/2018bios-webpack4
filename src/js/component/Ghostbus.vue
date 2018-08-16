@@ -17,10 +17,13 @@
 		.list.realt
 			.btn-j.btn1
 				img.relat(src="../../img/dest/bus-btn1.png")
-			.btn-j.btn2.relat
+			router-link.btn-j.btn2.relat(data-ga="gallery",data-href="",  to="./gallery")
 				img(src="../../img/dest/btn-gallery-else.png")
 				.prd.abs
 					img(src="../../img/dest/result-product.png")
+	.pop.pop-fblogin.fix.inv
+		.bgx.abs
+		.btnlogin.relat 請先登入FB
 </template>
 
 
@@ -32,7 +35,7 @@ import {GLOBAL} from '../utils/config.js';
 import {FB_ASSET} from '../utils/fb_assets.js';
 import {setCookie , getCookie} from '../utils/common.js';
 //import svgAnim from './svgAnim.vue';
-import {YTT_class} from 'youtubeiframe-jojo';
+import {YTT} from '../utils/youtube.js';
 
 import imagesLoaded from 'vue-images-loaded';
 
@@ -107,7 +110,7 @@ export default {
 			});
 		},
 		init(){
-			let YT = new YTT_class( $('.yt').data('id') , 'player' , this.playVideoHandler);
+			let YT = new YTT( $('.yt').data('id') , 'player' , this.playVideoHandler);
 			onYouTubeIframeAPIReady = function() {
 		        YT.onYouTubeIframeAPIReady();
 		

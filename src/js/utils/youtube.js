@@ -10,9 +10,14 @@ function YTT(vid, ElementID, playedHandle) {
     var firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);    
     
+   
     this.onYouTubeIframeAPIReady = function() {
         initplayer()        
     }
+   
+
+
+
     function initplayer(){
         player = new YT.Player(ElementID, {
             height: '100%',
@@ -45,6 +50,7 @@ function YTT(vid, ElementID, playedHandle) {
         if (device.mobile() || device.tablet()) {
 
         } else {
+            player.playVideo() 
         }
         state = "ready"
     }
