@@ -18,7 +18,7 @@
 		
 		a.btn-j.relat.btngallery(href="#/gallery")
 			img(src="../../img/dest/index-btn-1.png")
-		a.btn-j.relat.btnexam(href="#/exam")
+		a.btn-j.relat.btnexam.inv(href="#/exam")
 			img(src="../../img/dest/index-btn-2.png")
 		a.btn-j.btn2.relat(href="#/product")
 			img(src="../../img/dest/complete-btn.png")
@@ -75,7 +75,6 @@ export default {
 		MAX_img_count = $('.wrapper img').length;
 		console.log("MAX_img_count:" + MAX_img_count)
 		img_count = 0;
-		
 		prev = getCookie('prev');
 		console.log('prev .... ' + prev);
 		if(prev == 'exam'){

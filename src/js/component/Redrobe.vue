@@ -217,17 +217,17 @@ export default {
 			TweenMax.fromTo(title , .5 , {scaleX:1.2 , scaleY:1.2 , opacity:0},{delay:.5 ,scaleX:1 , scaleY:1 , opacity:1,ease:Back.easeOut})
 			TweenMax.fromTo($('.content') , 1 , { opacity:0},{delay:1 ,  opacity:1,ease:Back.easeOut})
 
-			new STEP(".b1", ".b2" ,cb)
-       		new STEP(".b2", ".b3" ,cb)
-       		new STEP(".b3", ".b4" ,cb)
-       		new STEP(".b4", ".b5" ,cb)
-       		new STEP(".b5", ".b6" ,cb)
-       		new STEP(".b6", ".b7" ,cb)
-       		new STEP(".b7", ".b8" ,cb)
-       		new STEP(".b8", ".b9" ,cb)
-       		new STEP(".b9", ".b10" ,cb)
-       		new STEP(".b10", ".b11" ,cb)
-       		new STEP(".b11", ".list" ,cb)
+			this.STEPS = [new STEP(".b1", ".b2" ,cb),
+       		new STEP(".b2", ".b3" ,cb),
+       		new STEP(".b3", ".b4" ,cb),
+       		new STEP(".b4", ".b5" ,cb),
+       		new STEP(".b5", ".b6" ,cb),
+       		new STEP(".b6", ".b7" ,cb),
+       		new STEP(".b7", ".b8" ,cb),
+       		new STEP(".b8", ".b9" ,cb),
+       		new STEP(".b9", ".b10" ,cb),
+       		new STEP(".b10", ".b11" ,cb),
+       		new STEP(".b11", ".list" ,cb)]
 
         
         
@@ -257,14 +257,14 @@ export default {
                 default:
                 {
                 	let t1 = $(SEC).find('.t1'),t2 = $(SEC).find('.t2'), p = $(SEC).find('.p')
-                    TweenMax.to(t1 , .7  , {x:0 , ease:ease})   
-                    TweenMax.to(t1.find('.mask') , .7 , {delay:0, opacity:0})
-                    TweenMax.to(t2 , .7  , {delay:.4,x:0, ease:ease})  
-                    TweenMax.to(t2.find('.mask') , .7  , {delay:.4, opacity:0})
+                    TweenMax.to(t1 , 1 , {x:0 ,y:0, ease:ease})   
+                    TweenMax.to(t1.find('.mask') , 1 , {delay:0, opacity:0})
+                    TweenMax.to(t2 , 1 , {delay:.4,x:0,y:0, ease:ease})  
+                    TweenMax.to(t2.find('.mask') ,1  , {delay:.4, opacity:0})
 
                     let xp = (p.data('dir')=='l')? -20:20;
 
-                    TweenMax.to(p , .7  , {delay:.2, x:0, ease:ease}) ;
+                    TweenMax.to(p , 1  , {delay:.2, opacity:1, y:0, ease:ease}) ;
 
 
                 }
@@ -289,14 +289,14 @@ export default {
                 {
                     let t1 = $(SEC).find('.t1'),t2 = $(SEC).find('.t2'),p = $(SEC).find('.p')
                 	let x1 = (t1.data('dir')=='l')? -25:25
-                    TweenMax.to(t1 , .7 , {x: x1 } )   
+                    TweenMax.to(t1 , .7 , {x: x1,y:10 } )   
                     TweenMax.to(t1.find('.mask') , .7 , {opacity:1})
                     let x2 = (t2.data('dir')=='l')? -25:25
-                    TweenMax.to(t2 , .7 , {x: x2 })  
+                    TweenMax.to(t2 , .7 , {x: x2 ,y:10})  
                     TweenMax.to(t2.find('.mask') , .7 , {opacity:1} )   
 
                     let xp = (p.data('dir')=='l')? -20:20
-                    TweenMax.to(p , .7  , {x:xp})
+                    TweenMax.to(p , .7  , {opacity:.8, y:10})
                 }
 				break;
                 
@@ -308,6 +308,9 @@ export default {
 
 		},
 		killIntervals (){
+			for(let i in this.STEPS){
+				this.STEPS[i].kill();
+			}
 		},
 		chkFbInitial() {
         	if (fb.get_FBID() == '0') {

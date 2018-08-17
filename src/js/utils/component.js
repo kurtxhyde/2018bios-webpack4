@@ -167,8 +167,10 @@ function STEP(SECTION, NEXT , ANIM = null){
     var _delay = 1000 / 5;
     var state = -1;
     var old_state = -1;
-    
-
+    var interval
+    this.kill=function(){
+        clearTimeout(interval)
+    }
     function render_loop() {
 
         var sh = parseInt(getBrowserHeight());
@@ -185,13 +187,13 @@ function STEP(SECTION, NEXT , ANIM = null){
         } else {
             state = 2
             if (state != old_state) {
-                animat('dis');
+               // animat('dis');
             }
         }
         old_state = state;
-        setTimeout(render_loop, _delay)
+       interval =  setTimeout(render_loop, _delay)
     }
-  this.getanimat=animat;
+    this.getanimat=animat;
     function animat(typ) {
         //console.log(SECTION + ' animat typ' + typ)
         

@@ -104,7 +104,7 @@ export default {
 		console.log("MAX_img_count:" + MAX_img_count)
 		img_count = 0;
 		
-		
+	
 		
 	},
 	beforeDestroy:function(){

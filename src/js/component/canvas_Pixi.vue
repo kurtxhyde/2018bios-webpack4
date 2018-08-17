@@ -91,6 +91,11 @@ export default {
 		},
 		updateBG:function(p){
 			console.log('update canvas....' + p)
+			if(p == 'product'){
+				TweenMax.to('.bgpc2' , .7 , {opacity:1})
+			}else{
+				TweenMax.to('.bgpc2' , .7 , {opacity:0})
+			}
 			switch(p){
 				case 'index':
 					initCanvasSlideshow.active(1);
@@ -110,6 +115,7 @@ export default {
 				case 'result4':
 					initCanvasSlideshow.active(6);
 					break;
+
 				default:
 					initCanvasSlideshow.active(0);
 					break;

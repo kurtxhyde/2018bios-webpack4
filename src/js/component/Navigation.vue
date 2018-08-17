@@ -103,6 +103,42 @@ export default{
   },
   
   mounted:function(){
+
+     var rv = -1; // Return value assumes failure.
+    
+        var ua = navigator.userAgent;
+        var re = ua.indexOf("MSIE ");
+        if (ua.indexOf("MSIE ") >=0 || ua.indexOf("Trident/") >=0 || ua.indexOf("Edge/") >=0 )
+        {
+          rv = "IE"
+        };
+    if(rv == "IE"){
+            $('body').on("mousewheel", function () {
+                event.preventDefault();
+        
+                var wheelDelta = event.wheelDelta;
+        
+                var currentScrollPosition = window.pageYOffset;
+                window.scrollTo(0, currentScrollPosition - wheelDelta);
+            });
+        
+            $('body').keydown(function (e) {
+                e.preventDefault(); // prevent the default action (scroll / move caret)
+                var currentScrollPosition = window.pageYOffset;
+                switch (e.which) {
+                    case 38: // up
+                        window.scrollTo(0, currentScrollPosition - 50);
+                        break;
+                    case 40: // down
+                        window.scrollTo(0, currentScrollPosition + 50);
+                        break;
+                    default: return; // exit this handler for other keys
+                } 
+            });
+    }
+
+
+
      $('.side').find('.tracklink').not('.hash').each(function(){
         $(this).click(function(e) {
 
