@@ -17,11 +17,11 @@
 		
 
 		.list.realt
-			router-link.btn-j.btn1(data-ga="ghost-bus",data-href="",  to="./ghost-bus")
+			router-link.btn-j.btn1(	data-ga="ghost-bus",data-href="",  :to="{name:'ghost-bus' , params:{typ:'gallery'}}")
 				img.relat(src="../../img/dest/gallery-bg1.png")
 				.t.abs
 					img(src="../../img/dest/gallery-t1.png")
-			router-link.btn-j.btn2(data-ga="red-robe",data-href="",  to="./red-robe")
+			router-link.btn-j.btn2(	data-ga="red-robe",data-href="",  :to="{name:'red-robe' , params:{typ:'gallery'}}")
 				img(src="../../img/dest/gallery-bg2.png")
 				.t.abs
 					img(src="../../img/dest/gallery-t2.png")

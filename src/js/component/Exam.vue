@@ -58,7 +58,7 @@ import userForm from './userForm.vue';
 
 //import svgAnim from './svgAnim.vue';
 
-
+import {GLOBAL} from '../utils/config.js';
 import imagesLoaded from 'vue-images-loaded';
 
 
@@ -173,7 +173,7 @@ export default {
 			function bind(){
 				
 				ring.mousedown(function(){
-
+					GLOBAL.ga.GT( '/exam'  , '.btn.go')
 					$('.sub .sub2').each(function(){
 						TweenMax.fromTo($(this) , .5 ,{y:20 ,opacity:0} , {delay:.5,y:0,opacity:1})
 						

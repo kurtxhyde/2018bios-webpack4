@@ -19,7 +19,7 @@ export default {
   },
   watch:{
   		percentLoading:function(val){
-  			console.log(val + '....percentLoading');
+  			//console.log(val + '....percentLoading');
   			if(val == 100){
   				
           TweenMax.to($('.loading .bg') , 1, {delay:.5 , opacity:0})  

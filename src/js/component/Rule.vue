@@ -16,7 +16,7 @@
 				img(src="../../img/dest/exam-blood1.png")
 			img.relat(src="../../img/dest/rule-tit.png")
 		.content
-			p 活動日期：2018/08/17-2018/09/17 23:59截止。
+			p 活動日期：2018/08/21-2018/09/17 23:59截止。
 			p 活動辦法：
 			ul 
 				li 活動辦法依本網站之公佈為準。

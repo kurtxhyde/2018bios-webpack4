@@ -16,13 +16,16 @@
 			img.relat(src="../../img/dest/result4-sub.png")
 		.btn-j.btn1.relat
 			img(src="../../img/dest/result4-btna.png")
-		a.btn-j.btn2.relat(href="#/")
+		router-link.btn-j.btn2.relat(data-ga="product",data-href="",  :to="{name:'product' , params:{typ:'result4'}}")
 			img(src="../../img/dest/result1-btnb.png")
 			.prd.abs
 				img(src="../../img/dest/result-product.png")
 	.pop.pop-fblogin.fix.inv
 		.bgx.abs
-		.btnlogin.relat 請先登入FB	
+		.btnlogin.relat 請先登入FB
+		.btn.btn-close.abs
+			span.ico.ico1 
+			span.ico.ico2 	
 
 		
 		
@@ -152,13 +155,16 @@ export default {
     	},
 		bind(){
 			let context = this;
-			
+			$('.pop-fblogin .btn-close').off('click').click(function(){
+				$('.pop-fblogin').fadeOut(300);
+			})
 			$('.btnlogin').click(function(){
 				let url = `${GLOBAL.host}${context.path}.html`;
 				
             	fb.get_login(cb , url);
         	})
 			$('.btn1').click(function(){
+				GLOBAL.ga.GT( '/result4'  , '.btn.share')
 				if ( !context.chkFbInitial()  ) {
                 	$('.pop-fblogin').fadeIn(500);
                 	return;

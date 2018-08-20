@@ -132,7 +132,7 @@ export default {
 		},
 		submit(){
 			let context = this;
-			console.log('fb name ...' + GLOBAL.fbname);
+			console.log('fb name ...' + fb.get_FBNAME());
 			FormHandle();
 			function  FormHandle(){
              let tof = validator();
@@ -146,19 +146,19 @@ export default {
             // let babyname = DOM.find("#babyname");
             // console.log('birthtyp...' + birthtyp)
             if (tof) {
-                //$("#loadingajax").show();
+                GLOBAL.ga.GT( '/form'  , '.btn.submit');
                 $.post(`${GLOBAL.api_root}api/?mode=savedata`, {
                         name: cName.val(),
                         tel: tel.val(),
                         email: email.val(),
-                        fbname: (location.href.indexOf('localhost')>=0)? 'chen jojo':GLOBAL.fbname,
+                        fbname: (location.href.indexOf('localhost')>=0)? 'chen jojo':fb.get_FBNAME(),
                         
                     },
                     (pResponse) => {
                         $("#loadingajax").hide();
                         //$('#loadingajax').fadeOut(400);
                         if (pResponse.state == '1') {
-                            context.$router.push('complete' );
+                            context.$router.push('product' );
                             
                         } else {
                             let msg = "出現錯誤，請稍後再試！"

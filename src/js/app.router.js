@@ -4,7 +4,8 @@ import Vue from 'vue';
 import store from './store';
 
 import Main from './component/Main.vue';
-
+import {GA} from './utils/ga.js';
+import {GLOBAL} from  './utils/config.js';
 Vue.use(VueRouter);
 
 const Exam = () => import(/* webpackChunkName: "Track" */'./component/Exam.vue');
@@ -57,14 +58,48 @@ const router = new VueRouter({
   },
 });
 
+GLOBAL.ga = new GA();
 router.beforeEach((to, from, next) => {
+  console.log('router breforeEach...' + to.params.typ)
 
   store.commit('path' , to.name);
 
-  let navExpanded = $('.navbar-toggle').attr('aria-expanded');
-  if(navExpanded == 'true'){
-    $('.navbar-toggle').trigger( "click" )
+  let dataJson={
+  'subFolder':'2018_b5gel',
+  'source':'bioessence',
+  'trackType':'view',
+  'trackSubfolderDepth':1,
+  'targetType':to.name ,
+  
+  };
+
+  switch(to.params.typ){
+    // case 'nav': 
+    // case 'index':
+    // case 'gallery':
+    // case 'red-robe':
+    // case 'ghost-bus':
+    // case 'exam':
+    // case 'result1':
+    // case 'result2':
+    // case 'result3':
+    // case 'result4':
+    // case 'form':
+    // case 'product':
+    //    GLOBAL.ga.GT( '/' + to.params.typ  , '.btn.' + to.name )
+    //   break;
+    default:
+      if(typeof to.params.typ != 'undefined')
+      GLOBAL.ga.GT( '/' + to.params.typ  , '.btn.' + to.name )
+      break;
   }
+  
+
+  ElandTracker.Track(dataJson);
+  setTimeout(function (){
+    GLOBAL.ga.GT( '/'+ to.name , '.pv')
+  } , 3000)
+  
 
   if (to.matched.some(record => record.meta.authorization || false)) {
     const isLogin = store.state.isLogin;

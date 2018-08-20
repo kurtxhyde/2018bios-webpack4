@@ -43,6 +43,29 @@
         left:50%;
         top:50%;
     }
+    .btn-close{
+      width:60px;
+      height:60px;
+      right:30px;
+      top:30px;
+      background:#4167b2;
+      border-radius:30px;
+      padding:0;
+        .ico{
+          .abs;
+          top:25px;
+          left:15px;
+          .fontsize(30px);
+          .bg-white;
+          height:5px;
+          width:30px;
+          &.ico1{
+            .rotate(45deg);
+          }&.ico2{
+            .rotate(-45deg);
+          }
+        }
+    }
    
 }
 .left{float:left;}
@@ -105,7 +128,7 @@ input[type="range"]::-webkit-slider-thumb{
 /* checkbox aspect */
 [type="checkbox"]:not(:checked) + label:before,
 [type="checkbox"]:checked + label:before {
-  content: url('');
+  content: '';
   position: absolute;
   left: -0px; top: 0;
   width: 1.85em; height: 1.85em;
@@ -117,9 +140,9 @@ input[type="range"]::-webkit-slider-thumb{
 /* checked mark aspect */
 [type="checkbox"]:not(:checked) + label:after,
 [type="checkbox"]:checked + label:after {
-  content: '✔';
+  content: url('../img/dest/checkico.png');
   position: absolute;
-  top: 3px; left:3px;
+  top: -5px; left:10px;
   font-size:1.85em;
   line-height: 0.8;
   color: #fff;
@@ -132,6 +155,6 @@ input[type="range"]::-webkit-slider-thumb{
 }
 [type="checkbox"]:checked + label:after {
   opacity: 1;
-  transform: scale(.9);
+  transform: scale(1.2);
 }
 

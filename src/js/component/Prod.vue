@@ -63,12 +63,15 @@
 								p 無添加Paraben防腐劑、精及香料。經皮膚測試，溫和配方適用於乾燥、脫屑及敏弱肌膚。
 				.sec3.relat#sec3b
 					.btns.relat
-						a.animobj.btn-j.btn1(href="https://www.bioessence.com.tw/products/bio-essence%E7%A2%A7%E6%AD%90%E6%96%AF-bio%E6%B0%B4%E6%84%9F%E8%88%92%E7%B7%A9%E7%B6%AD%E4%BB%96%E5%91%BDb5%E5%8E%9F%E6%B6%B230ml",target="_blank")
+						a.animobj.btn-j.btn1.tracklink(data-ga="part1.web" ,href="https://www.bioessence.com.tw/products/bio-essence%E7%A2%A7%E6%AD%90%E6%96%AF-bio%E6%B0%B4%E6%84%9F%E8%88%92%E7%B7%A9%E7%B6%AD%E4%BB%96%E5%91%BDb5%E5%8E%9F%E6%B6%B230ml",target="_blank")
 							img(src="../../img/dest/prd-btnweb.jpg")
-						a.animobj.btn-j.btn2(href="https://www.watsons.com.tw/bio%E6%B0%B4%E6%84%9F%E8%88%92%E7%B7%A9%E7%B6%AD%E4%BB%96%E5%91%BDb5%E5%8E%9F%E6%B6%B230ml/p/BP_158026?text=b5&page=0" , target="_blank")
+							img.abs.ico(src="../../img/dest/prd-btnweb-ico.png")
+						a.animobj.btn-j.btn2.tracklink(data-ga="part1.wat" , href="https://www.watsons.com.tw/bio%E6%B0%B4%E6%84%9F%E8%88%92%E7%B7%A9%E7%B6%AD%E4%BB%96%E5%91%BDb5%E5%8E%9F%E6%B6%B230ml/p/BP_158026?text=b5&page=0" , target="_blank")
 							img(src="../../img/dest/prd-btnwat.jpg")
-						.animobj.btn-j.btn3.btncoupon
+							img.abs.ico(src="../../img/dest/prd-btnwat-ico.png")
+						.animobj.btn-j.btn3.btncoupon(data-ga="part1.coupon")
 							img(src="../../img/dest/prd-btncoupon.jpg")
+							img.abs.ico(src="../../img/dest/prd-btncoupon-ico.png")
 			.part.part2.relat#part2
 				.sec.sec4.relat
 					.bgx.abs.animobj
@@ -143,13 +146,15 @@
 									p 豐富微量礦物元素和溫和pH值
 									p 有效強化肌膚防禦力
 					.btns.relat
-						a.animobj.btn-j.btn1(href="https://www.bioessence.com.tw/products/bio-essence%E7%A2%A7%E6%AD%90%E6%96%AF-bio%E6%B0%B4%E6%84%9F%E8%88%92%E7%B7%A9%E5%BE%AE%E7%A4%A6%E8%83%BD%E9%87%8F%E9%9B%99%E4%BB%B6%E7%B5%84-1" , target = "_blank")
+						a.animobj.btn-j.btn1.tracklink(data-ga="part2.web" ,href="https://www.bioessence.com.tw/products/bio-essence%E7%A2%A7%E6%AD%90%E6%96%AF-bio%E6%B0%B4%E6%84%9F%E8%88%92%E7%B7%A9%E5%BE%AE%E7%A4%A6%E8%83%BD%E9%87%8F%E9%9B%99%E4%BB%B6%E7%B5%84-1" , target = "_blank")
 							img(src="../../img/dest/prd-btnweb.jpg")
-						a.animobj.btn-j.btn2(href="https://www.watsons.com.tw/bio%E6%B0%B4%E6%84%9F%E8%88%92%E7%B7%A9%E5%BE%AE%E7%A4%A6%E8%83%BD%E9%87%8F%E5%99%B4%E9%9C%A7300ml/p/BP_154858?text=BIO%E6%B0%B4%E6%84%9F%E8%88%92%E7%B7%A9%E5%BE%AE%E7%A4%A6%E8%83%BD%E9%87%8F%E5%99%B4%E9%9C%A7&page=0" , target = "_blank")
+							img.abs.ico(src="../../img/dest/prd-btnweb-ico.png")
+						a.animobj.btn-j.btn2.tracklink(data-ga="part2.wat" ,href="https://www.watsons.com.tw/bio%E6%B0%B4%E6%84%9F%E8%88%92%E7%B7%A9%E5%BE%AE%E7%A4%A6%E8%83%BD%E9%87%8F%E5%99%B4%E9%9C%A7300ml/p/BP_154858?text=BIO%E6%B0%B4%E6%84%9F%E8%88%92%E7%B7%A9%E5%BE%AE%E7%A4%A6%E8%83%BD%E9%87%8F%E5%99%B4%E9%9C%A7&page=0" , target = "_blank")
 							img(src="../../img/dest/prd-btnwat.jpg")
-						.animobj.btn-j.btn3.btncoupon
+							img.abs.ico(src="../../img/dest/prd-btnwat-ico.png")
+						.animobj.btn-j.btn3.btncoupon(data-ga="part2.coupon" )
 							img(src="../../img/dest/prd-btncoupon.jpg")
-		
+							img.abs.ico(src="../../img/dest/prd-btncoupon-ico.png")
 			.part.part3.relat#part3
 				.sec.sec6.relat
 					.animobj.bgx.abs
@@ -196,13 +201,15 @@
 					.animobj.feature.relat.featpart3
 						img(src="../../img/dest/prd-feature-part3.jpg")
 					.btns.relat
-						a.animobj.btn-j.btn1(href="https://www.bioessence.com.tw/products/bio-essence%E7%A2%A7%E6%AD%90%E6%96%AF-bio%E6%B0%B4%E6%84%9F%E8%88%92%E7%B7%A9%E5%BE%AE%E7%A4%A6%E4%BA%AE%E7%99%BD%E5%99%B4%E9%9C%A7100ml-1",target="_blank")
+						a.animobj.btn-j.btn1.tracklink(data-ga="part3.web" ,href="https://www.bioessence.com.tw/products/bio-essence%E7%A2%A7%E6%AD%90%E6%96%AF-bio%E6%B0%B4%E6%84%9F%E8%88%92%E7%B7%A9%E5%BE%AE%E7%A4%A6%E4%BA%AE%E7%99%BD%E5%99%B4%E9%9C%A7100ml-1",target="_blank")
 							img(src="../../img/dest/prd-btnweb.jpg")
-						a.animobj.btn-j.btn2(href="https://www.watsons.com.tw/bio%E6%B0%B4%E6%84%9F%E8%88%92%E7%B7%A9%E5%BE%AE%E7%A4%A6%E6%8E%A7%E6%B2%B9%E5%99%B4%E9%9C%A7-100ml/p/BP_154851?text=BIO%E6%B0%B4%E6%84%9F%E8%88%92%E7%B7%A9%E5%BE%AE%E7%A4%A6%E6%8E%A7%E6%B2%B9%E5%99%B4%E9%9C%A7&page=0",target="_blank")
+							img.abs.ico(src="../../img/dest/prd-btnweb-ico.png")
+						a.animobj.btn-j.btn2.tracklink(data-ga="part3.wat" ,href="https://www.watsons.com.tw/bio%E6%B0%B4%E6%84%9F%E8%88%92%E7%B7%A9%E5%BE%AE%E7%A4%A6%E6%8E%A7%E6%B2%B9%E5%99%B4%E9%9C%A7-100ml/p/BP_154851?text=BIO%E6%B0%B4%E6%84%9F%E8%88%92%E7%B7%A9%E5%BE%AE%E7%A4%A6%E6%8E%A7%E6%B2%B9%E5%99%B4%E9%9C%A7&page=0",target="_blank")
 							img(src="../../img/dest/prd-btnwat.jpg")
-						.animobj.btn-j.btn3.btncoupon
+							img.abs.ico(src="../../img/dest/prd-btnwat-ico.png")
+						.animobj.btn-j.btn3.btncoupon(data-ga="part3.coupon" )
 							img(src="../../img/dest/prd-btncoupon.jpg")
-
+							img.abs.ico(src="../../img/dest/prd-btncoupon-ico.png")
 			.part.part4.relat#part4
 				.sec.sec8.relat
 					.animobj.bgx.abs
@@ -243,12 +250,15 @@
 					.animobj.feature.relat.featpart3
 						img(src="../../img/dest/prd-feature-part4.jpg")
 					.btns.relat
-						a.animobj.btn-j.btn1(href="https://www.bioessence.com.tw/products/bio-essence%E7%A2%A7%E6%AD%90%E6%96%AF-bio%E6%B0%B4%E6%84%9F%E8%88%92%E7%B7%A9%E5%BE%AE%E7%A4%A6%E4%BA%AE%E7%99%BD%E5%99%B4%E9%9C%A7100ml",target="_blank")
+						a.animobj.btn-j.btn1.tracklink(data-ga="part4.web" ,href="https://www.bioessence.com.tw/products/bio-essence%E7%A2%A7%E6%AD%90%E6%96%AF-bio%E6%B0%B4%E6%84%9F%E8%88%92%E7%B7%A9%E5%BE%AE%E7%A4%A6%E4%BA%AE%E7%99%BD%E5%99%B4%E9%9C%A7100ml",target="_blank")
 							img(src="../../img/dest/prd-btnweb.jpg")
-						a.animobj.btn-j.btn2(href="https://www.watsons.com.tw/bio%E6%B0%B4%E6%84%9F%E8%88%92%E7%B7%A9%E5%BE%AE%E7%A4%A6%E4%BA%AE%E7%99%BD%E5%99%B4%E9%9C%A7-100ml/p/BP_154848?search2=BIO",target="_blank")
+							img.abs.ico(src="../../img/dest/prd-btnweb-ico.png")
+						a.animobj.btn-j.btn2.tracklink(data-ga="part4.wat" ,href="https://www.watsons.com.tw/bio%E6%B0%B4%E6%84%9F%E8%88%92%E7%B7%A9%E5%BE%AE%E7%A4%A6%E4%BA%AE%E7%99%BD%E5%99%B4%E9%9C%A7-100ml/p/BP_154848?search2=BIO",target="_blank")
 							img(src="../../img/dest/prd-btnwat.jpg")
-						.animobj.btn-j.btn3.btncoupon
+							img.abs.ico(src="../../img/dest/prd-btnwat-ico.png")
+						.animobj.btn-j.btn3.btncoupon(data-ga="part4.coupon" )
 							img(src="../../img/dest/prd-btncoupon.jpg")
+							img.abs.ico(src="../../img/dest/prd-btncoupon-ico.png")
 				.end
 		.strip.abs.top
 		.strip.abs.left
@@ -339,6 +349,15 @@ export default {
 			});
 		},
 		init(){
+			let count = 0
+			$('.btns .btn-j .ico').not('.btn3 .ico').each(function(){
+				let _x = 0
+				let __x = 30
+				TweenMax.fromTo($(this) , .4 ,  {x:_x} , {delay:.5 + count *.1 , x:__x  ,yoyo:true , repeat:-1,ease:Linear.easeNone , repeatDelay:.1})
+				count++
+			})
+			
+
 			window.onscroll = function() {_scrollHandle();}
 			function _scrollHandle() {
 			    let top = $(window).scrollTop();
@@ -346,25 +365,40 @@ export default {
 			    GLOBAL.top = top;		    
 			}
 			_scrollHandle();
-			new STEP("#sec1", "#sec2" ,cb)
-			new STEP("#sec2", "#sec3" ,cb)
-			new STEP("#sec3", "#sec3a" ,cb)
-			new STEP("#sec3a", "#sec3b" ,cb)
-			new STEP("#sec3b", ".sec4" ,cb)
+			
+			this.STEPS =
+			[new STEP("#sec1", "#sec2" ,cb),
+			new STEP("#sec2", "#sec3" ,cb),
+			new STEP("#sec3", "#sec3a" ,cb),
+			new STEP("#sec3a", "#sec3b" ,cb),
+			new STEP("#sec3b", ".sec4" ,cb),
 
 
-			new STEP(".sec4", ".sec5" ,cb)
-			new STEP(".sec5", ".sec6" ,cb)
-			new STEP(".sec6", ".sec7" ,cb)
-			new STEP(".sec7", ".sec8" ,cb)
-			new STEP(".sec8", ".sec9" ,cb)
-			new STEP(".sec9", ".end" ,cb)
+			new STEP(".sec4", ".sec5" ,cb),
+			new STEP(".sec5", ".sec6" ,cb),
+			new STEP(".sec6", ".sec7" ,cb),
+			new STEP(".sec7", ".sec8" ,cb),
+			new STEP(".sec8", ".sec9" ,cb),
+			new STEP(".sec9", ".end" ,cb)]
 
         
         
         function cb(typ , SEC){
              if(typ == true){
-             	console.log('SEC...' + SEC)
+             	console.log('SEC...' + SEC);
+
+             	if(SEC =="#sec1"){
+             		GLOBAL.ga.GT( '/product'  , '.pv.part1')
+             	}else if (SEC==".sec4"){
+             		GLOBAL.ga.GT( '/product'  , '.pv.part2')
+             	}
+             	else if (SEC==".sec6"){
+             		GLOBAL.ga.GT( '/product'  , '.pv.part3')
+             	}
+           		else if (SEC==".sec8"){
+           			GLOBAL.ga.GT( '/product'  , '.pv.part4')
+           		}
+
              	animFac(true ,SEC);
              }else{
                 animFac(typ ,SEC);
@@ -412,7 +446,9 @@ export default {
 
 		},
 		killIntervals (){
-			
+			for(let i in this.STEPS){
+				this.STEPS[i].kill();
+			}
 			
 		},
 		bind(){
@@ -420,9 +456,21 @@ export default {
 				let id = $(this).data('id');
 				route('part' + id)
 			})
+
+			$('.tracklink').click(function(e){
+				e.preventDefault();
+				let url  = $(this).attr('href');
+				let ga = $(this).data('ga');
+				GLOBAL.ga.GT( '/product'  , '.btn.'+ga)
+				window.open(url , '_blank');
+				return false;
+			})
 			
 			$('.btncoupon').click(function(){
 				let id = $(this).data('id');
+
+				let ga = $(this).data('ga');
+				GLOBAL.ga.GT( '/product'  , '.btn.'+ga)
 				$('.pop-coupon').fadeIn(500);
 			})
 			$('.pop-coupon .btnclose').click(function(){

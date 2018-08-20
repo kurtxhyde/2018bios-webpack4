@@ -35,9 +35,13 @@
 			img(src="../../img/dest/index-sub2.png")
 		.sub.sub3.relat
 			img(src="../../img/dest/index-sub3.png")
-		a.btn-j.btn1(href="#/gallery")
+		.sub.sub4.relat
+			img(src="../../img/dest/index-sub4.png")
+		.sub.sub5.relat
+			img(src="../../img/dest/index-sub5.png")
+		router-link.btn-j.btn1(data-ga="gallery",data-href="",  :to="{name:'gallery' , params:{typ:'index'}}")
 			img(src="../../img/dest/index-btn-1.png")
-		a.btn-j.btn2(href="#/exam")
+		router-link.btn-j.btn2(data-ga="exam",data-href="",  :to="{name:'exam' , params:{typ:'index'}}")
 			img(src="../../img/dest/index-btn-2.png")
 	
 
@@ -101,7 +105,7 @@ export default {
 	},
 	mounted:function(){
 		MAX_img_count = $('.wrapper img').length;
-		console.log("MAX_img_count:" + MAX_img_count)
+		//console.log("MAX_img_count:" + MAX_img_count)
 		img_count = 0;
 		
 	
@@ -119,7 +123,7 @@ export default {
 		/**/
 		imageProgress(instance, image ) {
 			const result = image.isLoaded ? 'loaded' : 'broken';
-			console.log( 'image is ' + result + ' for ' + image.img.src );
+			//console.log( 'image is ' + result + ' for ' + image.img.src );
 			img_count ++;
 			//console.log( 'img_count is ' + img_count );
 			let per = parseInt(img_count/MAX_img_count * 100)
@@ -145,24 +149,24 @@ export default {
 
 			
 			$('.title').each(function(){
-				TweenMax.fromTo($(this) , 2 ,{y:0, opacity:0} , {delay:1.5 + count *.5,y:0 ,opacity:1})	
+				TweenMax.fromTo($(this) , 2 ,{y:0, opacity:0} , {delay:.5 + count *.5,y:0 ,opacity:1})	
 				count ++
 			})
 
-			TweenMax.fromTo ($('.blood1'),3, {scaleY:0 } , {delay:2 , scaleY:1 , transformOrigin:'50% 0%',ease:Sine.easeOut})
-			TweenMax.fromTo ($('.blood2'),5, {scaleY:0 } , {delay:2.5 , scaleY:1 , transformOrigin:'50% 00%',ease:Sine.easeOut})
+			TweenMax.fromTo ($('.blood1'),3, {scaleY:0 } , {delay:1 , scaleY:1 , transformOrigin:'50% 0%',ease:Sine.easeOut})
+			TweenMax.fromTo ($('.blood2'),5, {scaleY:0 } , {delay:1.5 , scaleY:1 , transformOrigin:'50% 00%',ease:Sine.easeOut})
 
-			TweenMax.fromTo ($('.blood3'),3, {scaleY:0 } , {delay:3.5 , scaleY:1 , transformOrigin:'50% 0%',ease:Sine.easeOut})
+			TweenMax.fromTo ($('.blood3'),3, {scaleY:0 } , {delay:2.5 , scaleY:1 , transformOrigin:'50% 0%',ease:Sine.easeOut})
 
 
 
 			count =0
 			$('.sub').each(function(){
-				TweenMax.fromTo($(this) , 2 ,{y:20 ,opacity:0} , {delay:3.5 + count *.4 ,y:0,opacity:1})	
+				TweenMax.fromTo($(this) , 1.5 ,{y:20 ,opacity:0} , {delay:1.5 + count *.25 ,y:0,opacity:1})	
 				count ++
 			})
 			$('.btn-j').each(function(){
-				TweenMax.fromTo($(this) , .7 ,{opacity:0} , {delay:5 + count *.1 ,y:0,opacity:1,ease:Expo.easeOut})	
+				TweenMax.fromTo($(this) , 1 ,{opacity:0} , {delay:2 + count *.1 ,y:0,opacity:1,ease:Sine.easeOut})	
 				count ++
 			})
 			// const requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
@@ -226,9 +230,7 @@ export default {
 					TweenMax.to($(this) , .3 ,{scaleX:1,scaleY:1,ease:Expo.easeOut} )	
 				})
 			})
-			$('.btn-j').click(function(){
-				//context.killIntervals();
-			})
+			
 		}
 
 		

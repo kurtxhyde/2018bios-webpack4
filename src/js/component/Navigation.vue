@@ -23,9 +23,15 @@ nav.navbar.navbar-fixed-top
     #navbar.navbar-collapse.collapse
       
       ul.nav.navbar-nav.relat
+        li.m1o(data-id='-1')
+            router-link.hash.custom(data-ga="index",data-href="",  :to="{name:'index' , params:{typ:'nav'}}" ) 
+              img.ico(src="../../img/dest/m-ico0.png")
+              img(src="../../img/dest/m0.png")
 
+        .line
+          img(src="../../img/dest/mline.png")
         li.m1o(data-id='0')
-            router-link.tracklink.custom(data-ga="exam",data-href="",  to="./exam") 
+            router-link.hash.custom(data-ga="exam",data-href="",  :to="{name:'exam' , params:{typ:'nav'}}") 
               img.ico(src="../../img/dest/m-ico1.png")
               img(src="../../img/dest/m1.png")
 
@@ -34,20 +40,20 @@ nav.navbar.navbar-fixed-top
         
 
         li.m2o(data-id='1')
-            router-link.hash.custom(data-ga="gallery",data-href="", to="./gallery") 
+            router-link.hash.custom(data-ga="gallery",data-href="", :to="{name:'gallery' , params:{typ:'nav'}}") 
               img.ico(src="../../img/dest/m-ico2.png")
               img(src="../../img/dest/m2.png")
         .line
           img(src="../../img/dest/mline.png")
 
         li.m3o(data-id='1')
-            router-link.hash.custom(data-ga="product",data-href="", to="./product") 
+            router-link.hash.custom(data-ga="product",data-href="", :to="{name:'product' , params:{typ:'nav'}}") 
               img.ico(src="../../img/dest/m-ico3.png")
               img(src="../../img/dest/m3.png")
         .line
           img(src="../../img/dest/mline.png")
         li.m4o(data-id='1')
-            router-link.hash.custom(data-ga="rule",data-href="", to="./rule") 
+            router-link.hash.custom(data-ga="rule",data-href="", :to="{name:'rule' , params:{typ:'nav'}}") 
               img.ico(src="../../img/dest/m-ico4.png")
               img(src="../../img/dest/m4.png")
                 //- img(src="../../img/dest/line.png")
@@ -79,6 +85,19 @@ export default{
         TweenMax.to(btnIndex , .2,{delay:.5,right:-80,ease:Sine.easeIn})
       }
     },
+    handleSameRoute(){
+      $('nav.navbar li a.act').off('click').click(function(){
+         chkToggle();
+      })
+      function chkToggle(){
+        let navExpanded = $('.navbar-toggle').attr('aria-expanded');
+  
+        if(navExpanded == 'true'){
+          $('.navbar-toggle').trigger( "click" );
+
+        }
+      }
+    }
   },
   computed: {
     ...mapGetters(['path']),
@@ -90,20 +109,38 @@ export default{
     path:function(){
       let p = this.path
       // console.log(str);
+      chkToggle();
       $('nav.navbar li a').each(function(){
           let ga= $(this).data('ga');
           if(ga==p){
-            $(this).addClass('act')
+            $(this).addClass('act');
+           
+          }else{
+            $(this).removeClass('act');
           }
       })
-      
+      this.handleSameRoute();
+      // $('nav.navbar li a.act').off('click').click(function(){
+      //    chkToggle();
+      // })
+      function chkToggle(){
+        let navExpanded = $('.navbar-toggle').attr('aria-expanded');
+  
+        if(navExpanded == 'true'){
+          $('.navbar-toggle').trigger( "click" );
+
+        }
+      }
       this.updateNav();
+
+
+      
     }
 
   },
   
   mounted:function(){
-
+    this.handleSameRoute();
      var rv = -1; // Return value assumes failure.
     
         var ua = navigator.userAgent;

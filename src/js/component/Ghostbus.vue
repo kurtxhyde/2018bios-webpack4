@@ -17,13 +17,16 @@
 		.list.realt
 			.btn-j.btn1
 				img.relat(src="../../img/dest/bus-btn1.png")
-			router-link.btn-j.btn2.relat(data-ga="gallery",data-href="",  to="./gallery")
+			router-link.btn-j.btn2.relat(data-ga="gallery",data-href="",  :to="{name:'gallery' , params:{typ:'ghost-bus'}}")
 				img(src="../../img/dest/btn-gallery-else.png")
 				.prd.abs
 					img(src="../../img/dest/result-product.png")
 	.pop.pop-fblogin.fix.inv
 		.bgx.abs
 		.btnlogin.relat 請先登入FB
+		.btn.btn-close.abs
+			span.ico.ico1 
+			span.ico.ico2 
 </template>
 
 
@@ -152,7 +155,7 @@ export default {
 		},
 		chkFbInitial() {
         	if (fb.get_FBID() == '0') {
-            	console.log('fb login')
+            	console.log('fb not login')
             	
             	return false;
         	}
@@ -166,11 +169,15 @@ export default {
 		},
 		bind(){
 			let context = this;
+			$('.pop-fblogin .btn-close').off('click').click(function(){
+				$('.pop-fblogin').fadeOut(300);
+			})
 			$('.btnlogin').click(function(){
 				let url = `${GLOBAL.host}${context.path}.html`;
             	fb.get_login(cb , url);
         	});
 			$('.btn1').click(function(){
+				GLOBAL.ga.GT( '/ghost-bus'  , '.btn.share')
 				if ( !context.chkFbInitial()  ) {
                 	$('.pop-fblogin').fadeIn(500);
                 	return;
@@ -182,7 +189,7 @@ export default {
             	$('.pop-fblogin').fadeOut(500);
         	}
         	function shareHandle(){
-                fb.get_ui_post('現形吧!肌膚鬼怪', '快來檢測妳的肌膚鬼怪，有機會獲得碧歐斯維他命B5原液喔！', "", GLOBAL.host+ context.path + '.html', [], afterPost);
+                fb.get_ui_post('搭上傳說中的幽靈公車，究竟會發生什麼事？', '都市傳說恐佈新解，分享有機會獲得BIO水感舒緩維他命B5原液', "", GLOBAL.host+ context.path + '.html', [], afterPost);
              	function afterPost(){
              		context.$router.replace('form');
              	}

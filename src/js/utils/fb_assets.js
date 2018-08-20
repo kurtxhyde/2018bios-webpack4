@@ -1,5 +1,7 @@
 
 import {GLOBAL} from './config.js';
+import { getCookie,setCookie} from './common.js';
+
 export {FB_ASSET as FB_ASSET}
 function FB_ASSET() {
 	const context = this;
@@ -30,6 +32,8 @@ function FB_ASSET() {
 			console.log('fbname...' + FB_NAME)
 			GLOBAL.fbid = FB_ID;
 			GLOBAL.fbname = FB_NAME;
+			setCookie('fbid' , FB_ID , '1')
+			setCookie('fbname' , FB_NAME , '1')
 			if(cb)
 			cb();
 		});
@@ -88,10 +92,11 @@ function FB_ASSET() {
 	function uiPost(title, msg, picurl, url, hash=null , cb ) {
 		const isSafari = navigator.userAgent.indexOf('Safari') > -1;
 		const isChrome = navigator.userAgent.indexOf('Chrome') > -1;
+		const isFB = navigator.userAgent.indexOf("FB") > -1;
 		var isLine = window.navigator.userAgent.toLowerCase().indexOf('line') ;
 		let hashtag = encodeURIComponent('#肌膚的都市傳說');
-		//alert('hashtag..'+hashtag)
-		if (false) {
+		//alert('navigator.userAgent..'+navigator.userAgent)
+		if (isFB) {
 			FB.ui({
 			        method: 'feed',
 			        
@@ -234,14 +239,31 @@ function FB_ASSET() {
 	}
 	function coverPhoto(id) {
 		FB.api(`/${id}?fields=picture&type=small`, (responseIn) => {
-			// const ind = albCovers.indexOf(id);
-			// const arrs = $('.cover');
+
 		});
 	}
 	this.get_FBID = function () {
+		if(FB_ID!='0'){
+			
+		}else if(getCookie('fbid')!=null){
+			FB_ID = getCookie('fbid')
+			GLOBAL.fbid = FB_ID;
+			
+		}else{
+			
+		}
 		return FB_ID;
+		
 	};
 	this.get_FBNAME = function () {
+		if(FB_ID!='0'){
+			
+		}else  if(getCookie('fbname')!=null){
+			FB_NAME = getCookie('fbname');
+			GLOBAL.fbname = FB_NAME;
+		}else{
+			
+		}
 		return FB_NAME;
 	};
 	this.get_state = function () {
