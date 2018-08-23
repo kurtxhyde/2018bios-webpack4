@@ -25,14 +25,14 @@
 				img(src="../../img/dest/gallery-bg2.png")
 				.t.abs
 					img(src="../../img/dest/gallery-t2.png")
-			.btn-j.btn3
+			router-link.btn-j.btn3(	data-ga="hospital",data-href="",  :to="{name:'hospital' , params:{typ:'gallery'}}")
 				img(src="../../img/dest/gallery-bg3.png")
 				.t.abs.coming
-					img(src="../../img/dest/coming.png")
-			.btn-j.btn4
+					img(src="../../img/dest/gallery-t3.png")
+			router-link.btn-j.btn4(	data-ga="office",data-href="",  :to="{name:'office' , params:{typ:'gallery'}}")
 				img(src="../../img/dest/gallery-bg4.png")
 				.t.abs.coming
-					img(src="../../img/dest/coming.png")
+					img(src="../../img/dest/gallery-t4.png")
 		
 
 		
@@ -139,17 +139,22 @@ export default {
 			})
 			this.glitch1opts = {dom:$('.btn1 > .t >img') , typ:true, count :0 , intervals :[] }
   			this.glitch2opts = {dom:$('.btn2 > .t >img') , typ:false, count :0 , intervals :[] }
+  			this.glitch3opts = {dom:$('.btn3 > .t >img') , typ:false, count :0 , intervals :[] }
+  			this.glitch4opts = {dom:$('.btn4 > .t >img') , typ:false, count :0 , intervals :[] }
   			let context = this;
   			
   			
-  			glitch(context.glitch1opts)
+  			glitch(context.glitch1opts);
+  			glitch(context.glitch3opts)
   			setTimeout( function(){
 				glitch(context.glitch2opts)
+				
+				glitch(context.glitch4opts)
   			}, 3000)
 
 
 
-			glitch(context.glitch1opts)
+			
 			function glitch(opt){
 				loop(opt)
 				function loop(opt){
@@ -184,6 +189,12 @@ export default {
 			}
 			for (let i in context.glitch2opts.intervals){
 				clearTimeout (context.glitch2opts.intervals[i]);
+			}
+			for (let i in context.glitch3opts.intervals){
+				clearTimeout (context.glitch3opts.intervals[i]);
+			}
+			for (let i in context.glitch4opts.intervals){
+				clearTimeout (context.glitch4opts.intervals[i]);
 			}
 			
 		},

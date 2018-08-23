@@ -19,6 +19,8 @@ const rule = () => import(/* webpackChunkName: "Track" */'./component/Rule.vue')
 const gallery = () => import(/* webpackChunkName: "Track" */'./component/Gallery.vue');
 const bus = () => import(/* webpackChunkName: "Track" */'./component/Ghostbus.vue');
 const redrobe = () => import(/* webpackChunkName: "Track" */'./component/Redrobe.vue');
+const hospital = () => import(/* webpackChunkName: "Track" */'./component/Hospital.vue');
+const office = () => import(/* webpackChunkName: "Track" */'./component/Office.vue');
 
 const prod = () => import(/* webpackChunkName: "Track" */'./component/Prod.vue');
 //const Login = () => import(/* webpackChunkName: "Login" */'./component/Login.vue');
@@ -44,7 +46,10 @@ const router = new VueRouter({
     { path: '/rule' , component: rule ,name:'rule'},
     { path: '/gallery' , component: gallery ,name:'gallery'},
     { path: '/ghost-bus' , component: bus ,name:'ghost-bus'},
+    { path: '/hospital' , component: hospital ,name:'hospital'},
     { path: '/red-robe' , component: redrobe ,name:'red-robe'},
+    { path: '/office' , component: office ,name:'office'},
+    
     { path: '/product' , component: prod ,name:'product'},
     // { path: '/exam' , component: Exam ,name:'exam'},
     //{ path: '/winner', name:'winner'},
@@ -72,33 +77,18 @@ router.beforeEach((to, from, next) => {
   'targetType':to.name ,
   
   };
-
+ /*ROUTE FROM NAV*/
   switch(to.params.typ){
-    // case 'nav': 
-    // case 'index':
-    // case 'gallery':
-    // case 'red-robe':
-    // case 'ghost-bus':
-    // case 'exam':
-    // case 'result1':
-    // case 'result2':
-    // case 'result3':
-    // case 'result4':
-    // case 'form':
-    // case 'product':
-    //    GLOBAL.ga.GT( '/' + to.params.typ  , '.btn.' + to.name )
-    //   break;
     default:
       if(typeof to.params.typ != 'undefined')
       GLOBAL.ga.GT( '/' + to.params.typ  , '.btn.' + to.name )
       break;
   }
   
-
   ElandTracker.Track(dataJson);
   setTimeout(function (){
     GLOBAL.ga.GT( '/'+ to.name , '.pv')
-  } , 3000)
+  } , 5000)
   
 
   if (to.matched.some(record => record.meta.authorization || false)) {
