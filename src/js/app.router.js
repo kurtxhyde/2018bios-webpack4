@@ -59,7 +59,7 @@ const router = new VueRouter({
     //{ path: '/game/', component: Game, meta: {  } ,name:'game'},///定义路由的时候可以配置 meta 字段：
   ],
   scrollBehavior (to, from, savedPosition) {
-    return { x: 0, y: 0 }
+    
   },
 });
 

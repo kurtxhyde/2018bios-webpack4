@@ -180,7 +180,7 @@ export default {
 		console.log("MAX_img_count:" + MAX_img_count)
 		img_count = 0;
 		setCookie('prev' , 'office' , '1')
-		
+		window.scrollTo(0, 0)
 		
 	},
 	beforeDestroy:function(){
