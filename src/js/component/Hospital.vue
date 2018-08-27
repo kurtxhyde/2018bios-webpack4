@@ -146,7 +146,7 @@ export default {
 				TweenMax.fromTo($(this) , .7 ,{opacity:0} , {delay:1.5 + count *.1 ,y:0,opacity:1,ease:Expo.easeOut})	
 				count ++
 			})
-			TweenMax.fromTo(prd ,.8, {opacity:0 ,y:-50 } , {delay:2.8 , y:0,opacity:1 , ease:Back.easeOut})
+			TweenMax.fromTo(prd ,.8, {opacity:0 ,y:-50 } , {delay:1.8 , y:0,opacity:1 , ease:Back.easeOut})
 
 		},
 		killIntervals (){
