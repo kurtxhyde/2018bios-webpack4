@@ -114,19 +114,17 @@ export default {
 		},
 		init(){
 			let YT = new YTT( $('.yt').data('id') , 'player' , this.playVideoHandler);
-			// onYouTubeIframeAPIReady = function() {
-		 //        YT.onYouTubeIframeAPIReady();
-		
-			// };
-			if (typeof onYouTubeIframeAPIReady == 'undefined') {
+			
+		if (typeof onYouTubeIframeAPIReady == 'undefined') {
 		    onYouTubeIframeAPIReady = function() {
-		        YT.onYouTubeIframeAPIReady();
-		       
+		        let id = $('.yt').data('id')
+		        YT.onYouTubeIframeAPIReady(id);
 		    };
 		}
 		else{
 			console.log('onYouTubeIframeAPIReady ready...')
 			onYouTubeIframeAPIReady();
+
 		}
 			TweenMax.to($('.bg-all') , 1 , {delay:1, opacity:1});
 			let title = $('.title >img') , t_sub = $('.title .sub') ,sub = $('.container > .sub') , blood1 =  $('.blood1') , blood2 =  $('.blood2') , btn1 = $('.btn-j.btn1')  , btn2 = $('.btn-j.btn2') , prd = btn2.find('.prd');

@@ -117,11 +117,13 @@
 					.framez.abs
 		.list.realt
 			.btn-j.btn1
-				img.relat(src="../../img/dest/office-btn1.png")
-			router-link.btn-j.btn2.relat(data-ga="gallery",data-href="",  :to="{name:'gallery' , params:{typ:'office'}}")
+				img.relat(src="../../img/dest/office-btn2.png")
+			router-link.btn-j.btn1.relat(data-ga="gallery",data-href="",  :to="{name:'gallery' , params:{typ:'office'}}")
 				img(src="../../img/dest/gallery-else.png")
 				//- .prd.abs
 				//- 	img(src="../../img/dest/result-product.png"
+			router-link.btn-j.btn3.relat(data-ga="product",data-href="",  :to="{name:'product' , params:{typ:'office'}}")
+				img(src="../../img/dest/office-btn3.png")
 	.pop.pop-fblogin.fix.inv
 		.bgx.abs
 		.btnlogin.relat 請先登入FB

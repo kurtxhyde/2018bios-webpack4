@@ -120,7 +120,8 @@ export default {
 			// };
 			if (typeof onYouTubeIframeAPIReady == 'undefined') {
 		    onYouTubeIframeAPIReady = function() {
-		        YT.onYouTubeIframeAPIReady();
+		    	let id = $('.yt').data('id')
+		        YT.onYouTubeIframeAPIReady(id);
 		       
 		    };
 		}
