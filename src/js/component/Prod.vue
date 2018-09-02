@@ -313,7 +313,7 @@ export default {
 		MAX_img_count = $('.wrapper img').length;
 		console.log("MAX_img_count:" + MAX_img_count)
 		img_count = 0;
-		
+		window.scrollTo(0, 0);
 
 		
 	},
