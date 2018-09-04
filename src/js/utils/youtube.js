@@ -11,18 +11,18 @@ function YTT(vid, ElementID, playedHandle) {
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);    
     
    
-    this.onYouTubeIframeAPIReady = function() {
-        initplayer()        
+    this.onYouTubeIframeAPIReady = function(id) {
+        initplayer(id)        
     }
    
 
 
 
-    function initplayer(){
+    function initplayer(id){
         player = new YT.Player(ElementID, {
             height: '100%',
             width: '100%',
-            videoId: vid,
+            videoId: id,
             playerVars: { 'autoplay': 0, 'rel': 0 ,'enablejsapi': 1,},
             events: {
                 'onReady': onPlayerReady,
