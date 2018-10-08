@@ -57,6 +57,12 @@ nav.navbar.navbar-fixed-top
               img.ico(src="../../img/dest/m-ico4.png")
               img(src="../../img/dest/m4.png")
                 //- img(src="../../img/dest/line.png")
+        .line
+          img(src="../../img/dest/mline.png")
+        li.m4o(data-id='1')
+            router-link.hash.custom(data-ga="winner",data-href="", :to="{name:'winner' , params:{typ:'nav'}}") 
+              img.ico(src="../../img/dest/m-ico5.png")
+              img(src="../../img/dest/m5.png")
       
 
 

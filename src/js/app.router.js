@@ -23,6 +23,7 @@ const hospital = () => import(/* webpackChunkName: "Track" */'./component/Hospit
 const office = () => import(/* webpackChunkName: "Track" */'./component/Office.vue');
 
 const prod = () => import(/* webpackChunkName: "Track" */'./component/Prod.vue');
+const winner = () => import(/* webpackChunkName: "Track" */'./component/Winner.vue');
 //const Login = () => import(/* webpackChunkName: "Login" */'./component/Login.vue');
 
 const log = value => console.log(`%c${value}`, 'background: #bdc3c7; color: black; font-size:10px;');
@@ -51,6 +52,7 @@ const router = new VueRouter({
     { path: '/office' , component: office ,name:'office'},
     
     { path: '/product' , component: prod ,name:'product'},
+    { path: '/winner' , component: winner ,name:'winner'},
     // { path: '/exam' , component: Exam ,name:'exam'},
     //{ path: '/winner', name:'winner'},
     

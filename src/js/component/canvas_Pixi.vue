@@ -12,6 +12,7 @@
 		img.cover__image(src="../../img/dest/result2-bg.jpg")
 		img.cover__image(src="../../img/dest/result3-bg.jpg")
 		img.cover__image(src="../../img/dest/result4-bg.jpg")
+		img.cover__image(src="../../img/dest/winner-bg.jpg")
 	#canvas.abs
 
 	.ghost1.abs
@@ -115,7 +116,9 @@ export default {
 				case 'result4':
 					initCanvasSlideshow.active(6);
 					break;
-
+				case 'winner':
+					initCanvasSlideshow.active(7);
+					break;	
 				default:
 					initCanvasSlideshow.active(0);
 					break;
