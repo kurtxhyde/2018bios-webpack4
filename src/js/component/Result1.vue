@@ -174,6 +174,8 @@ export default {
         	}
         	function shareHandle(){
                 fb.get_ui_post('現形吧!肌膚鬼怪', '快來檢測妳的肌膚鬼怪，有機會獲得碧歐斯維他命B5原液喔！', "", GLOBAL.host+ context.path + '.html', [], afterPost);
+                // let hashtag = encodeURIComponent('#現加入高鐵TGO有機會抽價值1000元的紅利點數');
+                // location.href="https://www.facebook.com/dialog/feed?app_id="+GLOBAL.fbAppId+"&display=popup&amp;caption="+"test!"+"&link="+"https://www.toyota.com.tw/event/toyotaandboty/"+"&hashtag="+hashtag+"&redirect_uri="+GLOBAL.host+"form.html";
              	function afterPost(){
              		context.$router.replace('form');
              	}
