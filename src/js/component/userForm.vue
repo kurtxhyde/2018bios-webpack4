@@ -39,9 +39,7 @@ export default {
 	        telnum:'',
 	        checkedPrivate:true,
 	        checkedAgree:true,
-
 	        submitActive:true,
-	        
 	    };
 	},
 	directives: {
@@ -56,7 +54,7 @@ export default {
 	},
 	created:function(){
 		//initial data
-		
+	
 	},
 	mounted:function(){
 		$('input#cname').focus(function(){

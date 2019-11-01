@@ -133,7 +133,6 @@ config.plugins = [
     'process.env': {
       NODE_ENV: JSON.stringify(DEV_MODE ? 'development' : 'production'),
       ROOT:JSON.stringify(ROOT)
-
     },
   }),
   
@@ -144,7 +143,7 @@ config.plugins = [
     new PrerendererWebpackPlugin({
       staticDir: path.join(__dirname, './dist'),
       routes: ['/'],
-      renderer: new JSDOMRenderer(),
+      // renderer: new JSDOMRenderer(),
     }),
     
   ],

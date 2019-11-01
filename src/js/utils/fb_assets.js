@@ -96,7 +96,7 @@ function FB_ASSET() {
 		var isLine = window.navigator.userAgent.toLowerCase().indexOf('line') ;
 		let hashtag = encodeURIComponent('#肌膚的都市傳說');
 		//alert('navigator.userAgent..'+navigator.userAgent)
-		if (isFB) {
+		if (false) {
 			FB.ui({
 			        method: 'feed',
 			        

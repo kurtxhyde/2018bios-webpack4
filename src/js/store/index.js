@@ -16,12 +16,10 @@ const state = {
    * loading 百分比
    */
   percentLoading:0,
-  
   /**
     目前的葉面名稱  
     可參考app.router
-   */ 
-  
+   */
   path:'index',
   /**
    * 會員的寶寶年紀
@@ -32,7 +30,6 @@ const state = {
    */
   videoplayed:false,
 };
-
 /////////////////////////////////////////////////////
 // vue 裡用 this.$store.commit('showLoading' , true) //
 // mutation 必須是同步函數, 很重要                  //
@@ -74,17 +71,14 @@ const mutations = {
     state.videoplayed = val;
   }
 };
-
 //////////////////////////////////////////////////////////////
 //  vue 裡用 this.$store.dispatch('showLoading' , true)         
 //  methods(){  ...Vuex.mapActions(['showLoading','count']),}   
 //  Action 類似於 mutation，不同在於：                          
-//  Action 提交的是 mutation，而不是直接變更狀態。              
-//  Action 可以包含任意異步操作。                               
-//  Action 可以非同步，但一定只能 return Promise                
+//  Action 提交的是 mutation，而不是直接變更狀態。
+//  Action 可以包含任意異步操作。                
+//  Action 可以非同步，但一定只能 return Promise
 //////////////////////////////////////////////////////////////
-
-
 //////////
 // TEST  CTRL+SHIFT + J//
 //////////

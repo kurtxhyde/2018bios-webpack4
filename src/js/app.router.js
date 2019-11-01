@@ -8,22 +8,22 @@ import {GA} from './utils/ga.js';
 import {GLOBAL} from  './utils/config.js';
 Vue.use(VueRouter);
 
-const Exam = () => import(/* webpackChunkName: "Track" */'./component/Exam.vue');
-const Result1 = () => import(/* webpackChunkName: "Track" */'./component/Result1.vue');
-const Result2 = () => import(/* webpackChunkName: "Track" */'./component/Result2.vue');
-const Result3 = () => import(/* webpackChunkName: "Track" */'./component/Result3.vue');
-const Result4 = () => import(/* webpackChunkName: "Track" */'./component/Result4.vue');
-const form = () => import(/* webpackChunkName: "Track" */'./component/form.vue');
-const comp = () => import(/* webpackChunkName: "Track" */'./component/complete.vue');
-const rule = () => import(/* webpackChunkName: "Track" */'./component/Rule.vue');
-const gallery = () => import(/* webpackChunkName: "Track" */'./component/Gallery.vue');
-const bus = () => import(/* webpackChunkName: "Track" */'./component/Ghostbus.vue');
-const redrobe = () => import(/* webpackChunkName: "Track" */'./component/Redrobe.vue');
-const hospital = () => import(/* webpackChunkName: "Track" */'./component/Hospital.vue');
-const office = () => import(/* webpackChunkName: "Track" */'./component/Office.vue');
+const Exam = () => import( './component/Exam.vue'); //  =  return  import( './component/Exam.vue');
+const Result1 = () => import( './component/Result1.vue');
+const Result2 = () => import( './component/Result2.vue');
+const Result3 = () => import( './component/Result3.vue');
+const Result4 = () => import( './component/Result4.vue');
+const form = () => import( './component/form.vue');
+const comp = () => import( './component/complete.vue');
+const rule = () => import( './component/Rule.vue');
+const gallery = () => import( './component/Gallery.vue');
+const bus = () => import( './component/Ghostbus.vue');
+const redrobe = () => import( './component/Redrobe.vue');
+const hospital = () => import( './component/Hospital.vue');
+const office = () => import( './component/Office.vue');
 
-const prod = () => import(/* webpackChunkName: "Track" */'./component/Prod.vue');
-const winner = () => import(/* webpackChunkName: "Track" */'./component/Winner.vue');
+const prod = () => import( './component/Prod.vue');
+const winner = () => import( './component/Winner.vue');
 //const Login = () => import(/* webpackChunkName: "Login" */'./component/Login.vue');
 
 const log = value => console.log(`%c${value}`, 'background: #bdc3c7; color: black; font-size:10px;');
@@ -61,7 +61,7 @@ const router = new VueRouter({
     //{ path: '/game/', component: Game, meta: {  } ,name:'game'},///定义路由的时候可以配置 meta 字段：
   ],
   scrollBehavior (to, from, savedPosition) {
-    
+
   },
 });
 
