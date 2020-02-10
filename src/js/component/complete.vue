@@ -59,8 +59,8 @@ export default {
 	components:{
 		userForm,
 		// svgAnim,
-		
-		
+
+
 	},
 	created:function(){
 

@@ -4,10 +4,10 @@
 transition( :duration="{ enter:500, leave: 500 }" ,name='fade', mode='out-in')
   .loading(v-show='showPageLoading')
     .center
-      .bg
+      //- .bg
       .ld
         img(src="../../img/dest/loading.gif")
-        .txt.relat.inv {{percentLoading}}
+        //- .txt.relat.inv {{percentLoading}}
 </template>
 
 <script>
